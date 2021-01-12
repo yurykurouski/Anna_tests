@@ -7,6 +7,8 @@ testForm.addEventListener('submit', addTask);
 
 function addTask(event) {
   event.preventDefault();
+  
+  if (answersArr.length != 0) return;
 
   answersArr.push(testForm.elements['first-question'].value);
   answersArr.push(testForm.elements['second-question'].value);
@@ -20,7 +22,7 @@ showResultsBtn.addEventListener('click', showTable)
 function showTable() {
   let i = 1;
   if (answersArr.length == 0) return;
-  
+
   const mainTable = document.createElement('table');
   const headRawWrap = document.createElement('tr')
   const headRaw = document.createElement('th');   // строка заголовка
