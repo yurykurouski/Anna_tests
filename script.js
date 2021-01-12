@@ -19,7 +19,8 @@ showResultsBtn.addEventListener('click', showTable)
 
 function showTable() {
   let i = 1;
-
+  if (answersArr.length == 0) return;
+  
   const mainTable = document.createElement('table');
   const headRawWrap = document.createElement('tr')
   const headRaw = document.createElement('th');   // строка заголовка
