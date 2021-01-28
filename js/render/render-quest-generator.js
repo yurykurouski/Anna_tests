@@ -12,8 +12,9 @@ function renderQuestGenerator() {
 
   const extraFieldBtn = rootDiv.querySelector('.add-extra-field');
 
-  extraFieldBtn.addEventListener('click', addExtraField)
-  form.addEventListener('submit', renderQuestionsEdit)
+  extraFieldBtn.addEventListener('click', addExtraField);
+  // form.addEventListener('submit', renderQuestionsEdit);
+  
 }
 
 function addExtraField() {

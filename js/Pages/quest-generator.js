@@ -53,7 +53,7 @@ const questGeneratorTemplate = `
 
       <div>/Здесь будет блок с редактированием возможных вариантов ответа/</div>
 
-      <input type='submit' class='pure-material-button-contained' value='Продолжить'></input>
+      <button type='submit' class='pure-material-button-contained'>Продолжить</button>
 
     </form>
   </div>
