@@ -6,50 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test</title>
 
-  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+
+  <link rel="stylesheet" href="./css/elements/textfield.css" type="text/css" />
+  <link rel="stylesheet" href="./css/elements/checkbox.css" type="text/css" />
+  <link rel="stylesheet" href="./css/elements/text-button.css" type="text/css" />
+  <link rel="stylesheet" href="./css/elements/contained-button.css" type="text/css" />
+  <link rel="stylesheet" href="./css/elements/select.css" type="text/css" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
 <body>
+  <div class='container'>
 
-  <div>
-    <form>
-      <div>
-        <h3>Описание исследования:</h3>
-        <textarea name='rsrchdescription' placeholder='Здесь можно ввести описание проводимого исследования' autofocus required></textarea>
-      </div>
 
-      <div>
-        <h4>Сбор предварительной информации об респонденте:</h4>
-          <label><input type='checkbox' value='gender'>Пол</label>
-          <label><input type='checkbox' value='age'>Возраст</label>
-          <label><input type='checkbox' value='educatiion'>Образование</label>
-          <label><input type='checkbox' value='marital-status'>Семейное положение</label>
-          <label><input type='checkbox' value='residence'>Место проживания</label>
-          <h5>Дополнительные сведения:</h5>
-          <input type='text' required><button>+</button>
-      </div>
-
-      <div>
-        <h4>Количество вопросов в исследовании:</h4>
-        <input type="number" required>
-      </div>
-
-      <div>
-        <h4>Формат возможных ответов:</h4>
-        <select>
-          <option value='boolean'>Да/Нет</option>
-          <option value='range'>Диапазон</option>
-          <option value='rating'>Оценка</option>
-        </select>
-      </div>
-
-      <div>/Здесь будет блок с редактированием возможных вариантов ответа/</div>
-    </form>
   </div>
-
 
   <!-- <div>
       <h3>Количество ответов</h3>
@@ -75,7 +48,7 @@
 
   <!-- Instantiate single textfield component rendered in the document -->
 
-  <script src="./js/script.js"></script>
+  <script type="module" src="./js/script.js"></script>
 </body>
 
 

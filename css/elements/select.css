@@ -1,0 +1,10 @@
+select {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  height: 2em;
+  background: white;
+}
+
+option {
+  padding: 3em;
+}
