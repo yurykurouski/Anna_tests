@@ -1,5 +1,5 @@
 import questGeneratorTemplate from "../Pages/quest-generator.js";
-import renderQuestionsEdit from "./render-questions-edit.js";
+import { collectQuestionsTemplate } from "./render-questions-edit.js";
 
 
 
@@ -12,12 +12,11 @@ function renderQuestGenerator() {
 
   const extraFieldBtn = rootDiv.querySelector('.add-extra-field');
 
-  extraFieldBtn.addEventListener('click', addExtraField);
-  // form.addEventListener('submit', renderQuestionsEdit);
-  
+  extraFieldBtn.addEventListener('click', () => addExtraField(rootDiv));
+  form.addEventListener('submit', collectQuestionsTemplate);
 }
 
-function addExtraField() {
+function addExtraField(rootDiv) {
   const extraInformationDiv = rootDiv.querySelector('.additional-information-extra');
   const newExtraInformationField = document.createElement('label');
 
@@ -26,10 +25,9 @@ function addExtraField() {
   extraInformationDiv.appendChild(newExtraInformationField);
 
   newExtraInformationField.innerHTML = `
-    <input placeholder=' ' required>
-    <span>Textfield</span>
+    <input name='additional-information' placeholder=' ' required>
+    <span>Введите...</span>
   `
-
 }
 
 export default renderQuestGenerator;
