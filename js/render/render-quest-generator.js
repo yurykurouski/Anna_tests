@@ -1,8 +1,8 @@
 import questGeneratorTemplate from "../Pages/quest-generator.js";
+import storageService from "../storage-service.js";
 import { collectQuestionsTemplate } from "./render-questions-edit.js";
 
-
-
+//* рендер формы-конструктора 
 function renderQuestGenerator() {
   const rootDiv = document.querySelector('.container');
 
@@ -16,6 +16,7 @@ function renderQuestGenerator() {
   form.addEventListener('submit', collectQuestionsTemplate);
 }
 
+//* функция добавления дополнительного поля для доп. сведений
 function addExtraField(rootDiv) {
   const extraInformationDiv = rootDiv.querySelector('.additional-information-extra');
   const newExtraInformationField = document.createElement('label');
