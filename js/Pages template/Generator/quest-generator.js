@@ -15,11 +15,11 @@ const template = `
       <div class='additional-information'>
         <h4>Сбор предварительной информации о респонденте:</h4>
         <div>
-          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='gender'><span>Пол</span></label>
-          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='age'><span>Возраст</span></label>
-          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='educatiion'><span>Образование</span></label>
-          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='marital-status'><span>Семейное положение</span></label>
-          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='residence'><span>Место проживания</span></label>
+          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='Пол'><span>Пол</span></label>
+          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='Возраст'><span>Возраст</span></label>
+          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='Образование'><span>Образование</span></label>
+          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='Семейное положение'><span>Семейное положение</span></label>
+          <label class="pure-material-checkbox"><input type='checkbox' name='additional-information' value='Место проживания'><span>Место проживания</span></label>
         </div>
        
         <h5>Дополнительные сведения:</h5>

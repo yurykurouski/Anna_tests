@@ -62,6 +62,6 @@ function saveQuestions() {
     questions.push(question);
   });
 
-  storageService.set('SavedQuestions', JSON.stringify(questions))
+  storageService.set('SavedQuestions', JSON.stringify(questions));
 }
 

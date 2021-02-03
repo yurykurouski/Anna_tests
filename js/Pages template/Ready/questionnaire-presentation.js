@@ -4,13 +4,16 @@ const template = `
     <p></p>
   </div>
 
-  <div>
   <h3>Сбор предварительной информации:</h3>
-  <div>Первый из выбранных вариантов</div>
+  <div class='additional-information-anquette'>
+
   </div>
 
-  <div>
   <h3>Дополнительные сведения:</h3>
+  <div class='additional-extra'>
+
   </div>
+    <h4 class='summary'></h4>
+    <button class='pure-material-button-contained go-to-questions'>Перейти к вопросам</input>
 `
 export default template;

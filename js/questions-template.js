@@ -6,7 +6,7 @@ class QuestionsTemplate {
   }
 }
 
-const template = storageService.get('QuestionTemplate');
+const template = JSON.parse(storageService.get('QuestionTemplate'));
 
 const questionsTemplate = new QuestionsTemplate(template);
 
