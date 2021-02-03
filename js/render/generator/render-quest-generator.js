@@ -1,24 +1,22 @@
-import questGeneratorTemplate from "../Pages/quest-generator.js";
-import storageService from "../storage-service.js";
+import { ROOT_DIV } from "../../constants.js";
+import template from "../../Pages template/Generator/quest-generator.js";
 import { collectQuestionsTemplate } from "./render-questions-edit.js";
 
-//* рендер формы-конструктора 
+//* рендер формы-конструктора
 function renderQuestGenerator() {
-  const rootDiv = document.querySelector('.container');
+  ROOT_DIV.innerHTML = template;
 
-  rootDiv.innerHTML = questGeneratorTemplate;
+  const form = ROOT_DIV.querySelector('div > form');
 
-  const form = rootDiv.querySelector('div > form');
+  const extraFieldBtn = ROOT_DIV.querySelector('.add-extra-field');
 
-  const extraFieldBtn = rootDiv.querySelector('.add-extra-field');
-
-  extraFieldBtn.addEventListener('click', () => addExtraField(rootDiv));
+  extraFieldBtn.addEventListener('click', () => addExtraField(ROOT_DIV));
   form.addEventListener('submit', collectQuestionsTemplate);
 }
 
 //* функция добавления дополнительного поля для доп. сведений
-function addExtraField(rootDiv) {
-  const extraInformationDiv = rootDiv.querySelector('.additional-information-extra');
+function addExtraField(ROOT_DIV) {
+  const extraInformationDiv = ROOT_DIV.querySelector('.additional-information-extra');
   const newExtraInformationField = document.createElement('label');
 
   newExtraInformationField.setAttribute('class', 'pure-material-textfield-outlined');

@@ -1,4 +1,4 @@
-const questGeneratorTemplate = `
+const template = `
   <div>
     <form>
       <div>
@@ -59,4 +59,4 @@ const questGeneratorTemplate = `
   </div>
 `
 
-export default questGeneratorTemplate;
+export default template;

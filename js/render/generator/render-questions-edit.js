@@ -1,33 +1,33 @@
-// import question from "../operations/questions.js";
-import questionsTemplate from "../Pages/questions-edit.js";
-import storageService from "../storage-service.js";
-
-const rootDiv = document.querySelector('.container');
+import { ROOT_DIV } from "../../constants.js";
+import template from "../../Pages template/Generator/questions-edit.js";
+import storageService from "../../storage-service.js";
 
 //* получение темплейта для формы вопросов
 export function collectQuestionsTemplate(event) {
   event.preventDefault();
   const formDdata = new FormData(event.target);
 
-  const questionsTemplate = {
-    description: formDdata.get('rsrchdescription'),
-    additionalInformation: formDdata.getAll('additional-information'),
-    additionalInformationExtra: formDdata.getAll('additional-information-extra'),
-    numberOfQuestions: formDdata.get('questions-amount'),
-    possibleAnswersType: formDdata.get('possible-answers')
+  const savedQuestionsTemplate = {
+  description: formDdata.get('rsrchdescription'),
+  additionalInformation: formDdata.getAll('additional-information'),
+  additionalInformationExtra: formDdata.getAll('additional-information-extra'),
+  numberOfQuestions: formDdata.get('questions-amount'),
+  possibleAnswersType: formDdata.get('possible-answers')
   }
 
-  const numberOfQuestions = questionsTemplate.numberOfQuestions;
+  storageService.set('QuestionTemplate', JSON.stringify(savedQuestionsTemplate));
+
+  const numberOfQuestions = savedQuestionsTemplate.numberOfQuestions;
 
   renderQuestionsInputs(numberOfQuestions);
 }
 
 //* рендер инпутов для ввода вопросов
 function renderQuestionsInputs(numberOfQuestions) {
-  rootDiv.innerHTML = questionsTemplate;
+  ROOT_DIV.innerHTML = template;
 
-  const questionsField = rootDiv.querySelector('.questions');
-  const saveBtn = rootDiv.querySelector('.saveBtn')
+  const questionsField = ROOT_DIV.querySelector('.questions');
+  const saveBtn = ROOT_DIV.querySelector('.saveBtn')
 
   for (let i = 1; i <= numberOfQuestions; i++) {
     const questionBlock = document.createElement('div');
@@ -50,7 +50,7 @@ function renderQuestionsInputs(numberOfQuestions) {
 
 //* получение вопросов
 function saveQuestions() {
-  const allFields = rootDiv.querySelectorAll('div textarea');
+  const allFields = ROOT_DIV.querySelectorAll('div textarea');
   const questions = [];
 
   allFields.forEach((field) => {
@@ -62,6 +62,6 @@ function saveQuestions() {
     questions.push(question);
   });
 
-  console.log(questions)
+  storageService.set('SavedQuestions', JSON.stringify(questions))
 }
 
