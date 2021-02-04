@@ -11,7 +11,7 @@ import storageService from "./storage-service.js";
 
   const template = JSON.parse(storageService.get('QuestionTemplate'));
   
-  researchCaption.textContent = template.description;
+  // researchCaption.textContent = template.description;
 
   toNewQuestBtn.addEventListener('click', renderQuestGenerator);
   goToAnquetteBtn.addEventListener('click', renderExsistingAnquette);
