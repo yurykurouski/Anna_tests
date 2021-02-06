@@ -44,12 +44,15 @@ const template = `
 
       <div class='possible-answers'>
         <h4>Формат возможных ответов:</h4>
-        <select name='possible-answers' required>
-          <option selected hidden>Выберите вариант</option>
-          <option name='possible-answers' value='boolean'>Да/Нет</option>
-          <option name='possible-answers' value='range'>Диапазон</option>
-        </select>
-        <div class='range-template'></div>
+          <span>
+            <select name='possible-answers' required>
+              <option selected hidden>Выберите вариант</option>
+              <option name='possible-answers' value='boolean'>Да/Нет</option>
+              <option name='possible-answers' value='range'>Диапазон</option>
+            </select>
+            <div class='range-template'></div>
+          </span>
+        
       </div>
 
       <button type='submit' class='pure-material-button-contained'>Продолжить</button>

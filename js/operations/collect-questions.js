@@ -16,7 +16,7 @@ function collectQuestionsTemplate(event) {
     ifRange: formDdata.getAll('variant-field')
   }
 
-  storageService.set('QuestionTemplate', JSON.stringify(savedQuestionsTemplate));
+  storageService.set('SavedQuestionsTemplate', JSON.stringify(savedQuestionsTemplate));
 
   const numberOfQuestions = savedQuestionsTemplate.numberOfQuestions;
 
@@ -27,19 +27,11 @@ function collectQuestionsTemplate(event) {
 export function saveQuestions(event) {
   event.preventDefault();
   
-  const allFields = ROOT_DIV.querySelectorAll('div textarea');
-  const questions = [];
+  const formData = new FormData(event.target);
 
-  allFields.forEach((field) => {
-    const question = {
-      id: field.id,
-      text: field.value
-    }
+  const savedQuestions =  formData.getAll('qstn-description');
 
-    questions.push(question);
-  });
-
-  storageService.set('SavedQuestions', JSON.stringify(questions));
+  storageService.set('SavedQuestions', JSON.stringify(savedQuestions));
 }
 
 export default collectQuestionsTemplate;

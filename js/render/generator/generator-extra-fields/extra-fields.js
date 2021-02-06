@@ -17,7 +17,7 @@ export function addExtraField(ROOT_DIV) {
 
 //* создание полей для кастомных полей ответа
 export function rangeTemplate(event) {
-  const wrap = ROOT_DIV.querySelector('form .possible-answers > .range-template');
+  const wrap = ROOT_DIV.querySelector('form .possible-answers span > .range-template');
 
   if (event.target.value === 'range') {
     wrap.innerHTML = `
@@ -26,6 +26,8 @@ export function rangeTemplate(event) {
         <option name='quanityOfAnswers' value='3'>3</option>
         <option name='quanityOfAnswers' value='4'>4</option>
         <option name='quanityOfAnswers' value='5'>5</option>
+        <option name='quanityOfAnswers' value='6'>6</option>
+        <option name='quanityOfAnswers' value='7'>7</option>
       </select>
       <span></span>
     `

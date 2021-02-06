@@ -5,7 +5,7 @@ import storageService from "../../storage-service.js";
 
 //* рендер инпутов для ввода вопросов
 export function renderQuestionsInputs() {
-  const numberOfQuestions = JSON.parse(storageService.get('QuestionTemplate')).numberOfQuestions;
+  const numberOfQuestions = JSON.parse(storageService.get('SavedQuestionsTemplate')).numberOfQuestions;
 
   ROOT_DIV.innerHTML = template;
 
