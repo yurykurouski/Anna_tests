@@ -1,6 +1,7 @@
 import { ROOT_DIV } from "../../constants.js";
+import collectQuestionsTemplate from "../../operations/collect-questions.js";
 import template from "../../Pages template/Generator/quest-generator.js";
-import { collectQuestionsTemplate } from "./render-questions-edit.js";
+import { renderQuestionsInputs } from "./render-questions-edit.js";
 
 //* рендер формы-конструктора
 function renderQuestGenerator() {
@@ -11,7 +12,11 @@ function renderQuestGenerator() {
   const extraFieldBtn = ROOT_DIV.querySelector('.add-extra-field');
 
   extraFieldBtn.addEventListener('click', () => addExtraField(ROOT_DIV));
-  form.addEventListener('submit', collectQuestionsTemplate);
+  
+  form.addEventListener('submit', () => {
+    collectQuestionsTemplate(event);
+    renderQuestionsInputs();
+  });
 }
 
 //* функция добавления дополнительного поля для доп. сведений

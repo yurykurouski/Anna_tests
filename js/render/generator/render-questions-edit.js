@@ -1,37 +1,20 @@
 import { ROOT_DIV } from "../../constants.js";
+import { saveQuestions } from "../../operations/collect-questions.js";
 import template from "../../Pages template/Generator/questions-edit.js";
 import storageService from "../../storage-service.js";
 
-//* получение темплейта для формы вопросов
-export function collectQuestionsTemplate(event) {
-  event.preventDefault();
-  const formDdata = new FormData(event.target);
-
-  const savedQuestionsTemplate = {
-  description: formDdata.get('rsrchdescription'),
-  additionalInformation: formDdata.getAll('additional-information'),
-  additionalInformationExtra: formDdata.getAll('additional-information-extra'),
-  numberOfQuestions: formDdata.get('questions-amount'),
-  possibleAnswersType: formDdata.get('possible-answers')
-  }
-
-  storageService.set('QuestionTemplate', JSON.stringify(savedQuestionsTemplate));
-
-  const numberOfQuestions = savedQuestionsTemplate.numberOfQuestions;
-
-  renderQuestionsInputs(numberOfQuestions);
-}
-
 //* рендер инпутов для ввода вопросов
-function renderQuestionsInputs(numberOfQuestions) {
+export function renderQuestionsInputs() {
+  const numberOfQuestions = JSON.parse(storageService.get('QuestionTemplate')).numberOfQuestions;
+
   ROOT_DIV.innerHTML = template;
 
   const questionsField = ROOT_DIV.querySelector('.questions');
-  const saveBtn = ROOT_DIV.querySelector('.saveBtn')
+  const form = ROOT_DIV.querySelector('form');
 
   for (let i = 1; i <= numberOfQuestions; i++) {
     const questionBlock = document.createElement('div');
-    questionBlock.setAttribute('id', i)
+    questionBlock.setAttribute('class', 'qstn-wrap')
     const singleQuestionTemplate = `
       <h3>Вопрос №${i}</h3>
 
@@ -45,23 +28,7 @@ function renderQuestionsInputs(numberOfQuestions) {
     questionsField.appendChild(questionBlock);
   }
 
-  saveBtn.addEventListener('click', saveQuestions)
+  form.addEventListener('submit', saveQuestions);
 }
 
-//* получение вопросов
-function saveQuestions() {
-  const allFields = ROOT_DIV.querySelectorAll('div textarea');
-  const questions = [];
-
-  allFields.forEach((field) => {
-    const question = {
-      id: field.id,
-      text: field.value
-    }
-
-    questions.push(question);
-  });
-
-  storageService.set('SavedQuestions', JSON.stringify(questions));
-}
 

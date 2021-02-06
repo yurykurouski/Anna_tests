@@ -1,4 +1,5 @@
 import { ROOT_DIV } from "../../constants.js";
+import { collectUserAnswers } from "../../operations/collect-answers.js";
 import template from "../../Pages template/Ready/questions-presentation.js";
 import questionsList from "../../questions-list.js";
 import questionsTemplate from "../../questions-template.js";
@@ -21,18 +22,20 @@ function renderExistingQuestions() {
     questionsWrapper.appendChild(wrap);
   });
 
-  const saveAnswersBtn = ROOT_DIV.querySelector('.save-answers');
+  const form = ROOT_DIV.querySelector('form');
+
+  form.addEventListener('submit', collectUserAnswers);
 }
 
 function generateAnswerTypeTemplate(questionsTemplate, id) {
   if (questionsTemplate.template.possibleAnswersType === 'boolean') {
     const template = `
       <label class="pure-material-radio">
-        <input type="radio" name="radio${id}">
+        <input type="radio" name="radio${id}" value='1'>
         <span>Да</span>
       </label>
       <label class="pure-material-radio">
-        <input type="radio" name="radio${id}">
+        <input type="radio" name="radio${id}" value='0'>
         <span>Нет</span>
       </label>
     `
@@ -43,9 +46,9 @@ function generateAnswerTypeTemplate(questionsTemplate, id) {
   if (questionsTemplate.template.possibleAnswersType === 'range') {
     const template = `
     <label class="pure-material-slider">
-    <span>
-      1<input type="range" min="1" max="10">10
-    </span>
+      <span>
+        Скорее нет<input type="range" min="1" max="5">Скорее да
+      </span>
     </label>
     `
 

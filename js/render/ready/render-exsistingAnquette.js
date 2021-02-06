@@ -1,8 +1,8 @@
 import { ROOT_DIV } from "../../constants.js";
+import { collectUserAnquette } from "../../operations/collect-answers.js";
 import template from "../../Pages template/Ready/questionnaire-presentation.js";
 import questionsTemplate from "../../questions-template.js";
 import renderExistingQuestions from "./render-existingQuestions.js";
-
 
 //* сборка анкеты из конструктора
 export function renderExsistingAnquette() {
@@ -26,8 +26,8 @@ export function renderExsistingAnquette() {
         <span>Введите...</span>
       </label>
     `
-    additionalInformation.appendChild(wrap)
-  })
+    additionalInformation.appendChild(wrap);
+  });
 
   const additionalExtra = ROOT_DIV.querySelector('div .additional-extra');
 
@@ -46,14 +46,15 @@ export function renderExsistingAnquette() {
       </label>
     `
     additionalExtra.appendChild(wrap);
-  })
+  });
 
   const summary = ROOT_DIV.querySelector('.summary');
   
   summary.textContent = `Количество вопросов: ${questionsTemplate.template.numberOfQuestions}`;
 
-  const goToQuestionsBtn = ROOT_DIV.querySelector('.go-to-questions');
+  const form = ROOT_DIV.querySelector('form');
+  // const goToQuestionsBtn = ROOT_DIV.querySelector('.go-to-questions');
 
-  goToQuestionsBtn.addEventListener('click', renderExistingQuestions)
+  form.addEventListener('submit', collectUserAnquette);
 
 }

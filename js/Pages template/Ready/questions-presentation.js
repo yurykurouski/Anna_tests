@@ -1,9 +1,10 @@
 const template = `
-  <div class='questions-wrapper'>
-  </div>
+  <form>
+    <div class='questions-wrapper'>
+    </div>
 
-  <button class='pure-material-button-contained save-answers'>Сохранить</input>
-
+    <button class='pure-material-button-contained save-answers'>Сохранить</input>
+  </form>
 `;
 
 export default template;
