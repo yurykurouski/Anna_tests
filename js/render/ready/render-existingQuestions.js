@@ -54,15 +54,6 @@ function generateAnswerTypeTemplate(questionsTemplate, id) {
 
     return template;
   }
-
-  //! уточнить
-  if (questionsTemplate.template.possibleAnswersType === 'rating') {
-    const template = `
-    <p>Уточнить у Ани, что с оценкой</p> 
-    `
-
-    return template;
-  }
 }
 
 export default renderExistingQuestions;

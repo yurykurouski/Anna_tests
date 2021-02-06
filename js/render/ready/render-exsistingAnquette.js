@@ -53,8 +53,9 @@ export function renderExsistingAnquette() {
   summary.textContent = `Количество вопросов: ${questionsTemplate.template.numberOfQuestions}`;
 
   const form = ROOT_DIV.querySelector('form');
-  // const goToQuestionsBtn = ROOT_DIV.querySelector('.go-to-questions');
 
-  form.addEventListener('submit', collectUserAnquette);
-
+  form.addEventListener('submit', (event) => {
+    collectUserAnquette(event);
+    renderExistingQuestions();
+  });
 }

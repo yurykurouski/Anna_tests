@@ -30,4 +30,5 @@ export function collectUserAnswers(event) {
   });
 
   storageService.set('UserAnswers', JSON.stringify(userAnswers));
+
 }

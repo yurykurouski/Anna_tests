@@ -42,16 +42,15 @@ const template = `
       </label>
       </div>
 
-      <div>
+      <div class='possible-answers'>
         <h4>Формат возможных ответов:</h4>
         <select name='possible-answers' required>
-          <option name='possible-answers'value='boolean'>Да/Нет</option>
+          <option selected hidden>Выберите вариант</option>
+          <option name='possible-answers' value='boolean'>Да/Нет</option>
           <option name='possible-answers' value='range'>Диапазон</option>
-          <option name='possible-answers' value='rating'>Оценка</option>
         </select>
+        <div class='range-template'></div>
       </div>
-
-      <div>/Здесь будет блок с редактированием возможных вариантов ответа/</div>
 
       <button type='submit' class='pure-material-button-contained'>Продолжить</button>
 

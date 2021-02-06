@@ -1,6 +1,7 @@
 import { ROOT_DIV } from "../../constants.js";
 import collectQuestionsTemplate from "../../operations/collect-questions.js";
 import template from "../../Pages template/Generator/quest-generator.js";
+import { addExtraField, rangeTemplate } from "./generator-extra-fields/extra-fields.js";
 import { renderQuestionsInputs } from "./render-questions-edit.js";
 
 //* рендер формы-конструктора
@@ -10,28 +11,18 @@ function renderQuestGenerator() {
   const form = ROOT_DIV.querySelector('div > form');
 
   const extraFieldBtn = ROOT_DIV.querySelector('.add-extra-field');
+  const selectField = ROOT_DIV.querySelector('select[name="possible-answers"]');
 
   extraFieldBtn.addEventListener('click', () => addExtraField(ROOT_DIV));
+
+  selectField.addEventListener('change', rangeTemplate);
   
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', (event) => {
     collectQuestionsTemplate(event);
     renderQuestionsInputs();
   });
 }
 
-//* функция добавления дополнительного поля для доп. сведений
-function addExtraField(ROOT_DIV) {
-  const extraInformationDiv = ROOT_DIV.querySelector('.additional-information-extra');
-  const newExtraInformationField = document.createElement('label');
 
-  newExtraInformationField.setAttribute('class', 'pure-material-textfield-outlined');
-
-  extraInformationDiv.appendChild(newExtraInformationField);
-
-  newExtraInformationField.innerHTML = `
-    <input name='additional-information-extra' placeholder=' ' required>
-    <span>Введите...</span>
-  `
-}
 
 export default renderQuestGenerator;
