@@ -8,15 +8,15 @@ function renderExistingQuestions() {
   ROOT_DIV.innerHTML = template;
   const questionsWrapper = ROOT_DIV.querySelector('.questions-wrapper');
 
-  questionsList.list.forEach(qstn => {
+  questionsList.list.forEach((qstn, id) => {
     const wrap = document.createElement('div');
     wrap.setAttribute('class', 'question-wrap');
 
     wrap.innerHTML = `
-    <h4>Вопрос №${qstn.id}</h4>
-    <p>${qstn.text}</p>
+    <h4>Вопрос №${id+1}</h4>
+    <p>${qstn}</p>
     <h4>Ваш ответ:</h4>
-    ${generateAnswerTypeTemplate(questionsTemplate, qstn.id)}
+    ${generateAnswerTypeTemplate(questionsTemplate, id)}
     `
 
     questionsWrapper.appendChild(wrap);
@@ -31,27 +31,28 @@ function generateAnswerTypeTemplate(questionsTemplate, id) {
   if (questionsTemplate.template.possibleAnswersType === 'boolean') {
     const template = `
       <label class="pure-material-radio">
-        <input type="radio" name="radio${id}" value='1'>
-        <span>Да</span>
+        <input type="radio" name="radio${id + 1}" value='0'>
+        <span>Нет</span>
       </label>
       <label class="pure-material-radio">
-        <input type="radio" name="radio${id}" value='0'>
-        <span>Нет</span>
+        <input type="radio" name="radio${id + 1}" value='1'>
+        <span>Да</span>
       </label>
     `
     return template;
   }
 
-//! добавить индикацию значения на range
   if (questionsTemplate.template.possibleAnswersType === 'range') {
-    const template = `
-    <label class="pure-material-slider">
-      <span>
-        Скорее нет<input type="range" min="1" max="5">Скорее да
-      </span>
-    </label>
-    `
-
+    let template = '';
+    for (let i = 0; i < questionsTemplate.template.ifRange.length; i++){
+      const part = `
+        <label class="pure-material-radio">
+          <input type="radio" name="radio${id + 1}" value='${i + 1}'>
+          <span>${questionsTemplate.template.ifRange[i]}</span>
+        </label>
+      `
+      template = template + part;
+    }
     return template;
   }
 }
