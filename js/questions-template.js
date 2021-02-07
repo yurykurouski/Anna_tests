@@ -1,13 +1,17 @@
 import storageService from "./storage-service.js";
 
-class QuestionsTemplate {
-  constructor(template) {
-    this.template = template;
+class QuestionsList {
+  constructor(templates) {
+    this.templates = templates;
+  }
+
+  saveTemplate(newTemplate) {
+    this.templates = [...this.templates, newTemplate];
   }
 }
 
-const template = JSON.parse(storageService.get('SavedQuestionsTemplate'));
+const templates = JSON.parse(storageService.get('SavedQuestionsTemplate'));
 
-const questionsTemplate = new QuestionsTemplate(template);
+const questionsTemplate = new QuestionsList(templates || []);
 
 export default questionsTemplate;

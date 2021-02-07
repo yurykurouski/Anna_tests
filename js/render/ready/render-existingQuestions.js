@@ -1,7 +1,10 @@
-import { ROOT_DIV } from "../../constants.js";
-import { collectUserAnswers } from "../../operations/collect-answers.js";
+import {
+  ROOT_DIV
+} from "../../constants.js";
+import {
+  collectUserAnswers
+} from "../../operations/collect-answers.js";
 import template from "../../Pages template/Ready/questions-presentation.js";
-import questionsList from "../../questions-list.js";
 import questionsTemplate from "../../questions-template.js";
 
 function renderExistingQuestions() {
@@ -44,7 +47,7 @@ function generateAnswerTypeTemplate(questionsTemplate, id) {
 
   if (questionsTemplate.template.possibleAnswersType === 'range') {
     let template = '';
-    for (let i = 0; i < questionsTemplate.template.ifRange.length; i++){
+    for (let i = 0; i < questionsTemplate.template.ifRange.length; i++) {
       const part = `
         <label class="pure-material-radio">
           <input type="radio" name="radio${id + 1}" value='${i + 1}'>

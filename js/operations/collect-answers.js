@@ -18,15 +18,13 @@ export function collectUserAnswers(event) {
 
   const formData = new FormData(event.target);
 
-  const field = ROOT_DIV.querySelectorAll('.question-wrap');
+  const fields = ROOT_DIV.querySelectorAll('.question-wrap');
 
-  const userAnswers = {
-    answers:[]
-  }
+  let userAnswers = [];
 
-  field.forEach((el, index) => {
+  fields.forEach((el, index) => {
     const answer = formData.get(`radio${index + 1}`);
-    userAnswers.answers = [...userAnswers.answers, answer]
+    userAnswers = [...userAnswers, answer]
   });
 
   storageService.set('UserAnswers', JSON.stringify(userAnswers));

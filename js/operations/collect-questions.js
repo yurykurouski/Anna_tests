@@ -1,4 +1,4 @@
-import { ROOT_DIV } from "../constants.js";
+import questionsTemplate from "../questions-template.js";
 import storageService from "../storage-service.js";
 
 //* получение темплейта для формы вопросов
@@ -16,8 +16,11 @@ function collectQuestionsTemplate(event) {
     ifRange: formDdata.getAll('variant-field')
   }
 
-  storageService.set('SavedQuestionsTemplate', JSON.stringify(savedQuestionsTemplate));
+  questionsTemplate.saveTemplate(savedQuestionsTemplate);
 
+  storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
+
+  console.log(savedQuestionsTemplate);
   const numberOfQuestions = savedQuestionsTemplate.numberOfQuestions;
 
   return numberOfQuestions;
