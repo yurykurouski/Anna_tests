@@ -46,7 +46,7 @@
   font-size: 75%;
   line-height: 18px;
   pointer-events: none;
-  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+  transition: color 0.1s, font-size 0.1s, line-height 0.1s;
 }
 
 /* Underline */
@@ -62,7 +62,7 @@
   background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
   transform-origin: bottom center;
   transform: scaleX(0);
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
 /* Hover */
@@ -177,7 +177,7 @@
   font-size: 75%;
   line-height: 15px;
   cursor: text;
-  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+  transition: color 0.1s, font-size 0.1s, line-height 0.1s;
 }
 
 /* Corners */
