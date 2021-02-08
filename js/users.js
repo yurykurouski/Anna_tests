@@ -1,4 +1,4 @@
-import storageService from "./storage-service";
+import storageService from "./storage-service.js";
 
 class UsersList {
   constructor(users) {
