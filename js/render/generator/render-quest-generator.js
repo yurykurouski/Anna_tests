@@ -17,8 +17,6 @@ function renderQuestGenerator() {
 
   selectField.addEventListener('change', rangeTemplate);
 
-
-  
   form.addEventListener('submit', (event) => {
     renderQuestionsInputs(collectQuestionsTemplate(event));
   });
