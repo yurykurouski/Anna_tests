@@ -5,7 +5,6 @@ import storageService from "./storage-service.js";
 
 function start() {
   const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
-  const goToAnquetteBtn = ROOT_DIV.querySelector('.go-to-anquette');
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
 
   const templates = JSON.parse(storageService.get('SavedQuestionsTemplate'));
@@ -15,29 +14,30 @@ function start() {
       <span>Нет доступных исследований</span>
     `
   } else {
-    templates.forEach(el => {
+    templates.forEach((el, index) => {
       const researchCard = document.createElement('li');
       const description = document.createElement('p');
       const info = document.createElement('span');
+      const startBtn = document.createElement('button');
+      
+      startBtn.setAttribute('class', 'pure-material-button-contained go-to-anquette');
+      startBtn.setAttribute('id', index);
+      startBtn.textContent = 'Пройти'
 
       researchesWrap.appendChild(researchCard);
       researchCard.appendChild(description);
       researchCard.appendChild(info);
+      researchCard.appendChild(startBtn);
 
       description.textContent = el.description;
-      info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: (Сюда автора)`
+      info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: (Сюда автора)`;
+
+      startBtn.addEventListener('click', () => renderExsistingAnquette(index))
+
     })
   }
 
-
-
-
-  
-  
-
-
   toNewQuestBtn.addEventListener('click', renderQuestGenerator);
-  goToAnquetteBtn.addEventListener('click', renderExsistingAnquette);
 };
 
 start();

@@ -1,12 +1,9 @@
 import { ROOT_DIV } from "../../constants.js";
-import { saveQuestions } from "../../operations/collect-questions.js";
+import { collectQuestions } from "../../operations/collect-questions.js";
 import template from "../../Pages template/Generator/questions-edit.js";
-import storageService from "../../storage-service.js";
 
 //* рендер инпутов для ввода вопросов
-export function renderQuestionsInputs() {
-  const numberOfQuestions = JSON.parse(storageService.get('SavedQuestionsTemplate')).numberOfQuestions;
-
+export function renderQuestionsInputs(numberOfQuestions) {
   ROOT_DIV.innerHTML = template;
 
   const questionsField = ROOT_DIV.querySelector('.questions');
@@ -28,7 +25,7 @@ export function renderQuestionsInputs() {
     questionsField.appendChild(questionBlock);
   }
 
-  form.addEventListener('submit', saveQuestions);
+  form.addEventListener('submit', collectQuestions);
 }
 
 

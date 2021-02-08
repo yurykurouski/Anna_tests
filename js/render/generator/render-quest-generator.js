@@ -16,13 +16,13 @@ function renderQuestGenerator() {
   extraFieldBtn.addEventListener('click', () => addExtraField(ROOT_DIV));
 
   selectField.addEventListener('change', rangeTemplate);
+
+
   
   form.addEventListener('submit', (event) => {
-    collectQuestionsTemplate(event);
-    renderQuestionsInputs();
+    renderQuestionsInputs(collectQuestionsTemplate(event));
   });
+
 }
-
-
 
 export default renderQuestGenerator;

@@ -1,16 +1,17 @@
 import { ROOT_DIV } from "../constants.js";
 import storageService from "../storage-service.js";
+import userAnswers from "../user-answers.js";
 
 export function collectUserAnquette(event) {
   event.preventDefault();
 
   const formDdata = new FormData(event.target);
 
-  const savedUsrAnquette = {
-    userInformation: formDdata.getAll('additional-input'),
-  }
+  const userInformation = formDdata.getAll('additional-input');
 
-  storageService.set('UserInformation', JSON.stringify(savedUsrAnquette));
+  userAnswers.saveInformation(userInformation);
+
+  storageService.set('UserInformation', JSON.stringify(userAnswers.information));
 }
 
 export function collectUserAnswers(event) {
@@ -20,13 +21,14 @@ export function collectUserAnswers(event) {
 
   const fields = ROOT_DIV.querySelectorAll('.question-wrap');
 
-  let userAnswers = [];
+  let answers = [];
 
   fields.forEach((el, index) => {
     const answer = formData.get(`radio${index + 1}`);
-    userAnswers = [...userAnswers, answer]
+    answers = [...answers, answer]
   });
 
-  storageService.set('UserAnswers', JSON.stringify(userAnswers));
+  userAnswers.saveAnswers(answers);
 
+  storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
 }

@@ -20,21 +20,20 @@ function collectQuestionsTemplate(event) {
 
   storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
 
-  console.log(savedQuestionsTemplate);
-  const numberOfQuestions = savedQuestionsTemplate.numberOfQuestions;
-
-  return numberOfQuestions;
+  return savedQuestionsTemplate.numberOfQuestions;
 }
 
 //* получение вопросов
-export function saveQuestions(event) {
+export function collectQuestions(event) {
   event.preventDefault();
   
   const formData = new FormData(event.target);
 
   const savedQuestions =  formData.getAll('qstn-description');
 
-  storageService.set('SavedQuestions', JSON.stringify(savedQuestions));
+  questionsTemplate.saveQuestions(savedQuestions);
+
+  storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions))
 }
 
 export default collectQuestionsTemplate;
