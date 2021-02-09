@@ -1,11 +1,13 @@
 import {
+  NEW_QUEST_URL,
   ROOT_DIV
 } from "../../constants.js";
+import currentUser from "../../current-user.js";
 import template from "../../Pages template/Main/main-page.js";
-import renderQuestGenerator from "../../render/generator/render-quest-generator.js";
 import {
   renderExsistingAnquette
 } from "../../render/ready/render-exsistingAnquette.js";
+import { navigateToUrl } from "../../routing.js";
 import storageService from "../../storage-service.js";
 
 function renderMainPage() {
@@ -14,6 +16,10 @@ function renderMainPage() {
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
 
   const templates = JSON.parse(storageService.get('SavedQuestionsTemplate'));
+
+  if (!currentUser.userData) {
+    toNewQuestBtn.style.display = 'none'
+  }
 
   if (!templates) {
     researchesWrap.innerHTML = `
@@ -42,7 +48,7 @@ function renderMainPage() {
     })
   }
 
-  toNewQuestBtn.addEventListener('click', renderQuestGenerator);
+  toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
 };
 
 export default renderMainPage;

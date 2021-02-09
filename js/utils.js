@@ -28,6 +28,10 @@ export function checkIfHasErrors(errors) {
   return Object.keys(errors).some(key => errors[key].length > 0);
 }
 
+export function changeUrl(url) {
+  window.history.pushState({}, url, window.location.origin + url);
+}
+
 
 /* export function uuidv4() {
   return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>

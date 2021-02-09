@@ -57,9 +57,10 @@ export function navigateToUrl(url) {
   renderPage();
 } */
 
-import { INDEX_URLS, LOGIN_URL, REGISTRATION_URL } from "./constants.js";
+import { INDEX_URLS, LOGIN_URL, NEW_QUEST_URL, REGISTRATION_URL } from "./constants.js";
 import renderLogin from "./render/auth/render-login.js";
 import renderSignup from "./render/auth/render-signup.js";
+import renderQuestGenerator from "./render/generator/render-quest-generator.js";
 import renderHeader from "./render/header/render-header.js";
 import notFound from "./render/main/404.js";
 import renderMainPage from "./render/main/render-main.js";
@@ -79,6 +80,11 @@ export function renderPage() {
 
   if (currentUrl === LOGIN_URL) {
     renderLogin();
+
+    return;
+  }
+  if (currentUrl === NEW_QUEST_URL) {
+    renderQuestGenerator();
 
     return;
   }

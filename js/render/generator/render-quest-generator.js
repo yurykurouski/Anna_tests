@@ -1,13 +1,13 @@
-import { ROOT_DIV } from "../../constants.js";
+import { NEW_QUEST_URL, ROOT_DIV } from "../../constants.js";
 import collectQuestionsTemplate from "../../operations/collect-questions.js";
 import template from "../../Pages template/Generator/quest-generator.js";
+import { navigateToUrl } from "../../routing.js";
 import { addExtraField, rangeTemplate } from "./generator-extra-fields/extra-fields.js";
 import { renderQuestionsInputs } from "./render-questions-edit.js";
 
 //* рендер формы-конструктора
 function renderQuestGenerator() {
   ROOT_DIV.innerHTML = template;
-
   const form = ROOT_DIV.querySelector('div > form');
 
   const extraFieldBtn = ROOT_DIV.querySelector('.add-extra-field');
@@ -20,7 +20,6 @@ function renderQuestGenerator() {
   form.addEventListener('submit', (event) => {
     renderQuestionsInputs(collectQuestionsTemplate(event));
   });
-
 }
 
 export default renderQuestGenerator;
