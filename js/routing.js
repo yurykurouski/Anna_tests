@@ -58,14 +58,18 @@ export function navigateToUrl(url) {
 } */
 
 import { INDEX_URLS, LOGIN_URL, REGISTRATION_URL } from "./constants.js";
-import renderLogin from "./render/log-in/render-login.js";
-import renderSignup from "./render/log-in/render-signup.js";
+import renderLogin from "./render/auth/render-login.js";
+import renderSignup from "./render/auth/render-signup.js";
+import renderHeader from "./render/header/render-header.js";
+import notFound from "./render/main/404.js";
 import renderMainPage from "./render/main/render-main.js";
 
 export function renderPage() {
   const {
     pathname: currentUrl
   } = window.location;
+
+  renderHeader();
 
   if (INDEX_URLS.includes(currentUrl)) {
     renderMainPage();
@@ -84,4 +88,13 @@ export function renderPage() {
 
     return;
   }
+
+  notFound();
+}
+
+export function navigateToUrl(url) {
+
+  window.history.pushState({}, url, window.location.origin + url);
+
+  renderPage();
 }
