@@ -5,7 +5,9 @@ const template = `
     </ol>
     
     <br>
-    <button class='pure-material-button-contained new-questionaire'>Новое исследование</button>
+    <span>
+      <button class='pure-material-button-contained new-questionaire'>Новое исследование</button>
+    </span>
 `
 
 export default template;

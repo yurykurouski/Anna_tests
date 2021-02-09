@@ -19,6 +19,11 @@ function renderMainPage() {
 
   if (!currentUser.userData) {
     toNewQuestBtn.style.display = 'none'
+    const msg = toNewQuestBtn.closest('span');
+
+    msg.innerHTML = `
+      <h5><a href='/login'>Войдите</a>, чтобы добавить новое исследование.</h5>
+    `
   }
 
   if (!templates) {

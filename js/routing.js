@@ -57,7 +57,13 @@ export function navigateToUrl(url) {
   renderPage();
 } */
 
-import { INDEX_URLS, LOGIN_URL, NEW_QUEST_URL, REGISTRATION_URL } from "./constants.js";
+import {
+  INDEX_URLS,
+  LOGIN_URL,
+  NEW_QUEST_URL,
+  REGISTRATION_URL
+} from "./constants.js";
+import currentUser from "./current-user.js";
 import renderLogin from "./render/auth/render-login.js";
 import renderSignup from "./render/auth/render-signup.js";
 import renderQuestGenerator from "./render/generator/render-quest-generator.js";
@@ -78,19 +84,32 @@ export function renderPage() {
     return;
   }
 
-  if (currentUrl === LOGIN_URL) {
-    renderLogin();
-
-    return;
-  }
   if (currentUrl === NEW_QUEST_URL) {
     renderQuestGenerator();
 
     return;
   }
 
-  if (currentUrl === REGISTRATION_URL) {
+  if (currentUrl === LOGIN_URL && !currentUser.userData) {
+    renderLogin();
+
+    return;
+  }
+
+  if (currentUrl === REGISTRATION_URL && !currentUser.userData) {
     renderSignup();
+
+    return;
+  }
+
+  if (currentUrl === LOGIN_URL && currentUser.userData) {
+    navigateToUrl('/')
+
+    return;
+  }
+
+  if (currentUrl === REGISTRATION_URL && currentUser.userData) {
+    navigateToUrl('/')
 
     return;
   }

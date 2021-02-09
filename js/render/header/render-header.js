@@ -7,7 +7,7 @@ function renderHeader() {
   const header = document.querySelector('header');
   header.innerHTML = template;
 
-  const auth = header.querySelector('.auth');
+  const auth = header.querySelector('#auth');
 
   if (currentUser.userData) {
     auth.textContent = 'Выйти';
