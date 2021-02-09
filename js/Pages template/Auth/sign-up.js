@@ -4,21 +4,24 @@ const template = `
     
       <label label class = "pure-material-textfield-outlined signup-user user" >
         <input name='username' placeholder=' '>
-        <span>Введите имя пользователя</span>
+        <span>Email</span>
       </label>
+      <span class='username error'></span>
       <br>
       <label label label class = "pure-material-textfield-outlined signup-password password" >
         <input type='password' name='password' placeholder=' ' >
-        <span>Введите пароль</span>
+        <span>Пароль</span>
       </label>
+      <span class='password error'></span>
       <br>
       <label label label class = "pure-material-textfield-outlined signup-password password" >
         <input type='password' name='repeatpass' placeholder=' ' >
-        <span>Повторите пароль</span>
+        <span>Подтвердите</span>
       </label>
+      <span class='repeatPass error'></span>
       <br>
       <span>
-        <span><a href='/login'>У меня есть аккаунт</a></span> 
+        <span><a href='/login'>Войти</a></span> 
         <button type='submit' class='pure-material-button-contained'>Регистрация</button>
       </span>
     
