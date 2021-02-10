@@ -16,6 +16,10 @@ export function getIdByUrl() {
   return parseInt(splittedCurrentUrl[splittedCurrentUrl.length - 1], 10);
 }
 
+export function makeUrlFromId(id) {
+  return window.location.pathname+`/${id}`
+}
+
 export function showErrors(errors) {
   for (let key in errors) {
     const span = ROOT_DIV.querySelector(`span.${key}`);

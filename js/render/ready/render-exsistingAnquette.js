@@ -62,5 +62,4 @@ export function renderExsistingAnquette(id) {
     renderExistingQuestions(currTemplate);
   });
 
-  // navigateToUrl(`/templates/${id}`);
 }

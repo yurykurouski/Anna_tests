@@ -6,16 +6,14 @@ import currentUser from "../../current-user.js";
 import template from "../../Pages template/Main/main-page.js";
 import questionsTemplate from "../../questions-template.js";
 import {
-  renderExsistingAnquette
-} from "../../render/ready/render-exsistingAnquette.js";
-import { navigateToUrl } from "../../routing.js";
-import storageService from "../../storage-service.js";
+  navigateToUrl
+} from "../../routing.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
   const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
-//* ниже получи из класса
+  //* ниже получи из класса
   if (!currentUser.userData) {
     toNewQuestBtn.style.display = 'none'
     const msg = toNewQuestBtn.closest('span');
@@ -48,8 +46,10 @@ function renderMainPage() {
       description.textContent = el.description;
       info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
 
-      startBtn.addEventListener('click', () => renderExsistingAnquette(el.id));
-    })
+      startBtn.addEventListener('click', () => {
+        navigateToUrl(`/templates/${el.id}`);
+      });
+    });
   }
 
   toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
