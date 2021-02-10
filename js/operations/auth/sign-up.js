@@ -1,3 +1,4 @@
+import { EMAIL_REGEX, MIN_PASSWORD_LENGTH, PASSWORD_REGEX } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import { navigateToUrl } from "../../routing.js";
 import storageService from "../../storage-service.js";
@@ -7,10 +8,6 @@ import {
   generateId,
   showErrors
 } from "../../utils.js";
-
-const EMAIL_REGEX = /\S+@\S+\.\S+/;
-const MIN_PASSWORD_LENGTH = 8;
-const PASSWORD_REGEX = /(([A-Za-z]+\d+)|(\d+[A-Za-z]+))[A-Za-z\d]/;
 
 function signUp(event) {
   event.preventDefault();

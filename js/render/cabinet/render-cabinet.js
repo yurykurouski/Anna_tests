@@ -8,7 +8,7 @@ function renderCabinet() {
 
   const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username);
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
-console.log(templatesByCurrUser)
+
   templatesByCurrUser.forEach((el, index) => {
     const researchCard = document.createElement('li');
     const description = document.createElement('p');

@@ -62,7 +62,8 @@ import {
   INDEX_URLS,
   LOGIN_URL,
   NEW_QUEST_URL,
-  REGISTRATION_URL
+  REGISTRATION_URL,
+  TEMPLATES_REGEX
 } from "./constants.js";
 import currentUser from "./current-user.js";
 import notFound from "./render/main/404.js";
@@ -72,6 +73,8 @@ import renderSignup from "./render/auth/render-signup.js";
 import renderHeader from "./render/header/render-header.js";
 import renderCabinet from "./render/cabinet/render-cabinet.js";
 import renderQuestGenerator from "./render/generator/render-quest-generator.js";
+import { renderExsistingAnquette } from "./render/ready/render-exsistingAnquette.js";
+import { getIdByUrl } from "./utils.js";
 
 export function renderPage() {
   const {
@@ -88,6 +91,12 @@ export function renderPage() {
 
   if (currentUrl === NEW_QUEST_URL) {
     renderQuestGenerator();
+
+    return;
+  }
+
+  if (TEMPLATES_REGEX.test(currentUrl)) {
+    renderExsistingAnquette(getIdByUrl);
 
     return;
   }

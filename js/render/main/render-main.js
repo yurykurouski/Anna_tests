@@ -4,6 +4,7 @@ import {
 } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import template from "../../Pages template/Main/main-page.js";
+import questionsTemplate from "../../questions-template.js";
 import {
   renderExsistingAnquette
 } from "../../render/ready/render-exsistingAnquette.js";
@@ -15,8 +16,6 @@ function renderMainPage() {
   const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
 //* ниже получи из класса
-  const templates = JSON.parse(storageService.get('SavedQuestionsTemplate'));
-
   if (!currentUser.userData) {
     toNewQuestBtn.style.display = 'none'
     const msg = toNewQuestBtn.closest('span');
@@ -26,19 +25,19 @@ function renderMainPage() {
     `
   }
 
-  if (!templates) {
+  if (!questionsTemplate.templates) {
     researchesWrap.innerHTML = `
       <span>Нет доступных исследований</span>
     `
   } else {
-    templates.forEach((el, index) => {
+    questionsTemplate.templates.forEach(el => {
       const researchCard = document.createElement('li');
       const description = document.createElement('p');
       const info = document.createElement('span');
       const startBtn = document.createElement('button');
 
       startBtn.setAttribute('class', 'pure-material-button-contained go-to-anquette');
-      startBtn.setAttribute('id', index);
+      startBtn.setAttribute('id', el.id);
       startBtn.textContent = 'Пройти'
 
       researchesWrap.appendChild(researchCard);
@@ -49,7 +48,7 @@ function renderMainPage() {
       description.textContent = el.description;
       info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
 
-      startBtn.addEventListener('click', () => renderExsistingAnquette(index));
+      startBtn.addEventListener('click', () => renderExsistingAnquette(el.id));
     })
   }
 

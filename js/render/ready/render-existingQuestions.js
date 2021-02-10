@@ -7,21 +7,21 @@ import {
 import template from "../../Pages template/Ready/questions-presentation.js";
 import questionsTemplate from "../../questions-template.js";
 
-function renderExistingQuestions(id) {
+function renderExistingQuestions(currTemplate) {
   ROOT_DIV.innerHTML = template;
   const questionsWrapper = ROOT_DIV.querySelector('.questions-wrapper');
 
-  console.log(questionsTemplate.questions[id])
+  const currQuestionsTemplate = questionsTemplate.questions.find(template => template.parentTemplateId === currTemplate.id)
 
-  questionsTemplate.questions[id].forEach((qstn, index) => {
+  currQuestionsTemplate.questions.forEach((qstn, index) => {
     const wrap = document.createElement('div');
     wrap.setAttribute('class', 'question-wrap');
 
     wrap.innerHTML = `
-    <h4>Вопрос №${id+1}</h4>
+    <h4>Вопрос №${currTemplate.id}</h4>
     <p>${qstn}</p>
     <h4>Ваш ответ:</h4>
-    ${generateAnswerTypeTemplate(questionsTemplate, index, id)}
+    ${generateAnswerTypeTemplate(currTemplate, index, currTemplate.id)}
     `
 
     questionsWrapper.appendChild(wrap);
@@ -29,11 +29,11 @@ function renderExistingQuestions(id) {
 
   const form = ROOT_DIV.querySelector('form');
 
-  form.addEventListener('submit', collectUserAnswers);
+  form.addEventListener('submit', () => collectUserAnswers(event, id));
 }
 
-function generateAnswerTypeTemplate(questionsTemplate, index, id) {
-  if (questionsTemplate.templates[id].possibleAnswersType === 'boolean') {
+function generateAnswerTypeTemplate(currTemplate, index, id) {
+  if (currTemplate.possibleAnswersType === 'boolean') {
     const template = `
       <label class="pure-material-radio">
         <input type="radio" name="radio${index + 1}" value='0'>
@@ -47,13 +47,13 @@ function generateAnswerTypeTemplate(questionsTemplate, index, id) {
     return template;
   }
 
-  if (questionsTemplate.templates[id].possibleAnswersType === 'range') {
+  if (currTemplate.possibleAnswersType === 'range') {
     let template = '';
-    for (let i = 0; i < questionsTemplate.templates[id].ifRange.length; i++) {
+    for (let i = 0; i < currTemplate.ifRange.length; i++) {
       const part = `
         <label class="pure-material-radio">
           <input type="radio" name="radio${index + 1}" value='${i + 1}'>
-          <span>${questionsTemplate.templates[id].ifRange[i]}</span>
+          <span>${currTemplate.ifRange[i]}</span>
         </label>
       `
       template = template + part;

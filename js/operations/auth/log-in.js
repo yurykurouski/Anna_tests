@@ -1,3 +1,4 @@
+import { EMAIL_REGEX } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import { navigateToUrl } from "../../routing.js";
 import storageService from "../../storage-service.js";
@@ -6,8 +7,6 @@ import {
   checkIfHasErrors,
   showErrors
 } from "../../utils.js";
-
-const EMAIL_REGEX = /\S+@\S+\.\S+/;
 
 export default function login(event) {
   event.preventDefault();
@@ -55,7 +54,7 @@ function validateLogin({
     password: [],
   };
 
-  if (!username) {
+  if (!username || !user) {
     errors = {
       ...errors,
       username: [...errors.username, 'Укажите email']
@@ -72,14 +71,14 @@ function validateLogin({
   if (!password) {
     errors = {
       ...errors,
-      password: [...errors.password, 'Password can not be empty.']
+      password: [...errors.password, 'Введите пароль']
     };
   }
 
   if (!user && EMAIL_REGEX.test(username)) {
     errors = {
       ...errors,
-      username: [...errors.username, 'User does not exist.']
+      username: [...errors.username, 'Пользователь не найден.']
     };
   }
 

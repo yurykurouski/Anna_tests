@@ -1,6 +1,9 @@
 import currentUser from "../current-user.js";
 import questionsTemplate from "../questions-template.js";
 import storageService from "../storage-service.js";
+import {
+  generateId
+} from "../utils.js";
 
 //* получение темплейта для формы вопросов
 function collectQuestionsTemplate(event) {
@@ -10,6 +13,7 @@ function collectQuestionsTemplate(event) {
 
   const savedQuestionsTemplate = {
     owner: currentUser.userData.username,
+    id: generateId(questionsTemplate.templates),
     description: formDdata.get('rsrchdescription'),
     additionalInformation: formDdata.getAll('additional-information'),
     additionalInformationExtra: formDdata.getAll('additional-information-extra'),
@@ -32,7 +36,7 @@ export function collectQuestions(event) {
   const formData = new FormData(event.target);
 
   const savedQuestions = {
-    owner: currentUser.userData.username,
+    parentTemplateId: questionsTemplate.templates.length,
     questions: formData.getAll('qstn-description')
   }
 

@@ -8,6 +8,14 @@ export function generateId(arr) {
   return arr.length + 1;
 }
 
+export function getIdByUrl() {
+  const currentUrl = window.location.pathname;
+
+  const splittedCurrentUrl = currentUrl.split('/');
+
+  return parseInt(splittedCurrentUrl[splittedCurrentUrl.length - 1], 10);
+}
+
 export function showErrors(errors) {
   for (let key in errors) {
     const span = ROOT_DIV.querySelector(`span.${key}`);

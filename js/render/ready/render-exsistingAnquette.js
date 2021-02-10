@@ -2,6 +2,8 @@ import { ROOT_DIV } from "../../constants.js";
 import { collectUserAnquette } from "../../operations/collect-answers.js";
 import template from "../../Pages template/Ready/questionnaire-presentation.js";
 import questionsTemplate from "../../questions-template.js";
+import { navigateToUrl } from "../../routing.js";
+import { getIdByUrl } from "../../utils.js";
 import renderExistingQuestions from "./render-existingQuestions.js";
 
 //* сборка анкеты из конструктора
@@ -10,11 +12,13 @@ export function renderExsistingAnquette(id) {
   
   const description = ROOT_DIV.querySelector('div p');
 
-  description.textContent = questionsTemplate.templates[id].description;
+  const currTemplate = questionsTemplate.templates.find(template => template.id === id);
+
+  description.textContent = currTemplate.description;
 
   const additionalInformation = ROOT_DIV.querySelector('div .additional-information-anquette');
 
-  questionsTemplate.templates[id].additionalInformation.forEach(param => {
+  currTemplate.additionalInformation.forEach(param => {
     const wrap = document.createElement('div');
     wrap.setAttribute('class', 'additional-wrap');
 
@@ -32,8 +36,7 @@ export function renderExsistingAnquette(id) {
   const additionalExtra = ROOT_DIV.querySelector('div .additional-extra');
 
   //!здесь генерит пустой span, потому что есть пустой элемент
-
-  questionsTemplate.templates[id].additionalInformationExtra.forEach(param => {
+  currTemplate.additionalInformationExtra.forEach(param => {
     const wrap = document.createElement('div');
     wrap.setAttribute('class', 'additional-extra-wrap');
 
@@ -50,12 +53,14 @@ export function renderExsistingAnquette(id) {
 
   const summary = ROOT_DIV.querySelector('.summary');
   
-  summary.textContent = `Количество вопросов: ${questionsTemplate.templates[id].numberOfQuestions}`;
+  summary.textContent = `Количество вопросов: ${currTemplate.numberOfQuestions}`;
 
   const form = ROOT_DIV.querySelector('form');
 
-  form.addEventListener('submit', (event) => {
-    collectUserAnquette(event);
-    renderExistingQuestions(id);
+  form.addEventListener('submit', () => {
+    collectUserAnquette(event, id);
+    renderExistingQuestions(currTemplate);
   });
+
+  // navigateToUrl(`/templates/${id}`);
 }
