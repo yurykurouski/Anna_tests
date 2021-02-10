@@ -13,6 +13,10 @@ class QuestionsList {
   saveQuestions(newQuestons) {
     this.questions = [...this.questions, newQuestons];
   }
+
+  getTemplatesByUser(username) {
+    return this.templates.filter(template => template.owner === username);
+  }
 }
 
 const templates = JSON.parse(storageService.get('SavedQuestionsTemplate'));

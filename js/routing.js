@@ -58,18 +58,20 @@ export function navigateToUrl(url) {
 } */
 
 import {
+  CABINET_URL,
   INDEX_URLS,
   LOGIN_URL,
   NEW_QUEST_URL,
   REGISTRATION_URL
 } from "./constants.js";
 import currentUser from "./current-user.js";
-import renderLogin from "./render/auth/render-login.js";
-import renderSignup from "./render/auth/render-signup.js";
-import renderQuestGenerator from "./render/generator/render-quest-generator.js";
-import renderHeader from "./render/header/render-header.js";
 import notFound from "./render/main/404.js";
+import renderLogin from "./render/auth/render-login.js";
 import renderMainPage from "./render/main/render-main.js";
+import renderSignup from "./render/auth/render-signup.js";
+import renderHeader from "./render/header/render-header.js";
+import renderCabinet from "./render/cabinet/render-cabinet.js";
+import renderQuestGenerator from "./render/generator/render-quest-generator.js";
 
 export function renderPage() {
   const {
@@ -86,6 +88,12 @@ export function renderPage() {
 
   if (currentUrl === NEW_QUEST_URL) {
     renderQuestGenerator();
+
+    return;
+  }
+
+  if (currentUrl === CABINET_URL && currentUser.userData) {
+    renderCabinet();
 
     return;
   }
@@ -118,7 +126,6 @@ export function renderPage() {
 }
 
 export function navigateToUrl(url) {
-
   window.history.pushState({}, url, window.location.origin + url);
 
   renderPage();

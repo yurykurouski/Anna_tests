@@ -14,7 +14,7 @@ function renderMainPage() {
   ROOT_DIV.innerHTML = template
   const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
-
+//* ниже получи из класса
   const templates = JSON.parse(storageService.get('SavedQuestionsTemplate'));
 
   if (!currentUser.userData) {
@@ -47,7 +47,7 @@ function renderMainPage() {
       researchCard.appendChild(startBtn);
 
       description.textContent = el.description;
-      info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: (Сюда автора)`;
+      info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
 
       startBtn.addEventListener('click', () => renderExsistingAnquette(index));
     })

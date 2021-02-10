@@ -1,3 +1,4 @@
+import currentUser from "../current-user.js";
 import questionsTemplate from "../questions-template.js";
 import storageService from "../storage-service.js";
 
@@ -8,6 +9,7 @@ function collectQuestionsTemplate(event) {
   const formDdata = new FormData(event.target);
 
   const savedQuestionsTemplate = {
+    owner: currentUser.userData.username,
     description: formDdata.get('rsrchdescription'),
     additionalInformation: formDdata.getAll('additional-information'),
     additionalInformationExtra: formDdata.getAll('additional-information-extra'),
@@ -26,10 +28,13 @@ function collectQuestionsTemplate(event) {
 //* получение вопросов
 export function collectQuestions(event) {
   event.preventDefault();
-  
+
   const formData = new FormData(event.target);
 
-  const savedQuestions =  formData.getAll('qstn-description');
+  const savedQuestions = {
+    owner: currentUser.userData.username,
+    questions: formData.getAll('qstn-description')
+  }
 
   questionsTemplate.saveQuestions(savedQuestions);
 

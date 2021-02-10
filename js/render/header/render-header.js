@@ -1,4 +1,3 @@
-// import currentUser from "../../current-user.js";
 import currentUser from "../../current-user.js";
 import logOut from "../../operations/auth/log-out.js";
 import template from "../../Pages template/header/header.js";
@@ -8,9 +7,13 @@ function renderHeader() {
   header.innerHTML = template;
 
   const auth = header.querySelector('#auth');
+  const cabinet = header.querySelector('#cabinet');
 
   if (currentUser.userData) {
     auth.textContent = 'Выйти';
+    cabinet.textContent = 'Кабинет'
+
+    cabinet.setAttribute('href', '/cabinet');
 
     auth.addEventListener('click', logOut);
   } else {

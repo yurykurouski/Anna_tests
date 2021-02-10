@@ -16,7 +16,7 @@ class UsersList {
   }
 
   getUserByUsername(username) {
-    return this.users.find(newUser => newUser.username === username);
+    return this.users.find(usr => usr.username === username);
   }
 
 }
