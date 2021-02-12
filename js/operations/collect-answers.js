@@ -5,11 +5,11 @@ import userAnswers from "../user-answers.js";
 export function collectUserAnquette(event, id) {
   event.preventDefault();
 
-  const formDdata = new FormData(event.target);
+  const formData = new FormData(event.target);
 
   const userInformation = {
     parentTemplateId: id,
-    userInformation: formDdata.getAll('additional-input')
+    userInformation: formData.getAll('additional-input')
   };
 
   userAnswers.saveInformation(userInformation);

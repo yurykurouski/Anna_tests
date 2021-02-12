@@ -29,7 +29,7 @@ function renderExistingQuestions(currTemplate) {
 
   const form = ROOT_DIV.querySelector('form');
 
-  form.addEventListener('submit', () => collectUserAnswers(event, id));
+  form.addEventListener('submit', () => collectUserAnswers(event, currTemplate.id));
 }
 
 function generateAnswerTypeTemplate(currTemplate, index, id) {
