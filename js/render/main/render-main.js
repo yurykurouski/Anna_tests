@@ -8,6 +8,7 @@ import {
 import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
 import template from "../../Pages template/Main/main-page.js";
+import popupSaveSuccesfully from "../../components/pop-up.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
@@ -51,7 +52,7 @@ function renderMainPage() {
       });
     });
   }
-
+popupSaveSuccesfully()
   toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
 };
 
