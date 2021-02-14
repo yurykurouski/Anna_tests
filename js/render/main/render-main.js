@@ -7,13 +7,13 @@ import {
 } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
-import template from "../../pages-templates/Main/main-page.js";
 import popupSaveSuccesfully from "../../components/pop-up.js";
+import template from "../../pages-templates/Main/main-page.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
-  const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
-  const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
+  const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire'),
+        researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
   
   if (!currentUser.userData) {
     toNewQuestBtn.style.display = 'none'
@@ -30,10 +30,10 @@ function renderMainPage() {
     `
   } else {
     questionsTemplate.templates.forEach(el => {
-      const researchCard = document.createElement('li');
-      const description = document.createElement('p');
-      const info = document.createElement('span');
-      const startBtn = document.createElement('button');
+      const researchCard = document.createElement('li'),
+            description = document.createElement('p'),
+            info = document.createElement('span'),
+            startBtn = document.createElement('button');
 
       startBtn.setAttribute('class', 'pure-material-button-contained go-to-anquette');
       startBtn.setAttribute('id', el.id);

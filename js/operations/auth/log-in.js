@@ -13,9 +13,9 @@ export default function login(event) {
 
   const formData = new FormData(event.target);
 
-  const username = formData.get('username');
-  const password = formData.get('password');
-  const hashedPassword = CryptoJS.SHA3(password).toString();
+  const username = formData.get('username'),
+        password = formData.get('password'),
+        hashedPassword = CryptoJS.SHA3(password).toString();
 
   const user = usersList.getUserByUsername(username);
 

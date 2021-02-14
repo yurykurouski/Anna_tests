@@ -14,9 +14,9 @@ function signUp(event) {
 
   const formData = new FormData(event.target);
 
-  const username = formData.get('username');
-  const password = formData.get('password');
-  const repeatPass = formData.get('repeatpass');
+  const username = formData.get('username'),
+        password = formData.get('password'),
+        repeatPass = formData.get('repeatpass');
 
   const errors = validateRegistration({
     username,

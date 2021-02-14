@@ -6,8 +6,8 @@ import { collectQuestions } from "../../operations/collect-questions.js";
 export function renderQuestionsInputs(numberOfQuestions) {
   ROOT_DIV.innerHTML = template;
 
-  const questionsField = ROOT_DIV.querySelector('.questions');
-  const form = ROOT_DIV.querySelector('form');
+  const questionsField = ROOT_DIV.querySelector('.questions'),
+        form = ROOT_DIV.querySelector('form');
 
   for (let i = 1; i <= numberOfQuestions; i++) {
     const questionBlock = document.createElement('div');

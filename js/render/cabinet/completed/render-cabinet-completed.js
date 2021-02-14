@@ -11,14 +11,15 @@ import template from "../../../pages-templates/cabinet/completed/cabinet-complet
 function renderCompleted() {
   ROOT_DIV.innerHTML = template;
 
-  const mainTable = ROOT_DIV.querySelector('table');
-  const questDescription = ROOT_DIV.querySelector('.description');
-  const questNum = ROOT_DIV.querySelector('.num');
+  const mainTable = ROOT_DIV.querySelector('table'),
+        questDescription = ROOT_DIV.querySelector('.description'),
+        questNum = ROOT_DIV.querySelector('.num');
+
   const questId = getIdByUrl();
 
-  const currTemplate = questionsTemplate.getTemplateById(questId);
-  const usersInformation = userAnswers.getInformationById(questId);
-  const usersAnswers = userAnswers.getAnswersById(questId)
+  const currTemplate = questionsTemplate.getTemplateById(questId),
+        usersInformation = userAnswers.getInformationById(questId),
+        usersAnswers = userAnswers.getAnswersById(questId);
 
   questDescription.textContent = currTemplate.description;
   questNum.textContent = currTemplate.numberOfQuestions;

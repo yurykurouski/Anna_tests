@@ -11,7 +11,7 @@ function renderExistingQuestions(currTemplate) {
   ROOT_DIV.innerHTML = template;
   const questionsWrapper = ROOT_DIV.querySelector('.questions-wrapper');
 
-  const currQuestionsTemplate = questionsTemplate.getQuestionsTemplateById(currTemplate.id)
+  const currQuestionsTemplate = questionsTemplate.getQuestionsTemplateById(currTemplate.id);
 
   currQuestionsTemplate.questions.forEach((qstn, index) => {
     const wrap = document.createElement('div');

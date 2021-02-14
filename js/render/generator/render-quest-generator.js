@@ -7,10 +7,10 @@ import { addExtraField, rangeTemplate } from "./generator-extra-fields/extra-fie
 //* рендер формы-конструктора
 function renderQuestGenerator() {
   ROOT_DIV.innerHTML = template;
-  const form = ROOT_DIV.querySelector('div > form');
 
-  const extraFieldBtn = ROOT_DIV.querySelector('.add-extra-field');
-  const selectField = ROOT_DIV.querySelector('select[name="possible-answers"]');
+  const form = ROOT_DIV.querySelector('div > form'),
+        extraFieldBtn = ROOT_DIV.querySelector('.add-extra-field'),
+        selectField = ROOT_DIV.querySelector('select[name="possible-answers"]');
 
   extraFieldBtn.addEventListener('click', () => addExtraField(ROOT_DIV));
 

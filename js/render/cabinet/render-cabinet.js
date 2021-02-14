@@ -11,10 +11,10 @@ function renderCabinet() {
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
 
   templatesByCurrUser.forEach((el) => {
-    const researchCard = document.createElement('li');
-    const description = document.createElement('p');
-    const info = document.createElement('span');
-    const startBtn = document.createElement('button');
+    const researchCard = document.createElement('li'),
+          description = document.createElement('p'),
+          info = document.createElement('span'),
+          startBtn = document.createElement('button');
 
     startBtn.setAttribute('class', 'pure-material-button-contained go-to-anquette');
     startBtn.textContent = 'Посмотреть анкеты';
