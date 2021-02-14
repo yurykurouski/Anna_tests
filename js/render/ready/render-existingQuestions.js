@@ -4,14 +4,14 @@ import {
 import {
   collectUserAnswers
 } from "../../operations/collect-answers.js";
-import template from "../../Pages template/Ready/questions-presentation.js";
 import questionsTemplate from "../../questions-template.js";
+import template from "../../Pages template/Ready/questions-presentation.js";
 
 function renderExistingQuestions(currTemplate) {
   ROOT_DIV.innerHTML = template;
   const questionsWrapper = ROOT_DIV.querySelector('.questions-wrapper');
 
-  const currQuestionsTemplate = questionsTemplate.questions.find(template => template.parentTemplateId === currTemplate.id);
+  const currQuestionsTemplate = questionsTemplate.getQuestionsTemplateById(currTemplate.id)
 
   currQuestionsTemplate.questions.forEach((qstn, index) => {
     const wrap = document.createElement('div');

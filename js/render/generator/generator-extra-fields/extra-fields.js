@@ -10,7 +10,7 @@ export function addExtraField(ROOT_DIV) {
   extraInformationDiv.appendChild(newExtraInformationField);
 
   newExtraInformationField.innerHTML = `
-    <input name='additional-information-extra' placeholder=' ' required>
+    <input name='additional-information' placeholder=' ' required>
     <span>Введите...</span>
   `
 }
@@ -53,5 +53,4 @@ export function rangeTemplate(event) {
   } else {
     wrap.innerHTML = ``;
   }
-
 }

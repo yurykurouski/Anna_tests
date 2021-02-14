@@ -10,10 +10,6 @@ const template = `
 
     </div>
 
-    <h3>Дополнительные сведения:</h3>
-    <div class='additional-extra'>
-
-    </div>
     <h4 class='summary'></h4>
     <button type='submit' class='pure-material-button-contained go-to-questions'>Перейти к вопросам</input>
   </form>

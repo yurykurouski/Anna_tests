@@ -1,12 +1,12 @@
 import {
-  ROOT_DIV
-} from "../../../constants.js";
-import template from "../../../Pages template/cabinet/completed/cabinet-completed.js";
-import questionsTemplate from "../../../questions-template.js";
-import userAnswers from "../../../user-answers.js";
-import {
   getIdByUrl
 } from "../../../utils.js";
+import {
+  ROOT_DIV
+} from "../../../constants.js";
+import userAnswers from "../../../user-answers.js";
+import questionsTemplate from "../../../questions-template.js";
+import template from "../../../Pages template/cabinet/completed/cabinet-completed.js";
 
 function renderCompleted() {
   ROOT_DIV.innerHTML = template;
@@ -22,6 +22,8 @@ function renderCompleted() {
 
   questDescription.textContent = currTemplate.description;
   questNum.textContent = currTemplate.numberOfQuestions;
+
+  if (usersInformation.length != usersAnswers.length) return console.error('Smthg wrong!');
 
   const headerRow = mainTable.insertRow();
   const cell1 = headerRow.insertCell(-1);

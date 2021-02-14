@@ -1,12 +1,12 @@
-import { EMAIL_REGEX } from "../../constants.js";
-import currentUser from "../../current-user.js";
-import { navigateToUrl } from "../../routing.js";
-import storageService from "../../storage-service.js";
-import usersList from "../../users.js";
 import {
   checkIfHasErrors,
   showErrors
 } from "../../utils.js";
+import usersList from "../../users.js";
+import currentUser from "../../current-user.js";
+import { EMAIL_REGEX } from "../../constants.js";
+import { navigateToUrl } from "../../routing.js";
+import storageService from "../../storage-service.js";
 
 export default function login(event) {
   event.preventDefault();

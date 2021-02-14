@@ -25,10 +25,7 @@ const template = `
         <h5>Дополнительные сведения:</h5>
 
         <div class='additional-information-extra'>
-          <label class="pure-material-textfield-outlined">
-            <input name='additional-information-extra' placeholder=' '>
-            <span>Введите...</span>
-          </label>
+
         </div>
         <button type='button' class="pure-material-button-text add-extra-field">Добавить</button>
       </div>

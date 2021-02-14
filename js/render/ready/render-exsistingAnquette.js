@@ -1,10 +1,8 @@
 import { ROOT_DIV } from "../../constants.js";
+import questionsTemplate from "../../questions-template.js";
+import renderExistingQuestions from "./render-existingQuestions.js";
 import { collectUserAnquette } from "../../operations/collect-answers.js";
 import template from "../../Pages template/Ready/questionnaire-presentation.js";
-import questionsTemplate from "../../questions-template.js";
-import { navigateToUrl } from "../../routing.js";
-import { getIdByUrl } from "../../utils.js";
-import renderExistingQuestions from "./render-existingQuestions.js";
 
 //* сборка анкеты из конструктора
 export function renderExsistingAnquette(id) {
@@ -12,7 +10,7 @@ export function renderExsistingAnquette(id) {
   
   const description = ROOT_DIV.querySelector('div p');
 
-  const currTemplate = questionsTemplate.templates.find(template => template.id === id);
+  const currTemplate = questionsTemplate.getTemplateById(id)
 
   description.textContent = currTemplate.description;
 
@@ -33,7 +31,7 @@ export function renderExsistingAnquette(id) {
     additionalInformation.appendChild(wrap);
   });
 
-  const additionalExtra = ROOT_DIV.querySelector('div .additional-extra');
+/*   const additionalExtra = ROOT_DIV.querySelector('div .additional-extra');
 
   //!здесь генерит пустой span, потому что есть пустой элемент
   currTemplate.additionalInformationExtra.forEach(param => {
@@ -49,7 +47,7 @@ export function renderExsistingAnquette(id) {
       </label>
     `
     additionalExtra.appendChild(wrap);
-  });
+  }); */
 
   const summary = ROOT_DIV.querySelector('.summary');
   

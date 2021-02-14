@@ -1,6 +1,6 @@
 import { ROOT_DIV } from "../../constants.js";
-import { collectQuestions } from "../../operations/collect-questions.js";
 import template from "../../Pages template/Generator/questions-edit.js";
+import { collectQuestions } from "../../operations/collect-questions.js";
 
 //* рендер инпутов для ввода вопросов
 export function renderQuestionsInputs(numberOfQuestions) {

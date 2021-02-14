@@ -1,19 +1,19 @@
 import {
+  navigateToUrl
+} from "../../routing.js";
+import {
   NEW_QUEST_URL,
   ROOT_DIV
 } from "../../constants.js";
 import currentUser from "../../current-user.js";
-import template from "../../Pages template/Main/main-page.js";
 import questionsTemplate from "../../questions-template.js";
-import {
-  navigateToUrl
-} from "../../routing.js";
+import template from "../../Pages template/Main/main-page.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
   const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
-  //* ниже получи из класса
+  
   if (!currentUser.userData) {
     toNewQuestBtn.style.display = 'none'
     const msg = toNewQuestBtn.closest('span');
