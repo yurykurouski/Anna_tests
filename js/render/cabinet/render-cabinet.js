@@ -17,7 +17,7 @@ function renderCabinet() {
     const startBtn = document.createElement('button');
 
     startBtn.setAttribute('class', 'pure-material-button-contained go-to-anquette');
-    startBtn.textContent = 'Посмотреть анкеты'
+    startBtn.textContent = 'Посмотреть анкеты';
 
     researchesWrap.appendChild(researchCard);
     researchCard.appendChild(description);

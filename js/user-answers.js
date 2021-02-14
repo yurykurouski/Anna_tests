@@ -13,6 +13,14 @@ class UserAnswersList {
   saveAnswers(newAnswer) {
     this.answers = [...this.answers, newAnswer];
   }
+
+  getInformationById(id) {
+    return this.information.filter(template => template.parentTemplateId  === id)
+  }
+
+  getAnswersById(id) {
+    return this.answers.filter(template => template.parentTemplateId  === id)
+  }
 }
 
 const information = JSON.parse(storageService.get('UserInformation'));
