@@ -1,5 +1,5 @@
 import { ROOT_DIV } from "../../constants.js";
-import template from "../../Pages template/Generator/questions-edit.js";
+import template from "../../pages-templates/Generator/questions-edit.js";
 import { collectQuestions } from "../../operations/collect-questions.js";
 
 //* рендер инпутов для ввода вопросов

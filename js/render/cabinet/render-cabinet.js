@@ -2,7 +2,7 @@ import { ROOT_DIV } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import { navigateToUrl } from "../../routing.js";
 import questionsTemplate from "../../questions-template.js";
-import template from "../../Pages template/cabinet/cabinet-template.js";
+import template from "../../pages-templates/cabinet/cabinet-template.js";
 
 function renderCabinet() {
   ROOT_DIV.innerHTML = template;

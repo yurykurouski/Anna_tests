@@ -5,7 +5,7 @@ import {
   collectUserAnswers
 } from "../../operations/collect-answers.js";
 import questionsTemplate from "../../questions-template.js";
-import template from "../../Pages template/Ready/questions-presentation.js";
+import template from "../../pages-templates/Ready/questions-presentation.js";
 
 function renderExistingQuestions(currTemplate) {
   ROOT_DIV.innerHTML = template;

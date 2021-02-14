@@ -6,7 +6,7 @@ import {
 } from "../../../constants.js";
 import userAnswers from "../../../user-answers.js";
 import questionsTemplate from "../../../questions-template.js";
-import template from "../../../Pages template/cabinet/completed/cabinet-completed.js";
+import template from "../../../pages-templates/cabinet/completed/cabinet-completed.js";
 
 function renderCompleted() {
   ROOT_DIV.innerHTML = template;

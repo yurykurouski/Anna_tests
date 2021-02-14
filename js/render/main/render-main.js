@@ -7,7 +7,7 @@ import {
 } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
-import template from "../../Pages template/Main/main-page.js";
+import template from "../../pages-templates/Main/main-page.js";
 import popupSaveSuccesfully from "../../components/pop-up.js";
 
 function renderMainPage() {

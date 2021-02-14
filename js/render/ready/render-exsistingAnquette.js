@@ -2,7 +2,7 @@ import { ROOT_DIV } from "../../constants.js";
 import questionsTemplate from "../../questions-template.js";
 import renderExistingQuestions from "./render-existingQuestions.js";
 import { collectUserAnquette } from "../../operations/collect-answers.js";
-import template from "../../Pages template/Ready/questionnaire-presentation.js";
+import template from "../../pages-templates/Ready/questionnaire-presentation.js";
 
 //* сборка анкеты из конструктора
 export function renderExsistingAnquette(id) {

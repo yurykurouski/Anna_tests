@@ -1,6 +1,6 @@
 import { ROOT_DIV } from "../../constants.js";
 import { renderQuestionsInputs } from "./render-questions-edit.js";
-import template from "../../Pages template/Generator/quest-generator.js";
+import template from "../../pages-templates/Generator/quest-generator.js";
 import collectQuestionsTemplate from "../../operations/collect-questions.js";
 import { addExtraField, rangeTemplate } from "./generator-extra-fields/extra-fields.js";
 

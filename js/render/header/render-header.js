@@ -1,6 +1,6 @@
 import currentUser from "../../current-user.js";
 import logOut from "../../operations/auth/log-out.js";
-import template from "../../Pages template/header/header.js";
+import template from "../../pages-templates/header/header.js";
 
 function renderHeader() {
   const header = document.querySelector('header');
