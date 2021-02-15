@@ -1,3 +1,7 @@
-import renderQuestGenerator from "./render/render-quest-generator.js";
+import { renderPage } from "./routing.js";
 
-renderQuestGenerator();
+renderPage();
+
+window.addEventListener('popstate', () => {
+  renderPage();
+});

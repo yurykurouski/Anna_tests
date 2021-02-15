@@ -1,0 +1,16 @@
+#popup {
+  position: fixed;
+  top: 5px;
+  z-index: 100;
+  background-color: lightgreen;
+  border-radius: 2em;
+  height: 2em;
+  line-height: 2em;
+  width: 250px;
+  text-align: center;
+}
+
+#popup>h4 {
+  margin-top: 0;
+  color:black;
+}
