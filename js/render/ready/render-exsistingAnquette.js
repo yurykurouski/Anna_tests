@@ -32,6 +32,9 @@ export function renderExsistingAnquette(id) {
     additionalInformation.appendChild(wrap);
   });
 
+  const firstInput = ROOT_DIV.querySelector('input');
+  firstInput.focus();
+
 /*   const additionalExtra = ROOT_DIV.querySelector('div .additional-extra');
 
   //!здесь генерит пустой span, потому что есть пустой элемент

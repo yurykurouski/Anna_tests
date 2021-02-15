@@ -27,6 +27,9 @@ export function renderQuestionsInputs(numberOfQuestions) {
     questionsField.appendChild(questionBlock);
   }
 
+  const firstQuestionBlock = ROOT_DIV.querySelector('textarea');
+  firstQuestionBlock.focus();
+
   form.addEventListener('submit', (event) => {
     popupSaveSuccesfully();
     collectQuestions(event);

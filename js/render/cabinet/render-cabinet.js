@@ -7,8 +7,8 @@ import template from "../../pages-templates/cabinet/cabinet-template.js";
 function renderCabinet() {
   ROOT_DIV.innerHTML = template;
 
-  const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username)
-        researchesWrap = ROOT_DIV.querySelector('div > .aw-researches')
+  const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username),
+        researchesWrap = ROOT_DIV.querySelector('div > .aw-researches'),
         newQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
 
   templatesByCurrUser.forEach((el) => {
