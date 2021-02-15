@@ -8,6 +8,7 @@ import {
 import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
 import template from "../../pages-templates/Main/main-page.js";
+import popupSaveSuccesfully from "../../components/pop-up.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template

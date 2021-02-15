@@ -7,8 +7,9 @@ import template from "../../pages-templates/cabinet/cabinet-template.js";
 function renderCabinet() {
   ROOT_DIV.innerHTML = template;
 
-  const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username);
-  const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
+  const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username)
+        researchesWrap = ROOT_DIV.querySelector('div > .aw-researches')
+        newQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
 
   templatesByCurrUser.forEach((el) => {
     const researchCard = document.createElement('li'),
@@ -29,6 +30,8 @@ function renderCabinet() {
 
     startBtn.addEventListener('click', () => navigateToUrl(`/cabinet/completed/${el.id}`));
   });
+
+  newQuestBtn.addEventListener('click', () => navigateToUrl('/new'));
 }
 
 export default renderCabinet;
