@@ -3,6 +3,7 @@ import questionsTemplate from "../../questions-template.js";
 import renderExistingQuestions from "./render-existingQuestions.js";
 import { collectUserAnquette } from "../../operations/collect-answers.js";
 import template from "../../pages-templates/Ready/questionnaire-presentation.js";
+import popupSaveSuccesfully from "../../components/pop-up.js";
 
 //* сборка анкеты из конструктора
 export function renderExsistingAnquette(id) {
@@ -56,8 +57,8 @@ export function renderExsistingAnquette(id) {
   const form = ROOT_DIV.querySelector('form');
 
   form.addEventListener('submit', () => {
+    popupSaveSuccesfully();
     collectUserAnquette(event, id);
     renderExistingQuestions(currTemplate);
   });
-
 }

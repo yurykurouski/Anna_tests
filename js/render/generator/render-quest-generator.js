@@ -3,6 +3,7 @@ import { renderQuestionsInputs } from "./render-questions-edit.js";
 import template from "../../pages-templates/Generator/quest-generator.js";
 import collectQuestionsTemplate from "../../operations/collect-questions.js";
 import { addExtraField, rangeTemplate } from "./generator-extra-fields/extra-fields.js";
+import popupSaveSuccesfully from "../../components/pop-up.js";
 
 //* рендер формы-конструктора
 function renderQuestGenerator() {
@@ -17,6 +18,7 @@ function renderQuestGenerator() {
   selectField.addEventListener('change', rangeTemplate);
 
   form.addEventListener('submit', (event) => {
+    popupSaveSuccesfully();
     renderQuestionsInputs(collectQuestionsTemplate(event));
   });
 }

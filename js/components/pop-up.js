@@ -7,17 +7,22 @@ function popupSaveSuccesfully() {
 
   header.appendChild(popup);
 
-  let posY = 15;
+  setOpacity(popup);
+
+  setTimeout(() => {
+    popup.style.display = 'none';
+    popup.remove();
+  }, 2000)
+}
+
+function setOpacity(popup) {
+  let opacity = 1;
 
   setInterval(() => {
-    popup.style.top = posY
-
-    posY--
-  }, 24);
-
-/*   setTimeout(() => {
-    popup.style.display = 'none'
-  }, 5000); */
+    if(popup)
+    popup.style.opacity = opacity;
+    opacity -= 0.05;
+  }, 100);
 }
 
 export default popupSaveSuccesfully;
