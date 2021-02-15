@@ -23,10 +23,9 @@ function renderMainPage() {
       <h5><a href='/login'>Войдите</a>, чтобы добавить новое исследование.</h5>
     `
   }
-
-  if (!questionsTemplate.templates) {
+  if (!questionsTemplate.templates.length) {
     researchesWrap.innerHTML = `
-      <span>Нет доступных исследований</span>
+      <span>Нажмите на кнопку ниже чтобы добавить.</span>
     `
   } else {
     questionsTemplate.templates.forEach(el => {
