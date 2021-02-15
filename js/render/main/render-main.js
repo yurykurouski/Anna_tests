@@ -7,14 +7,14 @@ import {
 } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
-import popupSaveSuccesfully from "../../components/pop-up.js";
 import template from "../../pages-templates/Main/main-page.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
+
   const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire'),
         researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
-  
+
   if (!currentUser.userData) {
     toNewQuestBtn.style.display = 'none'
     const msg = toNewQuestBtn.closest('span');
@@ -52,7 +52,6 @@ function renderMainPage() {
       });
     });
   }
-popupSaveSuccesfully()
   toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
 };
 
