@@ -27,7 +27,7 @@ const template = `
         <div class='additional-information-extra'>
 
         </div>
-        <button type='button' class="pure-material-button-text add-extra-field">Добавить</button>
+        <button type='button' class="pure-material-button-text add-extra-field">Добавить</button> <button type='button' class="pure-material-button-text del-extra-field">Удалить</button>
       </div>
 
       <div>

@@ -1,8 +1,13 @@
-import { ROOT_DIV } from "../../../constants.js";
+import {
+  ROOT_DIV
+} from "../../../constants.js";
 
 //* функция добавления дополнительного поля для доп. сведений
-export function addExtraField(ROOT_DIV) {
+export function addExtraField() {
+
   const extraInformationDiv = ROOT_DIV.querySelector('.additional-information-extra');
+  const delExtraFieldBtn = ROOT_DIV.querySelector('.del-extra-field');
+
   const newExtraInformationField = document.createElement('label');
 
   newExtraInformationField.setAttribute('class', 'pure-material-textfield-outlined');
@@ -13,6 +18,18 @@ export function addExtraField(ROOT_DIV) {
     <input name='additional-information' placeholder=' ' required>
     <span>Введите...</span>
   `
+
+  delExtraFieldBtn.style.display = 'inline-block';
+}
+
+export function delExtraField() {
+  const delExtraFieldBtn = ROOT_DIV.querySelector('.del-extra-field');
+  const lastExtraField = ROOT_DIV.querySelectorAll('.additional-information-extra input');
+  lastExtraField[lastExtraField.length - 1].closest('label').remove();
+
+  if (lastExtraField.length === 1) {
+    delExtraFieldBtn.style.display = 'none'
+  }
 }
 
 //* создание полей для кастомных полей ответа
