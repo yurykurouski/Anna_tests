@@ -25,15 +25,20 @@ function renderCabinet() {
     const researchCard = document.createElement('li'),
       description = document.createElement('p'),
       info = document.createElement('span'),
-      startBtn = document.createElement('button');
+      startBtn = document.createElement('button'),
+      delBtn = document.createElement('button');
 
     startBtn.setAttribute('class', 'pure-material-button-contained go-to-anquette');
+    delBtn.setAttribute('class', 'pure-material-button-contained del-anquette');
+
     startBtn.textContent = 'Посмотреть анкеты';
+    delBtn.textContent = 'Удалить исследование';
 
     researchesWrap.appendChild(researchCard);
     researchCard.appendChild(description);
     researchCard.appendChild(info);
     researchCard.appendChild(startBtn);
+    researchCard.appendChild(delBtn);
 
     description.textContent = el.description;
     info.textContent = `Количество вопросов: ${el.numberOfQuestions}.`;
