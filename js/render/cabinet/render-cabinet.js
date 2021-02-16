@@ -7,6 +7,7 @@ import {
 import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
 import template from "../../pages-templates/cabinet/cabinet-template.js";
+import modalDelete from "../../components/modal-delete.js";
 
 function renderCabinet() {
   ROOT_DIV.innerHTML = template;
@@ -14,7 +15,6 @@ function renderCabinet() {
   const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username),
     researchesWrap = ROOT_DIV.querySelector('div > .aw-researches'),
     newQuestBtn = ROOT_DIV.querySelector('.new-questionaire');
-
   if (!templatesByCurrUser.length) {
     researchesWrap.innerHTML = `
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
@@ -44,6 +44,7 @@ function renderCabinet() {
     info.textContent = `Количество вопросов: ${el.numberOfQuestions}.`;
 
     startBtn.addEventListener('click', () => navigateToUrl(`/cabinet/completed/${el.id}`));
+    delBtn.addEventListener('click', modalDelete);
   });
 
   newQuestBtn.addEventListener('click', () => navigateToUrl('/new'));

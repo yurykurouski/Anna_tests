@@ -1,8 +1,9 @@
 #popup {
   position: fixed;
   top: 5px;
+  left: calc(50% - 125px);
   z-index: 100;
-  background-color: lightgreen;
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 2em;
@@ -12,7 +13,7 @@
   text-align: center;
 }
 
-#popup>h4 {
+#popup>p {
   margin-top: 0;
-  color: black;
+  color: #00AA8D;
 }
