@@ -68,7 +68,6 @@ export function rangeTemplate(event) {
         `
       }
     });
-
   } else {
     wrap.innerHTML = ``;
   }
