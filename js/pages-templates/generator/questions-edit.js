@@ -1,8 +1,9 @@
 const template = `
     <form>
-        <div class='questions'>
+    <h4>Заполните список вопросов:</h4>
+        <ol class='questions'>
 
-        </div>
+        </ol>
 
         <button type='submit' class='pure-material-button-contained saveBtn'>Сохранить</input>
     </form>
