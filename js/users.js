@@ -18,7 +18,6 @@ class UsersList {
   getUserByUsername(username) {
     return this.users.find(usr => usr.username === username);
   }
-
 }
 
 const users = JSON.parse(storageService.get('Users'));

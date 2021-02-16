@@ -14,7 +14,7 @@ class CurrentUser {
   }
 }
 
-const userData = JSON.parse(storageService.get('CurrentUser'));
+const userData = JSON.parse(sessionStorage.getItem('CurrentUser'));
 
 const currentUser = new CurrentUser(userData || null);
 

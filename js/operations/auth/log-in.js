@@ -36,7 +36,8 @@ export default function login(event) {
 
   if (user.password === hashedPassword) {
     currentUser.login(user);
-    storageService.set('CurrentUser', JSON.stringify(user));
+    // storageService.set('CurrentUser', JSON.stringify(user));
+    sessionStorage.setItem('CurrentUser', JSON.stringify(user));
 
     navigateToUrl('/');
   }
