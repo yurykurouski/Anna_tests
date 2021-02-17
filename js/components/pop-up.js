@@ -3,7 +3,7 @@ function popupSaveSuccesfully() {
   const popup = document.createElement('span');
 
   popup.setAttribute('id', 'popup');
-  popup.innerHTML = `<h4>Данные успешно сохранены</h4>`;
+  popup.innerHTML = `<p>Данные успешно сохранены</p>`;
 
   header.appendChild(popup);
 

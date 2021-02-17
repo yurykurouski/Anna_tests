@@ -6,30 +6,32 @@ import {
 export function addExtraField() {
 
   const extraInformationDiv = ROOT_DIV.querySelector('.additional-information-extra');
-  const delExtraFieldBtn = ROOT_DIV.querySelector('.del-extra-field');
 
-  const newExtraInformationField = document.createElement('label');
+  const extraWrapper = document.createElement('div');
+  extraWrapper.setAttribute('class', 'extra-wrapper');
 
-  newExtraInformationField.setAttribute('class', 'pure-material-textfield-outlined');
-
-  extraInformationDiv.appendChild(newExtraInformationField);
-
-  newExtraInformationField.innerHTML = `
-    <input name='additional-information' placeholder=' ' required>
-    <span>Введите...</span>
+  extraWrapper.innerHTML = `
+    <label label class = 'pure-material-textfield-outlined'>
+      <input name='additional-information' placeholder=' '>
+      <span>Введите...</span>
+    </label>
+    <span class="material-icons close" title='Удалить вопрос'>cancel</span>
   `
 
-  delExtraFieldBtn.style.display = 'inline-block';
+  extraInformationDiv.appendChild(extraWrapper);
+
+  const delExtraBtn = extraInformationDiv.querySelectorAll('.close');
+
+  const closeBtnsArray = Array.prototype.slice.call(delExtraBtn);
+
+  closeBtnsArray.forEach(btn => {
+    btn.addEventListener('click', (event) => delExtraField(event, 'div'));
+  });
 }
 
-export function delExtraField() {
-  const delExtraFieldBtn = ROOT_DIV.querySelector('.del-extra-field');
-  const lastExtraField = ROOT_DIV.querySelectorAll('.additional-information-extra input');
-  lastExtraField[lastExtraField.length - 1].closest('label').remove();
-
-  if (lastExtraField.length === 1) {
-    delExtraFieldBtn.style.display = 'none'
-  }
+export function delExtraField(event, el) {
+  const targetWrap = event.target.closest(el);
+  targetWrap.remove();
 }
 
 //* создание полей для кастомных полей ответа
@@ -66,7 +68,6 @@ export function rangeTemplate(event) {
         `
       }
     });
-
   } else {
     wrap.innerHTML = ``;
   }

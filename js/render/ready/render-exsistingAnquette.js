@@ -33,25 +33,8 @@ export function renderExsistingAnquette(id) {
   });
 
   const firstInput = ROOT_DIV.querySelector('input');
-  firstInput.focus();
 
-/*   const additionalExtra = ROOT_DIV.querySelector('div .additional-extra');
-
-  //!здесь генерит пустой span, потому что есть пустой элемент
-  currTemplate.additionalInformationExtra.forEach(param => {
-    const wrap = document.createElement('div');
-    wrap.setAttribute('class', 'additional-extra-wrap');
-
-    wrap.innerHTML = `
-      <h4 class='additional-header'>${param}:</h4>
-
-      <label class="pure-material-textfield-outlined">
-        <input name='additional-input' placeholder=' '>
-        <span>Введите...</span>
-      </label>
-    `
-    additionalExtra.appendChild(wrap);
-  }); */
+  if (firstInput) firstInput.focus();
 
   const summary = ROOT_DIV.querySelector('.summary');
   

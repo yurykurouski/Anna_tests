@@ -25,6 +25,11 @@ class QuestionsList {
   getQuestionsTemplateById(id) {
     return this.questions.find(template => template.parentTemplateId === id);
   }
+
+  deleteTemplateById(id) {
+    this.templates = this.templates.filter(template => template.id !== id);
+    this.questions = this.questions.filter(question => question.parentTemplateId !== id);
+  }
 }
 
 const templates = JSON.parse(storageService.get('SavedQuestionsTemplate'));

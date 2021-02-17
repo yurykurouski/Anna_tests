@@ -9,7 +9,7 @@ import popupSaveSuccesfully from "../../components/pop-up.js";
 import {
   navigateToUrl
 } from "../../routing.js";
-import questionsTemplate from "../../questions-template.js";
+import { delExtraField } from "./generator-extra-fields/extra-fields.js";
 
 //* рендер инпутов для ввода вопросов
 export function renderQuestionsInputs(numAndId) {
@@ -41,10 +41,7 @@ export function renderQuestionsInputs(numAndId) {
   const closeBtnsArray = Array.prototype.slice.call(closeBtnsList);
 
   closeBtnsArray.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-      const targetLi = event.target.closest('li');
-      targetLi.remove();
-    });
+    btn.addEventListener('click', (event) => delExtraField(event, 'li'));
   });
 
   form.addEventListener('submit', (event) => {
