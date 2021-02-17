@@ -1,15 +1,21 @@
 import {
-  ROOT_DIV
-} from "../constants.js";
-import {
   textButton
 } from "./elements.js";
+import {
+  ROOT_DIV
+} from "../constants.js";
+import userAnswers from "../user-answers.js";
+import storageService from "../storage-service.js";
+import questionsTemplate from "../questions-template.js";
 
-function modalDelete() {
-  const fadeWrapper = document.createElement('div');
-  const messageWrap = document.createElement('div');
-  const message = document.createElement('p');
-  const soWhat = document.createElement('h5');
+function modalDelete(id) {
+  const fadeWrapper = document.createElement('div'),
+    messageWrap = document.createElement('div'),
+    message = document.createElement('p'),
+    soWhat = document.createElement('h5');
+
+  const targetLi = document.getElementById(id);
+  const tapMsg = ROOT_DIV.querySelector('.aw-researches > span');
 
   message.textContent = 'При удалении исследования также будут удалены все связанные с ним ответы пользователей.';
   soWhat.textContent = 'Вы уверены?';
@@ -23,10 +29,20 @@ function modalDelete() {
   messageWrap.appendChild(soWhat);
 
   textButton('accept-button', 'Да', messageWrap).addEventListener('click', () => {
-    console.log('ДА');
+    questionsTemplate.deleteTemplateById(id);
+    userAnswers.deleteAnswersById(id);
+    fadeWrapper.remove();
+    targetLi.remove();
+    tapMsg.style.display = 'inline';
+
+    storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
+    storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
+    storageService.set('UserInformation', JSON.stringify(userAnswers.information));
+    storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
   });
+
   textButton('discard-button', 'Нет', messageWrap).addEventListener('click', () => {
-    console.log('НЕТ');
+    fadeWrapper.remove();
   });
 
   if (messageWrap) {

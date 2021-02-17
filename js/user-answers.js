@@ -21,6 +21,11 @@ class UserAnswersList {
   getAnswersById(id) {
     return this.answers.filter(template => template.parentTemplateId  === id)
   }
+
+  deleteAnswersById(id) {
+    this.answers = this.answers.filter(answer => answer.parentTemplateId !== id);
+    this.information = this.information.filter(usr => usr.parentTemplateId !== id);
+  }
 }
 
 const information = JSON.parse(storageService.get('UserInformation'));
