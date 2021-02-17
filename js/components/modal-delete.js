@@ -41,8 +41,7 @@ function modalDelete(id) {
     storageService.set('UserInformation', JSON.stringify(userAnswers.information));
     storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
 
-    //!тут херня какая-то - не появляется сообщение
-    if (templatesByCurrUser.length === 0) {
+    if (templatesByCurrUser.length === 1) {
       researchesWrap.innerHTML = `
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
     `
