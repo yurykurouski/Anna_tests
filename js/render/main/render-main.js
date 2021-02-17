@@ -9,11 +9,14 @@ import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
 import newButton from "../../components/elements/button.js";
 import template from "../../pages-templates/Main/main-page.js";
+import newResearchCard from "../../components/research-cards.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
 
   const toNewQuestBtn = newButton.containedButton('button', 'new-questionaire', 'Новое исследование', ROOT_DIV);
+
+  toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
 
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
 
@@ -30,25 +33,8 @@ function renderMainPage() {
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
     `
   } else {
-    questionsTemplate.templates.forEach(el => {
-      const researchCard = document.createElement('li'),
-        description = document.createElement('p'),
-        info = document.createElement('span');
-
-      researchesWrap.appendChild(researchCard);
-      researchCard.appendChild(description);
-      researchCard.appendChild(info);
-
-      description.textContent = el.description;
-      info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
-
-      newButton.containedButton('button', 'go-to-anquette', 'Пройти', researchCard).
-      addEventListener('click', () => {
-        navigateToUrl(`/templates/${el.id}`);
-      });
-    });
+    questionsTemplate.templates.forEach(el => newResearchCard.cabinet(el, researchesWrap));
   }
-  toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
 };
 
 export default renderMainPage;

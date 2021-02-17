@@ -1,3 +1,4 @@
+import newInput from "../../components/elements/input.js";
 import currentUser from "../../current-user.js";
 import logOut from "../../operations/auth/log-out.js";
 import template from "../../pages-templates/header/header.js";

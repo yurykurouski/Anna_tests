@@ -1,10 +1,10 @@
 import {
   ROOT_DIV
 } from "../constants.js";
+import newButton from "./elements/button.js";
 import userAnswers from "../user-answers.js";
 import storageService from "../storage-service.js";
 import questionsTemplate from "../questions-template.js";
-import newButton from "./elements/button.js";
 
 function modalDelete(id) {
   const fadeWrapper = document.createElement('div'),

@@ -51,3 +51,35 @@ header a:hover:after,
 header a:focus:after {
   width: 100%;
 }
+
+header #search {
+  /* width: 100%; */
+}
+
+header #search input {
+  /* position: inherit; */
+  height: 1.5em;
+  font-size: 16px;
+  padding: 0 30px 0px 30px;
+  border: 0;
+  border-radius: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+  0 1px 2px rgba(0, 0, 0, 0.24);
+
+  width: 100px;
+  border: none;
+  outline: none;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+header #search input:focus{
+  width: 200px;
+}
+
+header #search .search{
+  position: absolute;
+  line-height: 50px;
+  z-index: 2;
+
+  margin: 0 5px 0 5px;
+}
