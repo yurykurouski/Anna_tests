@@ -31,4 +31,3 @@ class Button {
 const newButton = new Button();
 
 export default newButton;
-

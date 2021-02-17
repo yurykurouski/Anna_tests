@@ -45,7 +45,7 @@ function signUp(event) {
     currentUser.login(newUser);
 
     storageService.set('Users', JSON.stringify(usersList.users));
-    storageService.set('CurrentUser', JSON.stringify(currentUser.userData));
+    sessionStorage.setItem('CurrentUser', JSON.stringify(currentUser.userData));
 
     navigateToUrl('/')
   } catch (error) {
