@@ -14,11 +14,12 @@ function renderCabinet() {
   ROOT_DIV.innerHTML = template;
 
   const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username),
-    researchesWrap = ROOT_DIV.querySelector('.aw-researches'),
-    tapMsg = ROOT_DIV.querySelector('#msg');
+    researchesWrap = ROOT_DIV.querySelector('.aw-researches');
 
   if (!templatesByCurrUser.length) {
-    tapMsg.style.display = 'inline';
+    researchesWrap.innerHTML = `
+      <span>Нажмите на кнопку ниже чтобы добавить.</span>
+    `
   }
 
   templatesByCurrUser.forEach((el) => newResearchCard.cabinet(el, researchesWrap));

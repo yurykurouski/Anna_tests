@@ -1,11 +1,11 @@
 const template = `
   <h3>Ваши исследования:</h3>
 
-    <ol class='aw-researches'>
-      <span style='display: none'>Нажмите на кнопку ниже чтобы добавить.</span>
-    </ol>
-    <br>
+  <ol class='aw-researches'>
+  </ol>
 
-  <span id='msg'></span>
+  <br>
 `
 export default template;
+
+{/* <span id='msg' style='display: none'>Нажмите на кнопку ниже чтобы добавить.</span> */}

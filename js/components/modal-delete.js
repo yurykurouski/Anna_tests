@@ -5,6 +5,7 @@ import newButton from "./elements/button.js";
 import userAnswers from "../user-answers.js";
 import storageService from "../storage-service.js";
 import questionsTemplate from "../questions-template.js";
+import currentUser from "../current-user.js";
 
 function modalDelete(id) {
   const fadeWrapper = document.createElement('div'),
@@ -13,7 +14,8 @@ function modalDelete(id) {
     soWhat = document.createElement('h5');
 
   const targetLi = document.getElementById(id);
-  const tapMsg = ROOT_DIV.querySelector('.aw-researches > span');
+  const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
+  const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username)
 
   message.textContent = 'При удалении исследования также будут удалены все связанные с ним ответы пользователей.';
   soWhat.textContent = 'Вы уверены?';
@@ -26,20 +28,29 @@ function modalDelete(id) {
   messageWrap.appendChild(message);
   messageWrap.appendChild(soWhat);
 
-  newButton.textButton('accept-button', 'Да', messageWrap).addEventListener('click', () => {
+  newButton.textButton('accept-button', 'Да', messageWrap).
+  addEventListener('click', () => {
     questionsTemplate.deleteTemplateById(id);
     userAnswers.deleteAnswersById(id);
+
     fadeWrapper.remove();
     targetLi.remove();
-    tapMsg.style.display = 'inline';
 
     storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
     storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
     storageService.set('UserInformation', JSON.stringify(userAnswers.information));
     storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
+
+    //!тут херня какая-то - не появляется сообщение
+    if (templatesByCurrUser.length === 0) {
+      researchesWrap.innerHTML = `
+      <span>Нажмите на кнопку ниже чтобы добавить.</span>
+    `
+    }
   });
 
-  newButton.textButton('discard-button', 'Нет', messageWrap).addEventListener('click', () => {
+  newButton.textButton('discard-button', 'Нет', messageWrap).
+  addEventListener('click', () => {
     fadeWrapper.remove();
   });
 

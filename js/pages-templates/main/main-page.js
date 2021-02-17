@@ -3,9 +3,8 @@ const template = `
     <ol class='aw-researches'>
 
     </ol>
-    
+
     <br>
-    <span id='msg'></span>
 `
 
 export default template;

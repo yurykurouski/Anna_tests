@@ -1,16 +1,15 @@
 import {
   ROOT_DIV
 } from "../../constants.js";
-import template from "../../pages-templates/Generator/questions-edit.js";
 import {
   collectQuestions
 } from "../../operations/collect-questions.js";
-import popupSaveSuccesfully from "../../components/pop-up.js";
 import {
-  navigateToUrl
-} from "../../routing.js";
-import { delExtraField } from "./generator-extra-fields/extra-fields.js";
+  delExtraField
+} from "./generator-extra-fields/extra-fields.js";
 import newButton from "../../components/elements/button.js";
+import popupSaveSuccesfully from "../../components/pop-up.js";
+import template from "../../pages-templates/Generator/questions-edit.js";
 
 //* рендер инпутов для ввода вопросов
 export function renderQuestionsInputs(numAndId) {
@@ -36,7 +35,7 @@ export function renderQuestionsInputs(numAndId) {
   }
 
   const firstQuestionBlock = ROOT_DIV.querySelector('textarea');
-  firstQuestionBlock.focus();
+  if (firstQuestionBlock) firstQuestionBlock.focus();
 
   const closeBtnsList = ROOT_DIV.querySelectorAll('.close');
   const closeBtnsArray = Array.prototype.slice.call(closeBtnsList);
@@ -45,7 +44,7 @@ export function renderQuestionsInputs(numAndId) {
     btn.addEventListener('click', (event) => delExtraField(event, 'li'));
   });
 
-  newButton.containedButton('submit', '', 'Сохранить', form)
+  newButton.containedButton('submit', '', 'Сохранить', form);
 
   form.addEventListener('submit', (event) => {
     popupSaveSuccesfully();
