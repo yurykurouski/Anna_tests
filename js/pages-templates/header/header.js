@@ -1,6 +1,6 @@
 const template = `
-    <span><a href='/'>Главная</a></span>
-    <span><a id='cabinet'></a></span>
-    <span><a id='auth' href=''></a></span>
+    <span class='header' id='main'><a href='/'>Главная</a></span>
+    <span class='header' id='cabinet'><a></a></span>
+    <span class='header' id='auth'><a href=''></a></span>
 `
 export default template;

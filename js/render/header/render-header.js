@@ -6,8 +6,8 @@ function renderHeader() {
   const header = document.querySelector('header');
   header.innerHTML = template;
 
-  const auth = header.querySelector('#auth'),
-        cabinet = header.querySelector('#cabinet');
+  const auth = header.querySelector('#auth a'),
+        cabinet = header.querySelector('#cabinet a');
 
   if (currentUser.userData) {
     auth.textContent = 'Выйти';
