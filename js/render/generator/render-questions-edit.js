@@ -10,6 +10,7 @@ import {
   navigateToUrl
 } from "../../routing.js";
 import { delExtraField } from "./generator-extra-fields/extra-fields.js";
+import newButton from "../../components/elements/button.js";
 
 //* рендер инпутов для ввода вопросов
 export function renderQuestionsInputs(numAndId) {
@@ -44,11 +45,13 @@ export function renderQuestionsInputs(numAndId) {
     btn.addEventListener('click', (event) => delExtraField(event, 'li'));
   });
 
+  newButton.containedButton('submit', '', 'Сохранить', form)
+
   form.addEventListener('submit', (event) => {
     popupSaveSuccesfully();
     collectQuestions(numAndId.id, event);
     setTimeout(() => {
-      navigateToUrl('/');
+      window.history.back();
     }, 1000);
   });
 }

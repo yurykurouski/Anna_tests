@@ -7,17 +7,19 @@ import {
 } from "../../constants.js";
 import currentUser from "../../current-user.js";
 import questionsTemplate from "../../questions-template.js";
+import newButton from "../../components/elements/button.js";
 import template from "../../pages-templates/Main/main-page.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
 
-  const toNewQuestBtn = ROOT_DIV.querySelector('.new-questionaire'),
-        researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
+  const toNewQuestBtn = newButton.containedButton('button', 'new-questionaire', 'Новое исследование', ROOT_DIV);
+
+  const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
 
   if (!currentUser.userData) {
     toNewQuestBtn.style.display = 'none'
-    const msg = toNewQuestBtn.closest('span');
+    const msg = ROOT_DIV.querySelector('#msg');
 
     msg.innerHTML = `
       <h5><a href='/login'>Войдите</a>, чтобы добавить новое исследование.</h5>
@@ -30,23 +32,18 @@ function renderMainPage() {
   } else {
     questionsTemplate.templates.forEach(el => {
       const researchCard = document.createElement('li'),
-            description = document.createElement('p'),
-            info = document.createElement('span'),
-            startBtn = document.createElement('button');
-
-      startBtn.setAttribute('class', 'pure-material-button-contained go-to-anquette');
-      startBtn.setAttribute('id', el.id);
-      startBtn.textContent = 'Пройти'
+        description = document.createElement('p'),
+        info = document.createElement('span');
 
       researchesWrap.appendChild(researchCard);
       researchCard.appendChild(description);
       researchCard.appendChild(info);
-      researchCard.appendChild(startBtn);
 
       description.textContent = el.description;
       info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
 
-      startBtn.addEventListener('click', () => {
+      newButton.containedButton('button', 'go-to-anquette', 'Пройти', researchCard).
+      addEventListener('click', () => {
         navigateToUrl(`/templates/${el.id}`);
       });
     });

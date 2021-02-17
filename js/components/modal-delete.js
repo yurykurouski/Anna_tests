@@ -1,12 +1,10 @@
 import {
-  textButton
-} from "./elements.js";
-import {
   ROOT_DIV
 } from "../constants.js";
 import userAnswers from "../user-answers.js";
 import storageService from "../storage-service.js";
 import questionsTemplate from "../questions-template.js";
+import newButton from "./elements/button.js";
 
 function modalDelete(id) {
   const fadeWrapper = document.createElement('div'),
@@ -28,7 +26,7 @@ function modalDelete(id) {
   messageWrap.appendChild(message);
   messageWrap.appendChild(soWhat);
 
-  textButton('accept-button', 'Да', messageWrap).addEventListener('click', () => {
+  newButton.textButton('accept-button', 'Да', messageWrap).addEventListener('click', () => {
     questionsTemplate.deleteTemplateById(id);
     userAnswers.deleteAnswersById(id);
     fadeWrapper.remove();
@@ -41,7 +39,7 @@ function modalDelete(id) {
     storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
   });
 
-  textButton('discard-button', 'Нет', messageWrap).addEventListener('click', () => {
+  newButton.textButton('discard-button', 'Нет', messageWrap).addEventListener('click', () => {
     fadeWrapper.remove();
   });
 

@@ -20,9 +20,8 @@ const template = `
       </label>
       <span class='repeatPass error'></span>
       <br>
-      <span>
+      <span id='msg'>
         <span><a href='/login'>Войти</a></span> 
-        <button type='submit' class='pure-material-button-contained'>Регистрация</button>
       </span>
     
     </form>
@@ -30,3 +29,5 @@ const template = `
 `
 
 export default template;
+
+// <button type='submit' class='pure-material-button-contained'>Регистрация</button>

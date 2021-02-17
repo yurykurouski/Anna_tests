@@ -52,8 +52,6 @@ const template = `
         
       </div>
 
-      <button type='submit' class='pure-material-button-contained'>Продолжить</button>
-
     </form>
   </div>
 `

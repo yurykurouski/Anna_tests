@@ -1,7 +1,7 @@
 const template = `
   <div>
     <form>
-    
+
       <label class="pure-material-textfield-outlined">
         <input name='username' placeholder=' '>
         <span>Email</span>
@@ -13,15 +13,16 @@ const template = `
         <span>Пароль</span>
       </label>
       <span class='password hashedPassword error'></span>
-      <br>
-      <span>
-        <span><a href='/signup'>Создать аккаунт</a></span> 
-        <button type='submit' class='pure-material-button-contained'>Продолжить</button>
-      </span>
       <span class='repeatPass error'></span>
-    
+      <br>
+      <span id='msg'>
+        <span><a href='/signup'>Создать аккаунт</a></span> 
+      </span>
+
     </form>
   </div>
 `
 
 export default template;
+
+// <button type='submit' class='pure-material-button-contained'>Продолжить</button>
