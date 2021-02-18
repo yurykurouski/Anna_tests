@@ -60,6 +60,9 @@ function validateRegistration({
   password,
   repeatPass
 }) {
+
+  const existingUser = usersList.getUserByUsername(username);
+
   let errors = {
     username: [],
     password: [],
@@ -69,42 +72,49 @@ function validateRegistration({
   if (!username) {
     errors = {
       ...errors,
-      username: [...errors.username, 'Email cannot be empty.']
+      username: [...errors.username, 'Заполните это поле']
+    };
+  }
+
+  if (existingUser) {
+    errors = {
+      ...errors,
+      username: [...errors.username, 'Пользователь с указанным e-mail уже существует.']
     };
   }
 
   if (username && !EMAIL_REGEX.test(username)) {
     errors = {
       ...errors,
-      username: [...errors.username, 'Email invalid format.']
+      username: [...errors.username, 'Неверный формат e-mail.']
     };
   }
 
   if (!password) {
     errors = {
       ...errors,
-      password: [...errors.password, 'Password can not be empty.']
+      password: [...errors.password, 'Заполните это поле.']
     };
   }
 
   if (password && password.length < MIN_PASSWORD_LENGTH) {
     errors = {
       ...errors,
-      password: [...errors.password, `Password should contain at least ${MIN_PASSWORD_LENGTH} characters`]
+      password: [...errors.password, `Пароль должен состоять минимум из ${MIN_PASSWORD_LENGTH} символов.`]
     };
   }
 
   if (password && !PASSWORD_REGEX.test(password) && password.length > MIN_PASSWORD_LENGTH) {
     errors = {
       ...errors,
-      password: [...errors.password, 'Password invalid format.']
+      password: [...errors.password, 'Неверный формат пароля.']
     };
   }
 
   if (password !== repeatPass && PASSWORD_REGEX.test(password) && password.length > MIN_PASSWORD_LENGTH) {
     errors = {
       ...errors,
-      repeatPass: [...errors.repeatPass, 'Passwords does not match.']
+      repeatPass: [...errors.repeatPass, 'Пароли не совпадают.']
     };
   }
 
