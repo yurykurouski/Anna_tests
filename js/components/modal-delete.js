@@ -35,17 +35,18 @@ function modalDelete(id) {
 
     fadeWrapper.remove();
     targetLi.remove();
+    
+    if (templatesByCurrUser.length === 1) {
+      researchesWrap.innerHTML = `
+      <span>Нажмите на кнопку ниже чтобы добавить.</span>
+    `
+    }
 
     storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
     storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
     storageService.set('UserInformation', JSON.stringify(userAnswers.information));
     storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
 
-    if (templatesByCurrUser.length === 1) {
-      researchesWrap.innerHTML = `
-      <span>Нажмите на кнопку ниже чтобы добавить.</span>
-    `
-    }
   });
 
   newButton.textButton('discard-button', 'Нет', messageWrap).

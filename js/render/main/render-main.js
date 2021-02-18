@@ -33,7 +33,7 @@ function renderMainPage() {
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
     `
   } else {
-    questionsTemplate.templates.forEach(el => newResearchCard.cabinet(el, researchesWrap));
+    questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
   }
 };
 
