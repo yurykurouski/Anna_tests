@@ -2,7 +2,7 @@ import {
   ROOT_DIV
 } from "../../../constants.js";
 
-//* функция добавления дополнительного поля для доп. сведений
+// функция добавления дополнительного поля для доп. сведений
 export function addExtraField() {
 
   const extraInformationDiv = ROOT_DIV.querySelector('.additional-information-extra');
@@ -29,6 +29,7 @@ export function addExtraField() {
   });
 }
 
+// кнопка удаления доп полей информации и вопросов
 export function delExtraField(event, el) {
   const targetWrap = event.target.closest(el);
   targetWrap.remove();
@@ -71,4 +72,23 @@ export function rangeTemplate(event) {
   } else {
     wrap.innerHTML = ``;
   }
+}
+
+//блок ввода вопроса
+export function questionBlock(questionsField) {
+  const questionBlock = document.createElement('li');
+  questionBlock.setAttribute('class', 'qstn-wrap')
+  const singleQuestionTemplate = `
+      <label class="pure-material-textfield-filled">
+        <textarea name='qstn-description' placeholder='Вопрос для респондента'
+          required></textarea>
+        <span></span>
+      </label>
+      <span class="material-icons close" title='Удалить вопрос'>cancel</span>
+  `
+  questionBlock.innerHTML = singleQuestionTemplate;
+  questionsField.appendChild(questionBlock);
+
+  const closeBtn = questionBlock.querySelector('.close');
+  closeBtn.addEventListener('click', (event) => delExtraField(event, 'li'));
 }

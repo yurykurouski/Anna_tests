@@ -1,7 +1,7 @@
 class Button {
-  textButton(customClass, buttonText, parentEl) {
+  textButton(type, customClass, buttonText, parentEl) {
     const button = document.createElement('button');
-    button.setAttribute('type', 'button');
+    button.setAttribute('type', type);
     if (customClass) {
       button.setAttribute('class', 'pure-material-button-text' + customClass);
     }
