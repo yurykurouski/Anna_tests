@@ -37,7 +37,7 @@ export function delExtraField(event, el) {
 
 //* создание полей для кастомных полей ответа
 export function rangeTemplate(event) {
-  const wrap = ROOT_DIV.querySelector('form .possible-answers span > .range-template');
+  const wrap = ROOT_DIV.querySelector('form #possibleAnswersType span > .range-template');
 
   if (event.target.value === 'range') {
     wrap.innerHTML = `
@@ -80,8 +80,7 @@ export function questionBlock(questionsField) {
   questionBlock.setAttribute('class', 'qstn-wrap')
   const singleQuestionTemplate = `
       <label class="pure-material-textfield-filled">
-        <textarea name='qstn-description' placeholder='Вопрос для респондента'
-          required></textarea>
+        <textarea name='qstn-description' placeholder='Вопрос для респондента'></textarea>
         <span></span>
       </label>
       <span class="material-icons close" title='Удалить вопрос'>cancel</span>

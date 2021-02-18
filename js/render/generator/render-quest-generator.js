@@ -27,8 +27,7 @@ function renderQuestGenerator() {
   selectField.addEventListener('change', rangeTemplate);
 
   form.addEventListener('submit', (event) => {
-    popupSaveSuccesfully();
-    renderQuestionsInputs(collectQuestionsTemplate(event));
+    collectQuestionsTemplate(event);
   });
 }
 

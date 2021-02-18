@@ -4,7 +4,14 @@ import {
 import currentUser from "../current-user.js";
 import storageService from "../storage-service.js";
 import questionsTemplate from "../questions-template.js";
-import { ROOT_DIV } from "../constants.js";
+import {
+  ROOT_DIV
+} from "../constants.js";
+import validateForms from "./validation.js";
+import popupSaveSuccesfully from "../components/pop-up.js";
+import {
+  renderQuestionsInputs
+} from "../render/generator/render-questions-edit.js";
 
 //* получение темплейта для формы вопросов
 function collectQuestionsTemplate(event) {
@@ -22,13 +29,24 @@ function collectQuestionsTemplate(event) {
     ifRange: formDdata.getAll('variant-field')
   }
 
-  questionsTemplate.saveTemplate(savedQuestionsTemplate);
+  // if (!validateForms(savedQuestionsTemplate)) {
+  if (true) {
+    questionsTemplate.saveTemplate(savedQuestionsTemplate);
 
-  storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
+    storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
 
-  const { numberOfQuestions, id } = savedQuestionsTemplate;
+    const {
+      numberOfQuestions,
+      id
+    } = savedQuestionsTemplate;
 
-  return {numberOfQuestions, id};
+    popupSaveSuccesfully();
+
+    renderQuestionsInputs({
+      numberOfQuestions,
+      id
+    });
+  }
 }
 
 //* получение вопросов
@@ -42,17 +60,19 @@ export function collectQuestions(currId, event) {
     questions: formData.getAll('qstn-description')
   }
 
-  const currTemplate = questionsTemplate.getTemplateById(currId);
-  const allFieldsNumber = ROOT_DIV.querySelectorAll('textarea').length;
+  if (validateForms(savedQuestions)) {
+    const currTemplate = questionsTemplate.getTemplateById(currId);
+    const allFieldsNumber = ROOT_DIV.querySelectorAll('textarea').length;
 
-  if (currTemplate.numberOfQuestions != allFieldsNumber) {
-    currTemplate.numberOfQuestions = allFieldsNumber;
-  }
+    if (currTemplate.numberOfQuestions != allFieldsNumber) {
+      currTemplate.numberOfQuestions = allFieldsNumber;
+    }
 
-  questionsTemplate.saveQuestions(savedQuestions);
+    questionsTemplate.saveQuestions(savedQuestions);
 
-  storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
-  storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
+    storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
+    storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
+  };
 }
 
 export default collectQuestionsTemplate;

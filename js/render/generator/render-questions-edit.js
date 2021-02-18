@@ -18,13 +18,17 @@ export function renderQuestionsInputs(numAndId) {
   const questionsField = ROOT_DIV.querySelector('.questions'),
     form = ROOT_DIV.querySelector('form');
 
-  for (let i = 1; i <= numAndId.numberOfQuestions; i++) questionBlock(questionsField);
+  for (let i = 1; i <= numAndId.numberOfQuestions; i++) {
+    questionBlock(questionsField);
+  }
 
   const firstQuestionBlock = ROOT_DIV.querySelector('textarea');
 
   if (firstQuestionBlock) firstQuestionBlock.focus();
 
-  newButton.textButton('button', '', 'Добавить', form).addEventListener('click', () => questionBlock(questionsField))
+  newButton.textButton('button', '', 'Добавить', form).
+  addEventListener('click', () => questionBlock(questionsField));
+
   newButton.containedButton('submit', '', 'Сохранить', form);
 
   form.addEventListener('submit', (event) => {

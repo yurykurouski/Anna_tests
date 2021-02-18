@@ -1,7 +1,7 @@
 const template = `
   <div>
     <form>
-      <div>
+      <div id = 'description'>
         <h3>Описание исследования:</h3>
 
         <label class="pure-material-textfield-filled">
@@ -30,7 +30,7 @@ const template = `
         <button type='button' class="pure-material-button-text add-extra-field">Добавить</button>
       </div>
 
-      <div>
+      <div div id = 'numberOfQuestions'>
         <h4>Количество вопросов в исследовании:</h4>
 
       <label class="pure-material-textfield-outlined">
@@ -39,11 +39,11 @@ const template = `
       </label>
       </div>
 
-      <div class='possible-answers'>
+      <div id = 'possibleAnswersType'>
         <h4>Формат возможных ответов:</h4>
           <span>
-            <select name='possible-answers' required>
-              <option selected hidden>Выберите вариант</option>
+            <select name='possible-answers'>
+              <option selected value ='' hidden>Выберите вариант</option>
               <option name='possible-answers' value='boolean'>Да/Нет</option>
               <option name='possible-answers' value='range'>Диапазон</option>
             </select>
