@@ -74,7 +74,7 @@ function validateLogin({
     };
   }
 
-  if (user && user.password !== hashedPassword) {
+  if (user && user.password !== hashedPassword && password) {
     errors = {
       ...errors,
       password: [...errors.password, 'Неверный пароль']

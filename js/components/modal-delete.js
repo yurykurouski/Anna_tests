@@ -28,14 +28,14 @@ function modalDelete(id) {
   messageWrap.appendChild(message);
   messageWrap.appendChild(soWhat);
 
-  newButton.textButton('accept-button', 'Да', messageWrap).
+  newButton.textButton('accept-button', '', 'Да', messageWrap).
   addEventListener('click', () => {
     questionsTemplate.deleteTemplateById(id);
     userAnswers.deleteAnswersById(id);
 
     fadeWrapper.remove();
     targetLi.remove();
-    
+
     if (templatesByCurrUser.length === 1) {
       researchesWrap.innerHTML = `
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
@@ -49,7 +49,7 @@ function modalDelete(id) {
 
   });
 
-  newButton.textButton('discard-button', 'Нет', messageWrap).
+  newButton.textButton('discard-button', '', 'Нет', messageWrap).
   addEventListener('click', () => {
     fadeWrapper.remove();
   });
