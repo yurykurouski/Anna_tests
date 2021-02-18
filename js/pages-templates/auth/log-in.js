@@ -16,7 +16,7 @@ const template = `
       <span class='repeatPass error'></span>
       <br>
       <span id='msg'>
-        <span><a href='/signup'>Создать аккаунт</a></span> 
+        <span><a href=''>Создать аккаунт</a></span> 
       </span>
 
     </form>

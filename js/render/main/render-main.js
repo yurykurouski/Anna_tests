@@ -2,6 +2,7 @@ import {
   navigateToUrl
 } from "../../routing.js";
 import {
+  LOGIN_URL,
   NEW_QUEST_URL,
   ROOT_DIV
 } from "../../constants.js";
@@ -25,8 +26,13 @@ function renderMainPage() {
     const msg = ROOT_DIV.querySelector('#msg');
 
     msg.innerHTML = `
-      <h5><a href='/login'>Войдите</a>, чтобы добавить новое исследование.</h5>
+      <h5><a href=''>Войдите</a>, чтобы добавить новое исследование.</h5>
     `
+    const loginHref = msg.querySelector('a');
+    loginHref.addEventListener('click', (event) => {
+      event.preventDefault();
+      navigateToUrl(LOGIN_URL);
+    });
   }
   if (!questionsTemplate.templates.length) {
     researchesWrap.innerHTML = `

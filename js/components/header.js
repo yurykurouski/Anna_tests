@@ -4,6 +4,7 @@ import {
 import currentUser from "../current-user.js";
 import logOut from "../operations/auth/log-out.js";
 import template from "../pages-templates/header/header.js";
+import { CABINET_URL, LOGIN_URL } from "../constants.js";
 
 
 function renderHeader() {
@@ -19,11 +20,11 @@ function renderHeader() {
     auth.textContent = 'Выйти';
     cabinet.textContent = 'Кабинет'
 
-    cabinet.addEventListener('click', () => navigateToUrl('/cabinet'))
+    cabinet.addEventListener('click', () => navigateToUrl(CABINET_URL))
     auth.addEventListener('click', logOut);
   } else {
     auth.textContent = 'Войти';
-    auth.addEventListener('click', () => navigateToUrl('/login'));
+    auth.addEventListener('click', () => navigateToUrl(LOGIN_URL));
   }
 }
 

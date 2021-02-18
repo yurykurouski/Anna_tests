@@ -1,7 +1,11 @@
-import { ROOT_DIV } from "../../constants.js";
+import {
+  LOGIN_URL,
+  ROOT_DIV
+} from "../../constants.js";
 import signUp from "../../operations/auth/sign-up.js";
 import template from "../../pages-templates/Auth/sign-up.js";
 import newButton from "../../components/elements/button.js";
+import { navigateToUrl } from "../../routing.js";
 
 function renderSignup() {
   ROOT_DIV.innerHTML = template;
@@ -11,6 +15,12 @@ function renderSignup() {
 
   newButton.containedButton('submit', '', 'Регистрация', msg);
   form.addEventListener('submit', signUp);
+
+  const loginHref = ROOT_DIV.querySelector('#msg a');
+  loginHref.addEventListener('click', (event) => {
+    event.preventDefault();
+    navigateToUrl(LOGIN_URL);
+  });
 }
 
 export default renderSignup;
