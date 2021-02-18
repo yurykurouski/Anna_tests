@@ -75,9 +75,14 @@ export function rangeTemplate(event) {
 }
 
 //блок ввода вопроса
-export function questionBlock(questionsField) {
+export function addQuestionBlock(questionsField, id) {
+  if (!id) {
+    id = (ROOT_DIV.querySelectorAll('li').length + 1);
+  }
+  
   const questionBlock = document.createElement('li');
-  questionBlock.setAttribute('class', 'qstn-wrap')
+  questionBlock.setAttribute('class', 'qstn-wrap questions');
+  questionBlock.setAttribute('id', `${id}`);
   const singleQuestionTemplate = `
       <label class="pure-material-textfield-filled">
         <textarea name='qstn-description' placeholder='Вопрос для респондента'></textarea>

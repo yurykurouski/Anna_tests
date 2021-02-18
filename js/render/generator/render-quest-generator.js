@@ -2,14 +2,10 @@ import {
   ROOT_DIV
 } from "../../constants.js";
 import {
-  renderQuestionsInputs
-} from "./render-questions-edit.js";
-import {
   addExtraField,
   rangeTemplate
 } from "./generator-extra-fields/extra-fields.js";
 import newButton from "../../components/elements/button.js";
-import popupSaveSuccesfully from "../../components/pop-up.js";
 import template from "../../pages-templates/Generator/quest-generator.js";
 import collectQuestionsTemplate from "../../operations/collect-questions.js";
 

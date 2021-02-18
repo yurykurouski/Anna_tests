@@ -5,7 +5,7 @@ import {
 function validateForms(data) {
   let hasErrors = false;
 
-  clearErrors(hasErrors)
+  clearErrors();
 
   for (let key in data) {
     if (!data[key]) {
@@ -13,23 +13,36 @@ function validateForms(data) {
       hasErrors = true;
     }
     if (key === 'questions') {
-      for (let i = 1; i <= key.length; i++){
-        console.log(i)
+      for (let i = 0; i < data[key].length; i++) {
+        if (!data[key][i]) {
+          makeErrorMsg(key, i);
+          hasErrors = true;
+        }
       }
     }
   }
-  return true;
-  // return hasErrors
+  return hasErrors
 }
 
-function makeErrorMsg(key) {
-  const targetDiv = ROOT_DIV.querySelector(`#${key}`) || ROOT_DIV.querySelector;
+function makeErrorMsg(key, id) {
   const errorSpan = document.createElement('span');
 
   errorSpan.setAttribute('class', 'error');
   errorSpan.textContent = 'Это поле обязательно для заполнения';
 
-  targetDiv.appendChild(errorSpan);
+  if (key === 'questions') {
+    const parent = document.getElementById(id + 1);
+    parent.appendChild(errorSpan);
+
+    return;
+  }
+
+  if (key === 'description' || key === 'numberOfQuestions' || key === 'possibleAnswersType') {
+    const targetDiv = ROOT_DIV.querySelector(`#${key}`);
+    targetDiv.appendChild(errorSpan);
+
+    return;
+  }
 }
 
 function clearErrors() {

@@ -10,10 +10,10 @@ import {
 import { getIdByUrl } from "./utils.js";
 import currentUser from "./current-user.js";
 import notFound from "./render/main/404.js";
+import renderHeader from "./components/header.js";
 import renderLogin from "./render/auth/render-login.js";
 import renderMainPage from "./render/main/render-main.js";
 import renderSignup from "./render/auth/render-signup.js";
-import renderHeader from "./components/header.js";
 import renderCabinet from "./render/cabinet/render-cabinet.js";
 import renderQuestGenerator from "./render/generator/render-quest-generator.js";
 import { renderExsistingAnquette } from "./render/ready/render-exsistingAnquette.js";

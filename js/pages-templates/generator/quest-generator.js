@@ -26,20 +26,20 @@ const template = `
 
         <div class='additional-information-extra'>
 
-        </div>
+      </div>
         <button type='button' class="pure-material-button-text add-extra-field">Добавить</button>
       </div>
 
-      <div div id = 'numberOfQuestions'>
+      <div id='numberOfQuestions'>
         <h4>Количество вопросов в исследовании:</h4>
 
-      <label class="pure-material-textfield-outlined">
-        <input name='questions-amount' type="number">
-        <span>Введите число</span>
-      </label>
+        <label class="pure-material-textfield-outlined">
+          <input name='questions-amount' type="number">
+          <span>Введите число</span>
+        </label>
       </div>
 
-      <div id = 'possibleAnswersType'>
+      <div id='possibleAnswersType'>
         <h4>Формат возможных ответов:</h4>
           <span>
             <select name='possible-answers'>

@@ -4,7 +4,6 @@ const template = `
         <ol class='questions'>
 
         </ol>
-
     </form>
 `
 export default template;

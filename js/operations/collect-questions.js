@@ -12,6 +12,7 @@ import popupSaveSuccesfully from "../components/pop-up.js";
 import {
   renderQuestionsInputs
 } from "../render/generator/render-questions-edit.js";
+import renderMainPage from "../render/main/render-main.js";
 
 //* получение темплейта для формы вопросов
 function collectQuestionsTemplate(event) {
@@ -29,15 +30,12 @@ function collectQuestionsTemplate(event) {
     ifRange: formDdata.getAll('variant-field')
   }
 
-  // if (!validateForms(savedQuestionsTemplate)) {
-  if (true) {
+  if (!validateForms(savedQuestionsTemplate)) {
     questionsTemplate.saveTemplate(savedQuestionsTemplate);
 
     storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
 
-    const {
-      numberOfQuestions,
-      id
+    const { numberOfQuestions, id
     } = savedQuestionsTemplate;
 
     popupSaveSuccesfully();
@@ -60,7 +58,7 @@ export function collectQuestions(currId, event) {
     questions: formData.getAll('qstn-description')
   }
 
-  if (validateForms(savedQuestions)) {
+  if (!validateForms(savedQuestions)) {
     const currTemplate = questionsTemplate.getTemplateById(currId);
     const allFieldsNumber = ROOT_DIV.querySelectorAll('textarea').length;
 
@@ -72,6 +70,9 @@ export function collectQuestions(currId, event) {
 
     storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
     storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
+
+    popupSaveSuccesfully();
+    renderMainPage();
   };
 }
 
