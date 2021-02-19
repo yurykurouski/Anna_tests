@@ -13,6 +13,8 @@
 @import url('./components/popup.css');
 @import url('./components/modal-delete.css');
 @import url('./components/header.css');
+@import url('./components/table.css');
+@import url('./components/card.css');
 
 html,
 body {
@@ -20,12 +22,65 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  margin-bottom: 20px;
+}
+
+p {
+  text-indent: 1em;
+  text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0;
 }
 
 .material-icons {
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  margin: 3px;
   cursor: pointer;
 }
 
 .container {
-  margin-top: 55px;
+  margin: 0 auto;
+  margin-top: 60px;
+  max-width: 1280px;
+  width: 90%;
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* template */
+.additional-information .checks {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.additional-information-extra {
+  display: flex;
+}
+
+.rest-information div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* questions */
+.desription-wrap {
+  min-height: 50px;
+}
+
+ol li.close {
+  height: 40px;
 }

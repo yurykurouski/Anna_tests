@@ -7,18 +7,24 @@ import newButton from "./elements/button.js";
 class ResearchCard {
   main(el, researchesWrap) {
     const researchCard = document.createElement('li'),
+      cardWrap = document.createElement('div'),
       description = document.createElement('p'),
+      span = document.createElement('span'),
       info = document.createElement('span');
 
+    cardWrap.setAttribute('class', 'card main')
+
     researchesWrap.appendChild(researchCard);
-    researchCard.appendChild(description);
-    researchCard.appendChild(info);
+    researchCard.appendChild(cardWrap);
+    cardWrap.appendChild(description);
+    cardWrap.appendChild(span);
+    span.appendChild(info);
 
     description.textContent = el.description;
 
     info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
 
-    newButton.containedButton('button', 'go-to-anquette', 'Пройти', researchCard).
+    newButton.containedButton('button', 'go-to-anquette', 'Пройти', span).
     addEventListener('click', () => {
       navigateToUrl(`/templates/${el.id}`);
     });
@@ -26,23 +32,28 @@ class ResearchCard {
 
   cabinet(el, researchesWrap) {
     const researchCard = document.createElement('li'),
+      cardWrap = document.createElement('div'),
       description = document.createElement('p'),
+      span = document.createElement('span'),
       info = document.createElement('span');
 
+    cardWrap.setAttribute('class', 'card cabinet');
     researchCard.setAttribute('id', el.id);
 
     researchesWrap.appendChild(researchCard);
-    researchCard.appendChild(description);
-    researchCard.appendChild(info);
+    researchCard.appendChild(cardWrap);
+    cardWrap.appendChild(description);
+    cardWrap.appendChild(span);
+    span.appendChild(info);
 
     description.textContent = el.description;
 
     info.textContent = `Количество вопросов: ${el.numberOfQuestions}.`;
 
-    newButton.containedButton('button', 'go-to-anquette', 'Посмотреть анкеты', researchCard).
+    newButton.containedButton('button', 'go-to-anquette', 'Посмотреть анкеты', span).
     addEventListener('click', () => navigateToUrl(`/cabinet/completed/${el.id}`));
 
-    newButton.containedButton('button', 'del-anquette', 'Удалить исследование', researchCard).
+    newButton.containedButton('button', 'del-anquette', 'Удалить', span).
     addEventListener('click', () => modalDelete(el.id));
   }
 }

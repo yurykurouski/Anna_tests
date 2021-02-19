@@ -5,6 +5,11 @@
   font-size: 16px;
   line-height: 1.5;
   overflow: hidden;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
 }
 
 /* Input, Textarea */
@@ -14,15 +19,17 @@
   box-sizing: border-box;
   margin: 0;
   border: none;
-  border-top: solid 27px transparent;
+  border-top: solid 15px transparent;
   border-bottom: solid 1px rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
   border-radius: 4px 4px 0 0;
-  padding: 0 12px 10px;
+  padding: 0 15px 10px;
   width: 100%;
-  height: inherit;
+  min-height: 10px;
+
   color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
-  background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.04);
+  background-color: #efebe9;
   box-shadow: none;
+  resize: none;
   /* Firefox */
   font-family: inherit;
   font-size: inherit;
