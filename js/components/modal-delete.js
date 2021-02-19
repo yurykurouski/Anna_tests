@@ -11,7 +11,7 @@ function modalDelete(id) {
   const fadeWrapper = document.createElement('div'),
     messageWrap = document.createElement('div'),
     message = document.createElement('p'),
-    soWhat = document.createElement('h5');
+    soWhat = document.createElement('h4');
 
   const targetLi = document.getElementById(id);
   const researchesWrap = ROOT_DIV.querySelector('div > .aw-researches');
@@ -21,7 +21,7 @@ function modalDelete(id) {
   soWhat.textContent = 'Вы уверены?';
 
   fadeWrapper.setAttribute('class', 'fade');
-  messageWrap.setAttribute('class', 'modal-window');
+  messageWrap.setAttribute('class', 'modal-window card');
 
   ROOT_DIV.appendChild(fadeWrapper);
   fadeWrapper.appendChild(messageWrap);

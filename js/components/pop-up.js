@@ -1,28 +1,22 @@
-function popupSaveSuccesfully() {
+function popupSaveSuccesfully(msg) {
   const header = document.querySelector('header');
-  const popup = document.createElement('span');
+  const wrap = document.createElement('span');
+  const pMsg = document.createElement('p');
 
-  popup.setAttribute('id', 'popup');
-  popup.innerHTML = `<p>Данные успешно сохранены</p>`;
+  header.appendChild(wrap);
+  wrap.appendChild(pMsg);
 
-  header.appendChild(popup);
+  wrap.setAttribute('id', 'popup');
 
-  setOpacity(popup);
+  if (msg) {
+    pMsg.textContent = msg;
+  } else {
+    pMsg.textContent = 'Данные успешно сохранены';
+  }
 
   setTimeout(() => {
-    popup.style.display = 'none';
-    popup.remove();
-  }, 2000)
-}
-
-function setOpacity(popup) {
-  let opacity = 1;
-
-  setInterval(() => {
-    if(popup)
-    popup.style.opacity = opacity;
-    opacity -= 0.05;
-  }, 100);
+    wrap.remove();
+  }, 3000);
 }
 
 export default popupSaveSuccesfully;

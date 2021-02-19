@@ -1,15 +1,22 @@
 header {
   position: fixed;
   height: 50px;
-  width: 100%;
-
-  top: 0;
+  max-width: 1280px;
+  width: 90%;
+  /* margin: 0 auto; */
+  left: 50%;
+  right: 50%;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  top: 25px;
   background-color: #2196f3;
+  opacity: 0.97;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%),
     0px 1px 10px 0px rgb(0 0 0 / 12%);
 
   z-index: 99;
+  border-radius: 0 0 5px 5px;
 }
 
 header span {
@@ -52,31 +59,34 @@ header a:focus:after {
   width: 100%;
 }
 
-header #search {
-  /* width: 100%; */
-}
+header #search {}
 
 header #search input {
-  /* position: inherit; */
+  width: 1px;
   height: 1.5em;
   font-size: 16px;
   padding: 0 30px 0px 30px;
   border: 0;
   border-radius: 1em;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-  0 1px 2px rgba(0, 0, 0, 0.24);
+    0 1px 2px rgba(0, 0, 0, 0.24);
 
-  width: 100px;
   border: none;
   outline: none;
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-header #search input:focus{
-  width: 200px;
+header #search input:focus {
+  width: 150px;
 }
 
-header #search .search{
+header #search input:hover {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.20)
+}
+
+header #search .search {
   position: absolute;
   line-height: 50px;
   z-index: 2;

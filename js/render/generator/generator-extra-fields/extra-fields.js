@@ -83,14 +83,14 @@ export function addQuestionBlock(questionsField, id) {
   const questionBlock = document.createElement('li');
   questionBlock.setAttribute('class', 'qstn-wrap questions');
   questionBlock.setAttribute('id', `${id}`);
-  const singleQuestionTemplate = `
-      <label class="pure-material-textfield-filled">
+  questionBlock.innerHTML = `
+      <label class="pure-material-textfield-filled desription-wrap">
         <textarea name='qstn-description' placeholder='Вопрос для респондента'></textarea>
         <span></span>
       </label>
       <span class="material-icons close" title='Удалить вопрос'>cancel</span>
+
   `
-  questionBlock.innerHTML = singleQuestionTemplate;
   questionsField.appendChild(questionBlock);
 
   const closeBtn = questionBlock.querySelector('.close');
