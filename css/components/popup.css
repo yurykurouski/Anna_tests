@@ -1,19 +1,45 @@
 #popup {
   position: fixed;
-  top: 5px;
+  /* display: none; */
+  top: -40px;
+  
   left: calc(50% - 125px);
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.22);
-  border-radius: 2em;
+  border-radius: 1em;
   height: 2em;
   line-height: 2em;
   width: 250px;
   text-align: center;
+
+  animation-duration: 1.5s;
+  animation-name: popup;
+}
+
+@keyframes popup{
+  from{
+    top: 0px;
+    background-color: rgba(255, 255, 255, 0.1)
+  }
+  to{
+    top: -40px;
+  }
+
+  20%{
+    top: 10px;
+    background-color: rgba(255, 255, 255, 0.95)
+  }
+
+  80%{
+    top: 10px;
+    background-color: rgba(255, 255, 255, 0.95)
+  }
 }
 
 #popup>p {
+
   margin-top: 0;
   color: #00AA8D;
 }
