@@ -1,4 +1,7 @@
 import questionsTemplate from "../questions-template.js";
+import {
+  navigateToUrl
+} from "../routing.js";
 
 export function launchSearchBox(event) {
   const {
@@ -7,27 +10,20 @@ export function launchSearchBox(event) {
   const list = document.querySelector('header #list')
   list.innerHTML = ''
 
-  if (value) {
-    event.target.style.width = '300px';
-  } else {
-    event.target.style.width = '1px';
-    return
-  }
-
-  const match = questionsTemplate.templates.filter((template) => {
+  let match = questionsTemplate.templates.filter((template) => {
     return template.description.toUpperCase().includes(value.toUpperCase());
   });
 
-  match.slice(0, 4);
+  const result = match.slice(0, 4);
 
-  for (let i = 0; i < match.length; i++) {
-    if (match[i].description) {
-      renderOverlay(list, match[i].description);
+  result.forEach((el) => {
+    if (el.description) {
+      renderOverlay(list, el.description, el.id);
     }
-  }
+  });
 }
 
-function renderOverlay(parent, targetText) {
+function renderOverlay(parent, targetText, id) {
   const item = document.createElement('li');
   const href = document.createElement('span');
 
@@ -35,4 +31,7 @@ function renderOverlay(parent, targetText) {
   item.appendChild(href);
 
   href.textContent = targetText;
+  item.style.cursor = 'pointer'
+
+  href.addEventListener('click', () => navigateToUrl(`/templates/${id}`));
 }

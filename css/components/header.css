@@ -70,19 +70,22 @@ header #search-form button {
   border-style: none;
   padding: 0;
   height: 24px;
-  position: initial;
+  
   vertical-align: middle;
-
 }
 header #search .search {
+  position: relative;
   margin: 0;
   z-index: 2;
 }
 
-header #search {}
+header #search {
+  
+}
 
 header #search input {
   height: 1.5em;
+  width: 300px;
   font-size: 16px;
   padding: 0 30px 0px 30px;
   border: 0;

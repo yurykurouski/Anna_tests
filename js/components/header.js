@@ -18,7 +18,7 @@ function renderHeader() {
     cabinet = header.querySelector('#cabinet a');
 
   searchBox.addEventListener('input', launchSearchBox);
-  searchBox.addEventListener('onblur', () => console.log('fsfs'));
+  // searchBox.addEventListener('onblur', () => console.log('fsfs'));
   searchBox.addEventListener('submit', (event) => event.preventDefault())
 
   main.addEventListener('click', () => navigateToUrl('/'))
