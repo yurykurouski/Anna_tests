@@ -31,7 +31,7 @@ function renderOverlay(parent, targetText, id) {
   item.appendChild(href);
 
   href.textContent = targetText;
-  item.style.cursor = 'pointer'
+  item.style.cursor = 'pointer';
 
   href.addEventListener('click', () => navigateToUrl(`/templates/${id}`));
 }
