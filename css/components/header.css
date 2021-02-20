@@ -59,15 +59,34 @@ header a:focus:after {
   width: 100%;
 }
 
+header #search-form {
+  display: inline; 
+}
+
+header #search-form button {
+  border: none;
+  background: none;
+  outline: none;
+  border-style: none;
+  padding: 0;
+  height: 24px;
+  position: initial;
+  vertical-align: middle;
+
+}
+header #search .search {
+  margin: 0;
+  z-index: 2;
+}
+
 header #search {}
 
 header #search input {
-  width: 1px;
   height: 1.5em;
   font-size: 16px;
   padding: 0 30px 0px 30px;
   border: 0;
-  border-radius: 1em;
+  border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
     0 1px 2px rgba(0, 0, 0, 0.24);
 
@@ -82,23 +101,17 @@ header #search input:hover {
     0 2px 4px -1px rgba(0, 0, 0, 0.20)
 }
 
-header #search .search {
-  position: absolute;
-  line-height: 50px;
-  z-index: 2;
-
-  margin: 0 5px 0 5px;
-}
-
 header #results {
   display: none;
-  /* width: 0; */
 }
 
 header #search input:focus~#results {
   display: block;
-  width: 300px;
-  background-color: #2196f3;
+  position: fixed;
+  top: 45px;
+  width: 361px;
+  left: 135px;
+  background-color: whitesmoke;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12),
     0 5px 5px -3px rgba(0, 0, 0, 0.20);
@@ -109,19 +122,21 @@ header #search input:focus~#results {
   animation-name: search-results;
 }
 
-@keyframes search-results{
-  from{
+@keyframes search-results {
+  from {
     width: 0;
   }
 
-  to{
+  to {
     width: 300px;
   }
 }
 
-header #results ul{
+header #results ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  line-height: 1em;
+  /* line-height: 1em; */
+  
 }
+

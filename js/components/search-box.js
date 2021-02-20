@@ -8,7 +8,7 @@ export function launchSearchBox(event) {
   list.innerHTML = ''
 
   if (value) {
-    event.target.style.width = '150px';
+    event.target.style.width = '300px';
   } else {
     event.target.style.width = '1px';
     return
