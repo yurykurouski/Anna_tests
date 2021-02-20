@@ -42,7 +42,6 @@ function renderMainPage() {
   } else {
     questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
   }
-  newButton.containedButton('button', 'test', 'test', ROOT_DIV).addEventListener('click', () => popupSaveSuccesfully());
 };
 
 export default renderMainPage;
