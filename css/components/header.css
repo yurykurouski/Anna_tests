@@ -1,9 +1,9 @@
 header {
   position: fixed;
   height: 50px;
+
   max-width: 1280px;
   width: 90%;
-  /* margin: 0 auto; */
   left: 50%;
   right: 50%;
   padding: 5px;
@@ -59,15 +59,37 @@ header a:focus:after {
   width: 100%;
 }
 
-header #search {}
+header #search-form {
+  display: inline; 
+}
+
+header #search-form button {
+  border: none;
+  background: none;
+  outline: none;
+  border-style: none;
+  padding: 0;
+  height: 24px;
+  
+  vertical-align: middle;
+}
+header #search .search {
+  position: relative;
+  margin: 0;
+  z-index: 2;
+}
+
+header #search {
+  
+}
 
 header #search input {
-  width: 1px;
   height: 1.5em;
+  width: 300px;
   font-size: 16px;
   padding: 0 30px 0px 30px;
   border: 0;
-  border-radius: 1em;
+  border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
     0 1px 2px rgba(0, 0, 0, 0.24);
 
@@ -76,20 +98,45 @@ header #search input {
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-header #search input:focus {
-  width: 150px;
-}
-
 header #search input:hover {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.20)
 }
 
-header #search .search {
-  position: absolute;
-  line-height: 50px;
-  z-index: 2;
-
-  margin: 0 5px 0 5px;
+header #results {
+  display: none;
 }
+
+header #search input:focus~#results {
+  display: block;
+  position: fixed;
+  top: 45px;
+  width: 361px;
+  left: 135px;
+  background-color: whitesmoke;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12),
+    0 5px 5px -3px rgba(0, 0, 0, 0.20);
+  border-radius: 5px;
+
+  animation-duration: 0.1s;
+  animation-name: search-results;
+}
+
+@keyframes search-results {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: auto;
+  }
+}
+
+header #results ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+

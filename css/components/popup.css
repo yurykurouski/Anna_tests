@@ -1,6 +1,5 @@
 #popup {
   position: fixed;
-  /* display: none; */
   top: -40px;
   
   left: calc(50% - 125px);
@@ -39,7 +38,6 @@
 }
 
 #popup>p {
-
   margin-top: 0;
   color: #00AA8D;
 }
