@@ -1,14 +1,14 @@
-import questionsTemplate from "../questions-template.js";
+import questionsTemplate from '../questions-template.js';
 import {
   navigateToUrl
-} from "../routing.js";
+} from '../routing.js';
 
 export function launchSearchBox(event) {
   const {
     value
   } = event.target
-  const list = document.querySelector('header #list')
-  list.innerHTML = ''
+  const list = document.querySelector('header #list');
+  list.innerHTML = '';
 
   let match = questionsTemplate.templates.filter((template) => {
     return template.description.toUpperCase().includes(value.toUpperCase());
@@ -33,5 +33,5 @@ function renderOverlay(parent, targetText, id) {
   href.textContent = targetText;
   item.style.cursor = 'pointer';
 
-  href.addEventListener('click', () => navigateToUrl(`/templates/${id}`));
+  href.addEventListener('mousedown', () => navigateToUrl(`/templates/${id}`));
 }

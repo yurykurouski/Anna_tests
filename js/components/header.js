@@ -1,11 +1,17 @@
 import {
   navigateToUrl
 } from "../routing.js";
+import {
+  launchSearchBox
+} from "./search-box.js";
+import {
+  CABINET_URL,
+  LOGIN_URL
+} from "../constants.js";
 import currentUser from "../current-user.js";
 import logOut from "../operations/auth/log-out.js";
 import template from "../pages-templates/header/header.js";
-import { CABINET_URL, LOGIN_URL } from "../constants.js";
-import {launchSearchBox} from "./search-box.js";
+import { cabinetWrap, renderCabinetWrap } from "./cabinet-wrap.js";
 
 
 function renderHeader() {
@@ -18,16 +24,17 @@ function renderHeader() {
     cabinet = header.querySelector('#cabinet a');
 
   searchBox.addEventListener('input', launchSearchBox);
-  // searchBox.addEventListener('onblur', () => console.log('fsfs'));
   searchBox.addEventListener('submit', (event) => event.preventDefault());
 
-  main.addEventListener('click', () => navigateToUrl('/'))
+  main.addEventListener('click', () => navigateToUrl('/'));
+  
   if (currentUser.userData) {
-    auth.textContent = 'Выйти';
-    cabinet.textContent = 'Кабинет'
+    auth.textContent = 'Кабинет';
+    // cabinet.textContent = 'Кабинет'
 
-    cabinet.addEventListener('click', () => navigateToUrl(CABINET_URL))
-    auth.addEventListener('click', logOut);
+    // cabinet.addEventListener('click', () => navigateToUrl(CABINET_URL))
+    renderCabinetWrap();
+    auth.addEventListener('click', cabinetWrap);
   } else {
     auth.textContent = 'Войти';
     auth.addEventListener('click', () => navigateToUrl(LOGIN_URL));
