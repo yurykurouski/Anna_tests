@@ -9,9 +9,14 @@ const template = `
             </div>
         </form>
     </span>
-    <span class='header' id='cabinet'><a></a></span>
-    <span class='header' id='auth'><a></a></span>
+    
+    <span class='header' id='auth'>
+        <a></a>
+        <div id='cabinet-wrap'>
+            <span id='usr-name'></span>
+            <span id='cabinet'></span>
+            <span id='logout'><a class='cabinet-a'>Выйти</a></span>
+        </div>
+    </span>
 `
 export default template;
-
-{/* <span class="material-icons">close</span> */}

@@ -1,5 +1,6 @@
 header {
   position: fixed;
+  display: flex;
   height: 50px;
 
   max-width: 1280px;
@@ -24,9 +25,7 @@ header span {
   line-height: 50px;
 }
 
-header #auth {
-  float: right;
-}
+
 
 header a {
   font-size: 18px;
@@ -60,7 +59,7 @@ header a:focus:after {
 }
 
 header #search-form {
-  display: inline; 
+  display: inline;
 }
 
 header #search-form button {
@@ -70,24 +69,24 @@ header #search-form button {
   border-style: none;
   padding: 0;
   height: 24px;
-  
+
   vertical-align: middle;
 }
+
 header #search .search {
-  position: relative;
   margin: 0;
   z-index: 2;
 }
 
 header #search {
-  
+  flex-grow: 1;
 }
 
 header #search input {
   height: 1.5em;
-  width: 300px;
+  width: 340px;
   font-size: 16px;
-  padding: 0 30px 0px 30px;
+  padding: 0 10px 0px 10px;
   border: 0;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
@@ -140,3 +139,46 @@ header #results ul {
   margin: 0;
 }
 
+header #auth {
+  width: 70px;
+}
+
+header #cabinet-wrap {
+  position: relative;
+  right: 135px;
+  bottom: 10px;
+  display: none;
+  height: max-content;
+  width: 220px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12),
+    0 5px 5px -3px rgba(0, 0, 0, 0.20);
+
+ animation-duration: 0.2s;
+  animation-name: cabinet-wrap;
+}
+
+@keyframes cabinet-wrap{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#cabinet-wrap span{
+  width: 100%;
+}
+
+
+.cabinet-a {
+  color: black;
+}
+
+.cabinet-a:after {
+  background-color: black !important;
+}
