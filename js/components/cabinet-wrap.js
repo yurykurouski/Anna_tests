@@ -7,12 +7,12 @@ import {
 
 export function cabinetWrap() {
   const wrap = document.querySelector('.header #cabinet-wrap');
-  const wrapChilds = wrap.childNodes;
+  const wrapUsrName = wrap.querySelector('#usr-name');
 
   wrap.style.display = 'block';
 
   document.addEventListener('mousedown', event => {
-    if (event.target != wrap && event.target != wrapChilds) {
+    if (event.target != wrap && event.target != wrapUsrName) {
       wrap.style.display = 'none'
     }
   })

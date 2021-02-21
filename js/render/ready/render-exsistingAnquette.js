@@ -47,4 +47,5 @@ export function renderExsistingAnquette(id) {
     collectUserAnquette(event, id);
     renderExistingQuestions(currTemplate);
   });
+  window.scrollTo(0, 0);
 }

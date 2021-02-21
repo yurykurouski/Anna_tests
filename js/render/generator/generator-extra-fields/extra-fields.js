@@ -4,7 +4,6 @@ import {
 
 // функция добавления дополнительного поля для доп. сведений
 export function addExtraField() {
-
   const extraInformationDiv = ROOT_DIV.querySelector('.additional-information-extra');
 
   const extraWrapper = document.createElement('div');
@@ -37,41 +36,59 @@ export function delExtraField(event, el) {
 
 //* создание полей для кастомных полей ответа
 export function rangeTemplate(event) {
-  const wrap = ROOT_DIV.querySelector('form #possibleAnswersType span > .range-template');
+  const possibleAnswersWrap = ROOT_DIV.querySelector('.possible-answers');
+  const form = ROOT_DIV.querySelector('form');
+  const submitBtn = ROOT_DIV.querySelector('form button[type="submit"]');
 
   if (event.target.value === 'range') {
-    wrap.innerHTML = `
-      <select name='quanityOfAnswers'>
+    if (ROOT_DIV.querySelector('select[name="quanity-of-answers"]')) {
+      ROOT_DIV.querySelector('select[name="quanity-of-answers"]').remove();
+    }
+    const quanityField = document.createElement('select');
+    quanityField.setAttribute('name', 'quanity-of-answers');
+    possibleAnswersWrap.appendChild(quanityField);
+
+    quanityField.innerHTML = `
+
         <option selected hidden>Количество</option>
         <option name='quanityOfAnswers' value='3'>3</option>
         <option name='quanityOfAnswers' value='4'>4</option>
         <option name='quanityOfAnswers' value='5'>5</option>
         <option name='quanityOfAnswers' value='6'>6</option>
         <option name='quanityOfAnswers' value='7'>7</option>
-      </select>
-      <span></span>
-    `
 
-    const quanityField = wrap.querySelector('select');
+     `
 
     quanityField.addEventListener('change', () => {
-      const variantFields = wrap.querySelector('span');
-      variantFields.innerHTML = ``;
+      if (ROOT_DIV.querySelector('.range-wrap')) {
+        ROOT_DIV.querySelector('.range-wrap').remove();
+      }
+      const rangeWrap = document.createElement('div');
+
+      rangeWrap.setAttribute('class', 'range-wrap card');
+
+      form.insertBefore(rangeWrap, submitBtn);
 
       for (let i = 1; i <= quanityField.value; i++) {
         const variantField = document.createElement('label');
+
         variantField.setAttribute('class', 'pure-material-textfield-outlined');
-        variantFields.appendChild(variantField);
+        rangeWrap.appendChild(variantField);
 
         variantField.innerHTML = `
           <input name='variant-field' placeholder=' '>
           <span>${i}</span>
-        `
+         `
       }
     });
   } else {
-    wrap.innerHTML = ``;
+    const quanityField = document.querySelector('select[name="quanity-of-answers"]');
+    const rangeWrap = document.querySelector('.range-wrap');
+
+    if (rangeWrap) rangeWrap.remove();
+    if (quanityField) quanityField.remove();
   }
+
 }
 
 //блок ввода вопроса
@@ -79,7 +96,7 @@ export function addQuestionBlock(questionsField, id) {
   if (!id) {
     id = (ROOT_DIV.querySelectorAll('li').length + 1);
   }
-  
+
   const questionBlock = document.createElement('li');
   questionBlock.setAttribute('class', 'qstn-wrap questions');
   questionBlock.setAttribute('id', `${id}`);
@@ -89,7 +106,6 @@ export function addQuestionBlock(questionsField, id) {
         <span></span>
       </label>
       <span class="material-icons close" title='Удалить вопрос'>cancel</span>
-
   `
   questionsField.appendChild(questionBlock);
 

@@ -2,11 +2,11 @@ const template = `
 <form>
     <div>
       <h3>Описание проводимого исследования:</h3>
-      <p></p>
+      <p class='card'></p>
     </div>
 
     <h3>Сбор предварительной информации:</h3>
-    <div class='additional-information-anquette'>
+    <div class='additional-information-anquette card'>
 
     </div>
 

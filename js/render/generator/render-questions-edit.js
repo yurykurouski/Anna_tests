@@ -8,7 +8,6 @@ import {
   addQuestionBlock
 } from "./generator-extra-fields/extra-fields.js";
 import newButton from "../../components/elements/button.js";
-import popupSaveSuccesfully from "../../components/pop-up.js";
 import template from "../../pages-templates/Generator/questions-edit.js";
 
 //* рендер инпутов для ввода вопросов
@@ -34,4 +33,5 @@ export function renderQuestionsInputs(numAndId) {
   form.addEventListener('submit', (event) => {
     collectQuestions(numAndId.id, event);
   });
+  window.scrollTo(0, 0);
 }

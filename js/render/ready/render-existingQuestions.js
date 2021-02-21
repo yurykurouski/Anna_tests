@@ -38,6 +38,7 @@ function renderExistingQuestions(currTemplate) {
       navigateToUrl('/');
     }, 1000);
   });
+  window.scrollTo(0, 0);
 }
 
 function generateAnswerTypeTemplate(currTemplate, index, id) {
@@ -68,6 +69,7 @@ function generateAnswerTypeTemplate(currTemplate, index, id) {
     }
     return template;
   }
+  window.scrollTo(0, 0);
 }
 
 export default renderExistingQuestions;

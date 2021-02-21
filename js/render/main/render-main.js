@@ -11,7 +11,6 @@ import questionsTemplate from "../../questions-template.js";
 import newButton from "../../components/elements/button.js";
 import template from "../../pages-templates/Main/main-page.js";
 import newResearchCard from "../../components/research-cards.js";
-import popupSaveSuccesfully from "../../components/pop-up.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
@@ -42,6 +41,7 @@ function renderMainPage() {
   } else {
     questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
   }
+  window.scrollTo(0, 0);
 };
 
 export default renderMainPage;

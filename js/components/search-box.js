@@ -1,7 +1,8 @@
-import questionsTemplate from '../questions-template.js';
 import {
   navigateToUrl
 } from '../routing.js';
+import questionsTemplate from '../questions-template.js';
+
 
 export function launchSearchBox(event) {
   const {

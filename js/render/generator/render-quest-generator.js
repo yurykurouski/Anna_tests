@@ -25,6 +25,7 @@ function renderQuestGenerator() {
   form.addEventListener('submit', (event) => {
     collectQuestionsTemplate(event);
   });
+  window.scrollTo(0, 0);
 }
 
 export default renderQuestGenerator;
