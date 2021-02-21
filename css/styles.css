@@ -22,7 +22,40 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  margin-bottom: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 70px;
+  max-width: 1280px;
+  width: 90%;
+  height: 100%;
+  min-height: calc(100vh - 100px);
+}
+
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer hr {
+  width: 85%;
+}
+
+footer img {
+  height: 20px;
+  border-radius: 10px;
+  transition: all 1s cubic-bezier(.25, .8, .25, 1);
+}
+
+footer img:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.8),
+    0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 p {
@@ -45,18 +78,6 @@ h5 {
   font-feature-settings: 'liga';
   margin: 3px;
   cursor: pointer;
-}
-
-.container {
-  margin: 0 auto;
-  margin-top: 70px;
-  max-width: 1280px;
-  width: 90%;
-}
-
-ol {
-  list-style-type: none;
-  padding-left: 0;
 }
 
 /* template */

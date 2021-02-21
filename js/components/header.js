@@ -5,11 +5,9 @@ import {
   launchSearchBox
 } from "./search-box.js";
 import {
-  CABINET_URL,
   LOGIN_URL
 } from "../constants.js";
 import currentUser from "../current-user.js";
-import logOut from "../operations/auth/log-out.js";
 import template from "../pages-templates/header/header.js";
 import { cabinetWrap, renderCabinetWrap } from "./cabinet-wrap.js";
 
@@ -30,9 +28,7 @@ function renderHeader() {
   
   if (currentUser.userData) {
     auth.textContent = 'Кабинет';
-    // cabinet.textContent = 'Кабинет'
 
-    // cabinet.addEventListener('click', () => navigateToUrl(CABINET_URL))
     renderCabinetWrap();
     auth.addEventListener('click', cabinetWrap);
   } else {
