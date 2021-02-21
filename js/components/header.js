@@ -19,7 +19,7 @@ function renderHeader() {
 
   searchBox.addEventListener('input', launchSearchBox);
   // searchBox.addEventListener('onblur', () => console.log('fsfs'));
-  searchBox.addEventListener('submit', (event) => event.preventDefault())
+  searchBox.addEventListener('submit', (event) => event.preventDefault());
 
   main.addEventListener('click', () => navigateToUrl('/'))
   if (currentUser.userData) {
