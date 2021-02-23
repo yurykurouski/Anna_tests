@@ -3,17 +3,15 @@ import {
 } from '../routing.js';
 import questionsTemplate from '../questions-template.js';
 
-
 export function launchSearchBox(event) {
   const {
     value
   } = event.target
+  
   const list = document.querySelector('header #list');
   list.innerHTML = '';
 
-  let match = questionsTemplate.templates.filter((template) => {
-    return template.description.toUpperCase().includes(value.toUpperCase());
-  });
+  const match = questionsTemplate.getTemplateByRequest(value);
 
   const result = match.slice(0, 4);
 

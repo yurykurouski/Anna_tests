@@ -9,8 +9,8 @@ import {
 } from "../constants.js";
 import currentUser from "../current-user.js";
 import template from "../pages-templates/header/header.js";
+import renderSearchPage from "../render/search/search-results.js";
 import { cabinetWrap, renderCabinetWrap } from "./cabinet-wrap.js";
-
 
 function renderHeader() {
   const header = document.querySelector('header');
@@ -18,11 +18,20 @@ function renderHeader() {
 
   const auth = header.querySelector('#auth a'),
     main = header.querySelector('#main'),
-    searchBox = header.querySelector('#search-form'),
-    cabinet = header.querySelector('#cabinet a');
+    form = header.querySelector('#search-form');
 
-  searchBox.addEventListener('input', launchSearchBox);
-  searchBox.addEventListener('submit', (event) => event.preventDefault());
+  const formData = new FormData();
+
+  form.addEventListener('input', launchSearchBox);
+  form.addEventListener('submit', () => {
+    const formData = new FormData(event.target);
+    const searchRequest = formData.get('search');
+    if (!searchRequest) {
+      event.preventDefault();
+      return;
+    }
+    renderSearchPage(event, searchRequest);
+  });
 
   main.addEventListener('click', () => navigateToUrl('/'));
   
