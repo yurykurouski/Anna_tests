@@ -12,11 +12,11 @@ const template = `
     
     <span class='header' id='auth'>
         <a></a>
-        <div id='cabinet-wrap'>
-            <span id='usr-name'></span>
-            <span id='cabinet'></span>
-            <span id='logout'><a class='cabinet-a'>Выйти</a></span>
-        </div>
+        <ul id='cabinet-wrap'>
+            <li><span id='usr-name'></span></li>
+            <li id='cabinet'></li>
+            <li id='logout'><a class='cabinet-a'>Выйти</a></li>
+        </г>
     </span>
 `
 export default template;

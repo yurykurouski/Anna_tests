@@ -20,8 +20,6 @@ function renderHeader() {
     main = header.querySelector('#main'),
     form = header.querySelector('#search-form');
 
-  const formData = new FormData();
-
   form.addEventListener('input', launchSearchBox);
   form.addEventListener('submit', () => {
     const formData = new FormData(event.target);

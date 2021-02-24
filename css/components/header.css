@@ -112,6 +112,8 @@ header #search input:focus~#results {
   position: fixed;
   top: 45px;
   width: 361px;
+  /* max-height: 500px; */
+  overflow-y: auto;
   left: 135px;
   background-color: whitesmoke;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
@@ -139,6 +141,26 @@ header #results ul {
   margin: 0;
 }
 
+header #results ul li {
+  padding: 0px 5px 0px 5px;
+  transition: .2s;
+}
+
+header #results ul li span {
+  display: inline-block;
+  margin: 0;
+  /* height: 50px; */
+  overflow-y: hidden;
+}
+
+header #results ul li:hover {
+  border-radius: 5px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.20);
+  background-color: #efebe9;
+}
+
 header #auth {
   width: 70px;
 }
@@ -156,11 +178,23 @@ header #cabinet-wrap {
     0 3px 14px 2px rgba(0, 0, 0, 0.12),
     0 5px 5px -3px rgba(0, 0, 0, 0.20);
 
- animation-duration: 0.2s;
+  list-style: none;
+  padding: 0px;
+
+  animation-duration: 0.2s;
   animation-name: cabinet-wrap;
 }
 
-@keyframes cabinet-wrap{
+header #cabinet-wrap li{
+  padding-left: 10px;
+}
+
+header #cabinet-wrap li:hover{
+    background-color: #efebe9;
+  border-radius: 5px;
+}
+
+@keyframes cabinet-wrap {
   from {
     opacity: 0;
   }
@@ -170,10 +204,10 @@ header #cabinet-wrap {
   }
 }
 
-#cabinet-wrap span{
+#cabinet-wrap span {
+  margin: 0;
   width: 100%;
 }
-
 
 .cabinet-a {
   color: black;
