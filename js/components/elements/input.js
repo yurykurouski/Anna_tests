@@ -1,28 +1,20 @@
-class Input {
-  standard(customClass, placeholder, nameId, parentEl) {
-    const label = document.createElement('label');
-    const input = document.createElement('input');
-    const span = document.createElement('span');
+function newInput(customClass, placeholder, nameId, parentEl) {
+  const label = document.createElement('label');
+  const input = document.createElement('input');
+  const span = document.createElement('span');
 
-    if (customClass) {
-      label.setAttribute('class', 'pure-material-textfield-standard' + customClass);
-    }
-    label.setAttribute('class', 'pure-material-textfield-standard');
+  input.setAttribute('placeholder', ' ')
 
-    input.setAttribute('placeholder', ' ')
+  input.setAttribute('name', nameId);
+  span.textContent = placeholder;
 
-    if (nameId) {
-      input.setAttribute('name', nameId);
-    }
+  parentEl.appendChild(label);
+  label.appendChild(input);
+  label.appendChild(span);
 
-    span.textContent = placeholder;
+  label.setAttribute('class', `pure-material-textfield-standard ${customClass}`);
 
-    parentEl.appendChild(label);
-    label.appendChild(input);
-    label.appendChild(span);
-  }
+  return label
 }
-
-const newInput = new Input();
 
 export default newInput;

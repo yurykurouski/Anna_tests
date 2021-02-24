@@ -5,6 +5,7 @@ function newButton(kind, type, customClass, buttonText, parentEl) {
   button.textContent = buttonText;
 
   parentEl.appendChild(button);
+  
   if (kind === 'text') {
     button.setAttribute('class', `pure-material-button-text ${customClass}`);
     return button;

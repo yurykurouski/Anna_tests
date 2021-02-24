@@ -49,7 +49,7 @@ footer hr {
 
 footer img {
   height: 20px;
-  border-radius: 10px;
+  border-radius: 50%;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.8),
   0 10px 10px rgba(0, 0, 0, 0.5);
 }
