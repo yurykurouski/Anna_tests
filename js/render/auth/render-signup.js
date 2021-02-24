@@ -13,7 +13,7 @@ function renderSignup() {
   const msg = ROOT_DIV.querySelector('#msg');
   const form = ROOT_DIV.querySelector('form');
 
-  newButton.containedButton('submit', '', 'Регистрация', msg);
+  newButton('contained', 'submit', '', 'Регистрация', msg);
   form.addEventListener('submit', signUp);
 
   const loginHref = ROOT_DIV.querySelector('#msg a');

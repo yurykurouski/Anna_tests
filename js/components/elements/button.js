@@ -1,4 +1,23 @@
-class Button {
+function newButton(kind, type, customClass, buttonText, parentEl) {
+  const button = document.createElement('button');
+  button.setAttribute('type', type);
+
+  button.textContent = buttonText;
+
+  parentEl.appendChild(button);
+  if (kind === 'text') {
+    button.setAttribute('class', `pure-material-button-text ${customClass}`);
+    return button;
+  }
+
+  if (kind === 'contained') {
+    button.setAttribute('class', `pure-material-button-contained ${customClass}`);
+    return button;
+  }
+}
+
+export default newButton;
+/* class Button {
   textButton(type, customClass, buttonText, parentEl) {
     const button = document.createElement('button');
     button.setAttribute('type', type);
@@ -26,8 +45,8 @@ class Button {
 
     return button;
   }
-}
+} */
 
-const newButton = new Button();
+/* const newButton = new Button();
 
-export default newButton;
+export default newButton; */

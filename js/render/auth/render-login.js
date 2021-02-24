@@ -5,7 +5,6 @@ import {
 import login from "../../operations/auth/log-in.js";
 import template from "../../pages-templates/Auth/log-in.js";
 import newButton from "../../components/elements/button.js";
-import renderSignup from "./render-signup.js";
 import { navigateToUrl } from "../../routing.js";
 
 function renderLogin() {
@@ -14,7 +13,7 @@ function renderLogin() {
   const msg = ROOT_DIV.querySelector('#msg');
   const form = ROOT_DIV.querySelector('form');
 
-  newButton.containedButton('submit', '', 'Войти', msg);
+  newButton('contained', 'submit', '', 'Войти', msg);
   form.addEventListener('submit', login);
 
   const signUpHref = ROOT_DIV.querySelector('#msg a');

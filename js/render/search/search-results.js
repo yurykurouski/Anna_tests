@@ -7,6 +7,7 @@ function renderSearchPage(event, text) {
   event.preventDefault();
 
   ROOT_DIV.innerHTML = template;
+  window.scrollTo(0, 0);
 
   const headerMsg = ROOT_DIV.querySelector('#search-message');
   const wrap = ROOT_DIV.querySelector('.aw-researches');

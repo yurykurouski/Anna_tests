@@ -28,7 +28,7 @@ function modalDelete(id) {
   messageWrap.appendChild(message);
   messageWrap.appendChild(soWhat);
 
-  newButton.textButton('accept-button', '', 'Да', messageWrap).
+  newButton('text', 'accept-button', '', 'Да', messageWrap).
   addEventListener('click', () => {
     questionsTemplate.deleteTemplateById(id);
     userAnswers.deleteAnswersById(id);
@@ -49,7 +49,7 @@ function modalDelete(id) {
 
   });
 
-  newButton.textButton('discard-button', '', 'Нет', messageWrap).
+  newButton('text', 'discard-button', '', 'Нет', messageWrap).
   addEventListener('click', () => {
     fadeWrapper.remove();
   });

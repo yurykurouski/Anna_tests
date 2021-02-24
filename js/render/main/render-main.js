@@ -15,7 +15,7 @@ import newResearchCard from "../../components/research-cards.js";
 function renderMainPage() {
   ROOT_DIV.innerHTML = template
 
-  const toNewQuestBtn = newButton.containedButton('button', 'new-questionaire', 'Новое исследование', ROOT_DIV);
+  const toNewQuestBtn = newButton('contained', 'button', 'new-questionaire', 'Новое исследование', ROOT_DIV);
 
   toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
 

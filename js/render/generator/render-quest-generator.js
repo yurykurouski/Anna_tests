@@ -17,7 +17,7 @@ function renderQuestGenerator() {
     extraFieldBtn = ROOT_DIV.querySelector('.add-extra-field'),
     selectField = ROOT_DIV.querySelector('select[name="possible-answers"]');
 
-  newButton.containedButton('submit', '', 'Продолжить', form);
+  newButton('contained', 'submit', '', 'Продолжить', form);
 
   extraFieldBtn.addEventListener('click', addExtraField);
   selectField.addEventListener('change', rangeTemplate);

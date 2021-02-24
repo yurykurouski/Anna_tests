@@ -24,7 +24,7 @@ class ResearchCard {
 
     info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
 
-    newButton.containedButton('button', 'go-to-anquette', 'Пройти', span).
+    newButton('contained', 'button', 'go-to-anquette', 'Пройти', span).
     addEventListener('click', () => {
       navigateToUrl(`/templates/${el.id}`);
     });
@@ -50,10 +50,10 @@ class ResearchCard {
 
     info.textContent = `Количество вопросов: ${el.numberOfQuestions}.`;
 
-    newButton.containedButton('button', 'go-to-anquette', 'Посмотреть анкеты', span).
+    newButton('contained', 'button', 'go-to-anquette', 'Посмотреть анкеты', span).
     addEventListener('click', () => navigateToUrl(`/cabinet/completed/${el.id}`));
 
-    newButton.containedButton('button', 'del-anquette', 'Удалить', span).
+    newButton('contained', 'button', 'del-anquette', 'Удалить', span).
     addEventListener('click', () => modalDelete(el.id));
   }
 }

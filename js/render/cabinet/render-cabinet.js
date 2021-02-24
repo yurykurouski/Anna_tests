@@ -24,7 +24,7 @@ function renderCabinet() {
 
   templatesByCurrUser.forEach((el) => newResearchCard.cabinet(el, researchesWrap));
 
-  newButton.containedButton('button', 'new-questionaire', 'Новое исследование', ROOT_DIV).
+  newButton('contained', 'button', 'new-questionaire', 'Новое исследование', ROOT_DIV).
     addEventListener('click', () => navigateToUrl('/new'));
   
   window.scrollTo(0, 0);

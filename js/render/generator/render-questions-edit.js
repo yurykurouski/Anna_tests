@@ -25,10 +25,10 @@ export function renderQuestionsInputs(numAndId) {
 
   if (firstQuestionBlock) firstQuestionBlock.focus();
 
-  newButton.textButton('button', '', 'Добавить', form).
+  newButton('text', 'button', '', 'Добавить', form).
   addEventListener('click', () => addQuestionBlock(questionsField));
 
-  newButton.containedButton('submit', '', 'Сохранить', form);
+  newButton('contained', 'submit', '', 'Сохранить', form);
 
   form.addEventListener('submit', (event) => {
     collectQuestions(numAndId.id, event);
