@@ -6,6 +6,7 @@ import usersList from "../../users.js";
 import currentUser from "../../current-user.js";
 import { EMAIL_REGEX } from "../../constants.js";
 import { navigateToUrl } from "../../routing.js";
+import validateForms from "../validation.js";
 
 export default function login(event) {
   event.preventDefault();
@@ -18,7 +19,9 @@ export default function login(event) {
 
   const user = usersList.getUserByUsername(username);
 
-  const errors = validateLogin({
+  if(validateForms({ username, user, password, hashedPassword })) return;
+
+/*   const errors = validateLogin({
     username,
     password,
     user,
@@ -31,7 +34,7 @@ export default function login(event) {
 
   if (hasErrors) {
     return;
-  }
+  } */
 
   if (user.password === hashedPassword) {
     currentUser.login(user);
@@ -41,7 +44,7 @@ export default function login(event) {
   }
 }
 
-function validateLogin({
+/* function validateLogin({
   username,
   password,
   user,
@@ -82,4 +85,4 @@ function validateLogin({
   }
 
   return errors;
-}
+} */

@@ -3,17 +3,14 @@ const template = `
     <form>
 
       <label class="pure-material-textfield-outlined">
-        <input name='username' placeholder=' '>
+        <input id='username' name='username' placeholder=' '>
         <span>Email</span>
       </label>
-      <span class='username user error'></span>
       <br>
       <label label class = "pure-material-textfield-outlined" >
-        <input type='password' name='password' placeholder=' ' >
+        <input id='password'type='password' name='password' placeholder=' ' >
         <span>Пароль</span>
       </label>
-      <span class='password hashedPassword error'></span>
-      <span class='repeatPass error'></span>
       <br>
       <span id='msg'>
         <span><a href=''>Создать аккаунт</a></span> 

@@ -30,21 +30,21 @@ function collectQuestionsTemplate(event) {
     ifRange: formDdata.getAll('variant-field')
   }
 
-  if (!validateForms(savedQuestionsTemplate)) {
-    questionsTemplate.saveTemplate(savedQuestionsTemplate);
+  if (validateForms(savedQuestionsTemplate)) return;
 
-    storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
+  questionsTemplate.saveTemplate(savedQuestionsTemplate);
 
-    const { numberOfQuestions, id
-    } = savedQuestionsTemplate;
+  storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
 
-    popupMessage('msg');
+  const { numberOfQuestions, id
+  } = savedQuestionsTemplate;
 
-    renderQuestionsInputs({
-      numberOfQuestions,
-      id
-    });
-  }
+  popupMessage('msg');
+
+  renderQuestionsInputs({
+    numberOfQuestions,
+    id
+  });
 }
 
 //* получение вопросов
@@ -58,22 +58,22 @@ export function collectQuestions(currId, event) {
     questions: formData.getAll('qstn-description')
   }
 
-  if (!validateForms(savedQuestions)) {
-    const currTemplate = questionsTemplate.getTemplateById(currId);
-    const allFieldsNumber = ROOT_DIV.querySelectorAll('textarea').length;
+  if (validateForms(savedQuestions)) return;
 
-    if (currTemplate.numberOfQuestions != allFieldsNumber) {
-      currTemplate.numberOfQuestions = allFieldsNumber;
-    }
+  const currTemplate = questionsTemplate.getTemplateById(currId);
+  const allFieldsNumber = ROOT_DIV.querySelectorAll('textarea').length;
 
-    questionsTemplate.saveQuestions(savedQuestions);
+  if (currTemplate.numberOfQuestions != allFieldsNumber) {
+    currTemplate.numberOfQuestions = allFieldsNumber;
+  }
 
-    storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
-    storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
+  questionsTemplate.saveQuestions(savedQuestions);
 
-    popupMessage('msg');
-    renderMainPage();
-  };
+  storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
+  storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
+
+  popupMessage('msg');
+  renderMainPage();
 }
 
 export default collectQuestionsTemplate;

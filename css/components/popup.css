@@ -10,7 +10,8 @@
   border-radius: 1em;
   height: 2em;
   line-height: 2em;
-  width: 250px;
+  width: max-content;
+  padding: 0 10px 0 10px;
   text-align: center;
 
   animation-duration: 1.5s;
