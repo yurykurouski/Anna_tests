@@ -1,7 +1,7 @@
-function popupSaveSuccesfully(msg) {
+function popupMessage(type, msg) {
   const header = document.querySelector('header');
   const wrap = document.createElement('span');
-  const pMsg = document.createElement('p');
+  const pMsg = document.createElement('strong');
 
   header.appendChild(wrap);
   wrap.appendChild(pMsg);
@@ -14,9 +14,15 @@ function popupSaveSuccesfully(msg) {
     pMsg.textContent = 'Данные успешно сохранены';
   }
 
+  if (type === 'error') {
+    pMsg.setAttribute('class', 'error-msg');
+  } else {
+    pMsg.setAttribute('class', 'msg')
+  }
+
   setTimeout(() => {
     wrap.remove();
   }, 3000);
 }
 
-export default popupSaveSuccesfully;
+export default popupMessage;

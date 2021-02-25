@@ -1,9 +1,8 @@
 const template = `
     <form>
-      <div id = 'description'>
+      <div>
         <h4>Описание исследования:</h4>
-
-        <label class="pure-material-textfield-filled">
+        <label id = 'description' class="pure-material-textfield-filled">
           <textarea name='rsrchdescription' placeholder='Здесь можно ввести описание проводимого исследования' autofocus
           ></textarea>
           <span></span>
@@ -11,7 +10,7 @@ const template = `
 
       </div>
 
-      <div class=''>
+      <div>
         <h4>Сбор предварительной информации о респонденте:</h4>
         <div div class = 'additional-information card' >
           <div class='checks'>
@@ -33,20 +32,20 @@ const template = `
 
       <div class='rest-information'>
 
-        <div id='numberOfQuestions'>
+        <div>
           <h4>Количество вопросов в исследовании:</h4>
           <div class='card'>
             <label class="pure-material-textfield-outlined">
-              <input name='questions-amount' type="number">
+              <input id='numberOfQuestions' name='questions-amount' type="number">
               <span>Введите число</span>
             </label>
           </div>
         </div>
 
-        <div id='possibleAnswersType'>
+        <div>
           <h4>Формат возможных ответов:</h4>
             <div class = 'possible-answers card' >
-              <select name='possible-answers'>
+              <select id='possibleAnswersType' name='possible-answers'>
                 <option selected value ='' hidden>Выберите вариант</option>
                 <option name='possible-answers' value='boolean'>Да/Нет</option>
                 <option name='possible-answers' value='range'>Диапазон</option>

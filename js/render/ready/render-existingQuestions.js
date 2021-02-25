@@ -6,7 +6,7 @@ import {
 } from "../../operations/collect-answers.js";
 import questionsTemplate from "../../questions-template.js";
 import template from "../../pages-templates/Ready/questions-presentation.js";
-import popupSaveSuccesfully from "../../components/pop-up.js";
+import popupMessage from "../../components/pop-up.js";
 import { navigateToUrl } from "../../routing.js";
 
 function renderExistingQuestions(currTemplate) {
@@ -32,7 +32,7 @@ function renderExistingQuestions(currTemplate) {
   const form = ROOT_DIV.querySelector('form');
 
   form.addEventListener('submit', () => {
-    popupSaveSuccesfully();
+    popupMessage('msg');
     collectUserAnswers(event, currTemplate.id);
     setTimeout(() => {
       navigateToUrl('/');

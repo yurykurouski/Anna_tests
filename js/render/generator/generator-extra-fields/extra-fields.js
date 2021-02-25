@@ -88,7 +88,6 @@ export function rangeTemplate(event) {
     if (rangeWrap) rangeWrap.remove();
     if (quanityField) quanityField.remove();
   }
-
 }
 
 //блок ввода вопроса
@@ -99,9 +98,8 @@ export function addQuestionBlock(questionsField, id) {
 
   const questionBlock = document.createElement('li');
   questionBlock.setAttribute('class', 'qstn-wrap questions');
-  questionBlock.setAttribute('id', `${id}`);
   questionBlock.innerHTML = `
-      <label class="pure-material-textfield-filled desription-wrap">
+      <label id = ${id} class="pure-material-textfield-filled desription-wrap">
         <textarea name='qstn-description' placeholder='Вопрос для респондента'></textarea>
         <span></span>
       </label>

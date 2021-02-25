@@ -8,7 +8,7 @@ import {
   ROOT_DIV
 } from "../constants.js";
 import validateForms from "./validation.js";
-import popupSaveSuccesfully from "../components/pop-up.js";
+import popupMessage from "../components/pop-up.js";
 import {
   renderQuestionsInputs
 } from "../render/generator/render-questions-edit.js";
@@ -38,7 +38,7 @@ function collectQuestionsTemplate(event) {
     const { numberOfQuestions, id
     } = savedQuestionsTemplate;
 
-    popupSaveSuccesfully();
+    popupMessage('msg');
 
     renderQuestionsInputs({
       numberOfQuestions,
@@ -71,7 +71,7 @@ export function collectQuestions(currId, event) {
     storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
     storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
 
-    popupSaveSuccesfully();
+    popupMessage('msg');
     renderMainPage();
   };
 }

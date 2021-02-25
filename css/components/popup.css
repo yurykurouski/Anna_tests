@@ -37,7 +37,11 @@
   }
 }
 
-#popup>p {
-  margin-top: 0;
+#popup strong.msg{
+  margin: 0;
   color: #00AA8D;
+}
+
+#popup strong.error-msg{
+  color: red;
 }
