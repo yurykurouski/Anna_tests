@@ -1,24 +1,24 @@
 const template = `
   <div>
     <form>
-    
+  
       <label label class = "pure-material-textfield-outlined signup-user user" >
-        <input name='username' placeholder=' '>
+        <input id='username' name='username' placeholder=' '>
         <span>Email</span>
       </label>
-      <span class='username error'></span>
+      
       <br>
       <label label label class = "pure-material-textfield-outlined signup-password password" >
-        <input type='password' name='password' placeholder=' ' >
+        <input id = 'password' type='password' name='password' placeholder=' ' >
         <span>Пароль</span>
       </label>
-      <span class='password error'></span>
+      
       <br>
       <label label label class = "pure-material-textfield-outlined signup-password password" >
-        <input type='password' name='repeatpass' placeholder=' ' >
+        <input id ='repeatPass' type='password' name='repeatpass' placeholder=' ' >
         <span>Подтвердите</span>
       </label>
-      <span class='repeatPass error'></span>
+      
       <br>
       <span id='msg'>
         <span><a href='/login'>Войти</a></span> 
