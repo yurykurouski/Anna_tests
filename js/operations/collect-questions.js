@@ -21,6 +21,7 @@ function collectQuestionsTemplate(event) {
   const formDdata = new FormData(event.target);
 
   const savedQuestionsTemplate = {
+    templateName: formDdata.get('rscrch-name'),
     owner: currentUser.userData.username,
     id: generateId(questionsTemplate.templates),
     description: formDdata.get('rsrchdescription'),

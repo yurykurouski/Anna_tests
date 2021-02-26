@@ -24,7 +24,7 @@
   border-radius: 4px 4px 0 0;
   padding: 0 15px 10px;
   width: 100%;
-  min-height: 10px;
+  min-height: 100px;
 
   color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
   background-color: #efebe9;
@@ -37,6 +37,12 @@
   caret-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
   transition: border-bottom 0.2s, background-color 0.2s;
 }
+
+.template-name,
+.question-description {
+  min-height: 70px !important;
+}
+
 
 /* Span */
 .pure-material-textfield-filled>input+span,
@@ -146,7 +152,7 @@
   overflow: hidden;
   border-radius: 4px;
   margin: 10px
-  /* box-shadow: 0 2px 5px 3px rgba(207, 0, 15, 0.50); */
+    /* box-shadow: 0 2px 5px 3px rgba(207, 0, 15, 0.50); */
 }
 
 /* Input, Textarea */

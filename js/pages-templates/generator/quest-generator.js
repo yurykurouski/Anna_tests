@@ -1,9 +1,17 @@
 const template = `
     <form>
+
+        <h4>Название проводимого исследования:</h4>
+        <label id='templateName' class="pure-material-textfield-filled">
+          <textarea class='template-name' name='rscrch-name' placeholder='Название исследования' autofocus
+          ></textarea>
+          <span></span>
+        </label>
+
       <div>
         <h4>Описание исследования:</h4>
-        <label id = 'description' class="pure-material-textfield-filled">
-          <textarea name='rsrchdescription' placeholder='Здесь можно ввести описание проводимого исследования' autofocus
+        <label id='description' class="pure-material-textfield-filled">
+          <textarea name='rsrchdescription' placeholder='Описание исследования'
           ></textarea>
           <span></span>
         </label>
@@ -35,8 +43,8 @@ const template = `
         <div>
           <h4>Количество вопросов в исследовании:</h4>
           <div class='card'>
-            <label class="pure-material-textfield-outlined">
-              <input id='numberOfQuestions' name='questions-amount' type="number">
+            <label id='numberOfQuestions' class="pure-material-textfield-outlined">
+              <input name='questions-amount' type="number">
               <span>Введите число</span>
             </label>
           </div>

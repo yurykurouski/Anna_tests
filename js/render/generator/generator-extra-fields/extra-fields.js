@@ -100,7 +100,7 @@ export function addQuestionBlock(questionsField, id) {
   questionBlock.setAttribute('class', 'qstn-wrap questions');
   questionBlock.innerHTML = `
       <label id = ${id} class="pure-material-textfield-filled desription-wrap">
-        <textarea name='qstn-description' placeholder='Вопрос для респондента'></textarea>
+        <textarea class='question-description' name='qstn-description' placeholder='Вопрос для респондента'></textarea>
         <span></span>
       </label>
       <span class="material-icons close" title='Удалить вопрос'>cancel</span>

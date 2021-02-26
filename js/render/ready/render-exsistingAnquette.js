@@ -9,11 +9,13 @@ import popupMessage from "../../components/pop-up.js";
 export function renderExsistingAnquette(id) {
   ROOT_DIV.innerHTML = template;
   
-  const description = ROOT_DIV.querySelector('div p');
+  const currTemplate = questionsTemplate.getTemplateById(id);
 
-  const currTemplate = questionsTemplate.getTemplateById(id)
+  const description = ROOT_DIV.querySelector('p.template-description');
+  const name = ROOT_DIV.querySelector('p.template-name');
 
   description.textContent = currTemplate.description;
+  name.textContent = currTemplate.templateName;
 
   const additionalInformation = ROOT_DIV.querySelector('div .additional-information-anquette');
 

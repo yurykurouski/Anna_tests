@@ -1,8 +1,13 @@
 const template = `
 <form>
     <div>
+      <h3>Название проводимого исследования:</h3>
+      <p class='template-name card'></p>
+    </div>
+
+    <div>
       <h3>Описание проводимого исследования:</h3>
-      <p class='card'></p>
+      <p class='template-description card'></p>
     </div>
 
     <h3>Сбор предварительной информации:</h3>

@@ -77,24 +77,22 @@ function validateForms(data) {
       }
     }
 
-    if (key === 'description' || key === 'numberOfQuestions' || key == 'possibleAnswersType') {
+    if (key === 'description' || key === 'numberOfQuestions' || key === 'possibleAnswersType' || key === 'templateName') {
       if (!data[key]) {
-        makeErrorMsg(key);
-        hasErrors = true;
+        makeErrorMsg(key, 'Заполните все необходимые поля');
+        return hasErrors = true;
       }
     }
 
     if (key === 'questions') {
       for (let i = 0; i < data[key].length; i++) {
         if (!data[key][i]) {
-          makeErrorMsg(key, '', i);
-          hasErrors = true;
+          makeErrorMsg(key, 'Заполните все поля или удалите ненужные', i);
+          return hasErrors = true;
         }
       }
     }
   }
-
-  if (hasErrors) popupMessage('error', 'Заполните необходимые поля');
 
   return hasErrors;
 }
