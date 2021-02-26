@@ -139,11 +139,14 @@
   --pure-material-safari-helper1: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
   position: relative;
   display: inline-block;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
   font-size: 16px;
   line-height: 1.5;
   overflow: hidden;
+  border-radius: 4px;
+  margin: 10px
+  /* box-shadow: 0 2px 5px 3px rgba(207, 0, 15, 0.50); */
 }
 
 /* Input, Textarea */
@@ -174,15 +177,15 @@
 .pure-material-textfield-outlined>input+span,
 .pure-material-textfield-outlined>textarea+span {
   position: absolute;
-  top: 0;
+  top: -4px;
   left: 0;
   display: flex;
   border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
   width: 100%;
   max-height: 100%;
   color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
-  font-size: 75%;
-  line-height: 15px;
+  font-size: 70%;
+  line-height: 20px;
   cursor: text;
   transition: color 0.1s, font-size 0.1s, line-height 0.1s;
 }
@@ -194,8 +197,8 @@
 .pure-material-textfield-outlined>textarea+span::after {
   content: "";
   display: block;
-  box-sizing: border-box;
-  margin-top: 6px;
+  /* box-sizing: border-box; */
+  margin-top: 4px;
   border-top: solid 1px;
   border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
   min-width: 10px;

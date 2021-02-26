@@ -103,5 +103,6 @@ ol li.close {
 }
 
 .error {
-  border: solid 1px red !important;
+  /* border: solid 1px red !important; */
+  box-shadow: 0 2px 5px 3px rgba(207, 0, 15, 0.50)!important;
 }

@@ -2,20 +2,20 @@ const template = `
   <div>
     <form>
   
-      <label label class = "pure-material-textfield-outlined signup-user user" >
-        <input id='username' name='username' placeholder=' '>
+      <label id='username' class = "pure-material-textfield-outlined signup-user user" >
+        <input name='username' placeholder=' '>
         <span>Email</span>
       </label>
       
       <br>
-      <label label label class = "pure-material-textfield-outlined signup-password password" >
-        <input id = 'password' type='password' name='password' placeholder=' ' >
+      <label id='password' class = "pure-material-textfield-outlined signup-password password" >
+        <input type='password' name='password' placeholder=' ' >
         <span>Пароль</span>
       </label>
       
       <br>
-      <label label label class = "pure-material-textfield-outlined signup-password password" >
-        <input id ='repeatPass' type='password' name='repeatpass' placeholder=' ' >
+      <label id='repeatPass' class = "pure-material-textfield-outlined signup-password password" >
+        <input type='password' name='repeatpass' placeholder=' ' >
         <span>Подтвердите</span>
       </label>
       
