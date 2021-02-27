@@ -25,7 +25,8 @@ function renderQuestGenerator() {
   form.addEventListener('submit', (event) => {
     collectQuestionsTemplate(event);
   });
-  
+
+  document.title = 'Социология > Новое исследование';
   window.scrollTo(0, 0);
 }
 

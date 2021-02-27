@@ -14,6 +14,7 @@ function renderExistingQuestions(currTemplate) {
   const questionsWrapper = ROOT_DIV.querySelector('.questions-wrapper');
 
   const currQuestionsTemplate = questionsTemplate.getQuestionsTemplateById(currTemplate.id);
+  const questionsNum = currQuestionsTemplate.numberOfQuestions;
 
   currQuestionsTemplate.questions.forEach((qstn, index) => {
     const wrap = document.createElement('div');
@@ -38,6 +39,8 @@ function renderExistingQuestions(currTemplate) {
       navigateToUrl('/');
     }, 1000);
   });
+
+  document.title = `Социология > Всего вопросов - ${questionsNum}`;
   window.scrollTo(0, 0);
 }
 
@@ -69,7 +72,6 @@ function generateAnswerTypeTemplate(currTemplate, index, id) {
     }
     return template;
   }
-  window.scrollTo(0, 0);
 }
 
 export default renderExistingQuestions;

@@ -33,5 +33,7 @@ export function renderQuestionsInputs(numAndId) {
   form.addEventListener('submit', (event) => {
     collectQuestions(numAndId.id, event);
   });
+
+  document.title = 'Социология > Редактирование вопросов';
   window.scrollTo(0, 0);
 }

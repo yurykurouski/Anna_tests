@@ -49,5 +49,7 @@ export function renderExsistingAnquette(id) {
     collectUserAnquette(event, id);
     renderExistingQuestions(currTemplate);
   });
+
+  document.title = 'Социология > Информация об исследовании';
   window.scrollTo(0, 0);
 }

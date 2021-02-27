@@ -8,7 +8,7 @@ class ResearchCard {
   main(el, researchesWrap) {
     const researchCard = document.createElement('li'),
       cardWrap = document.createElement('div'),
-      description = document.createElement('p'),
+      name = document.createElement('p'),
       span = document.createElement('span'),
       info = document.createElement('span');
 
@@ -16,11 +16,11 @@ class ResearchCard {
 
     researchesWrap.appendChild(researchCard);
     researchCard.appendChild(cardWrap);
-    cardWrap.appendChild(description);
+    cardWrap.appendChild(name);
     cardWrap.appendChild(span);
     span.appendChild(info);
 
-    description.textContent = el.description;
+    name.textContent = el.templateName;
 
     info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
 

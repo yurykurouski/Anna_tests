@@ -21,6 +21,8 @@ function renderLogin() {
     event.preventDefault();
     navigateToUrl(REGISTRATION_URL);
   });
+
+  document.title = 'Социология > Войти на сайт';
 }
 
 export default renderLogin;

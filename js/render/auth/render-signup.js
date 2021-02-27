@@ -21,6 +21,8 @@ function renderSignup() {
     event.preventDefault();
     navigateToUrl(LOGIN_URL);
   });
+
+  document.title = 'Социология > Регистрация';
 }
 
 export default renderSignup;

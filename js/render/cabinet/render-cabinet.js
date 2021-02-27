@@ -27,6 +27,7 @@ function renderCabinet() {
   newButton('contained', 'button', 'new-questionaire', 'Новое исследование', ROOT_DIV).
     addEventListener('click', () => navigateToUrl('/new'));
   
+  document.title = 'Социология > Кабинет';
   window.scrollTo(0, 0);
 }
 
