@@ -116,10 +116,10 @@ header #results ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  line-height: 2em;
 }
 
 header #results ul li {
-  line-height: 20px;
   padding: 0 5px 0 5px;
   transition: .2s;
 }
@@ -147,7 +147,7 @@ header #cabinet-wrap {
   top: 40px;
   height: max-content;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12),
     0 5px 5px -3px rgba(0, 0, 0, 0.20);
@@ -168,7 +168,7 @@ header #cabinet-wrap li {
 
 header #cabinet-wrap li:hover {
   background-color: #efebe9;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 @keyframes cabinet-wrap {
