@@ -35,19 +35,24 @@ body {
 
 .container {
   grid-area: c;
-  margin-top: 70px;
+  margin-top: 50px;
+  padding: 0 15px 15px 15px;
   min-height: calc(100vh - 100px);
+}
+
+.container ol {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 footer {
   grid-area: f;
-  /* display: inline; */
   height: 20px;
   font-size: 14px;
   text-align: center;
 }
 
-footer hr{
+footer hr {
   margin-bottom: 5px;
 }
 
