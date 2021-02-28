@@ -32,9 +32,6 @@ body{
   margin: 0 auto;
 }
 
-/* header{
-  grid-area: h;
-} */
 
 .container {
   grid-area: c;
