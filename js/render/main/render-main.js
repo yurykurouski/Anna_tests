@@ -13,7 +13,7 @@ import template from "../../pages-templates/Main/main-page.js";
 import newResearchCard from "../../components/research-cards.js";
 
 function renderMainPage() {
-  ROOT_DIV.innerHTML = template
+  ROOT_DIV.innerHTML = template;
 
   const toNewQuestBtn = newButton('contained', 'button', 'new-questionaire', 'Новое исследование', ROOT_DIV);
 
