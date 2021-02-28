@@ -24,16 +24,29 @@ body {
   font-size: 16px;
 }
 
-.container {
-  margin: 0 auto;
-  margin-top: 70px;
+body{
+  display: grid;
+  grid-template-areas: 'h' 'c' 'f';
   max-width: 1280px;
   width: 90%;
-  height: 100%;
+  margin: 0 auto;
+}
+
+/* header{
+  grid-area: h;
+} */
+
+.container {
+  grid-area: c;
+  margin-top: 70px;
   min-height: calc(100vh - 100px);
 }
 
-ol {
+footer{
+  grid-area: f;
+}
+
+/* ol {
   list-style-type: none;
   padding-left: 0;
 }
@@ -76,7 +89,6 @@ h5 {
   cursor: pointer;
 }
 
-/* template */
 .additional-information .checks {
   display: flex;
   justify-content: space-around;
@@ -93,7 +105,6 @@ h5 {
   vertical-align: top;
 }
 
-/* questions */
 .desription-wrap {
   min-height: 50px;
 }
@@ -104,4 +115,4 @@ ol li.close {
 
 .error {
   box-shadow: 0 2px 5px 3px rgba(207, 0, 15, 0.50)!important;
-}
+} */
