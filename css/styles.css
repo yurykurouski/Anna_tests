@@ -40,6 +40,10 @@ body {
   min-height: calc(100vh - 100px);
 }
 
+.container .pure-material-textfield-outlined{
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -54,10 +58,6 @@ h5 {
 }
 
 /* quest generator */
-.quest-generator .additional-information {
-  margin-bottom: 5px;
-}
-
 .quest-generator .additional-information .checks,
 .quest-generator .additional-information .additional-information-extra {
   display: flex;
@@ -124,6 +124,21 @@ h5 {
   list-style-type: square !important;
 }
 
+/* existing */
+#existing-anquete .additional-header {
+  margin-top: 0;
+}
+
+#existing-anquete .additional-information-anquette{
+  display: flex;
+  column-gap: 10px;
+}
+
+#questions-wrapper .answer-wrap {
+  display: flex;
+  align-items: baseline;
+  column-gap: 10px;
+}
 
 footer {
   grid-area: f;
