@@ -25,14 +25,14 @@ function makeTable(currTemplate, questId) {
 
     questionField.textContent = `Вопрос ${i}`;
   }
-
+  
   if (usersInformation.length != usersAnswers.length) return console.error('Smthg wrong!');
 
   //* заполнение таблицы пользовательскими ответами
   for (let i = 0; i < usersAnswers.length; i++) {
     const userAnswersRow = mainTable.insertRow(-1);
     const userNumber = userAnswersRow.insertCell(-1);
-    userNumber.textContent = `${i + 1} респондент`;
+    userNumber.innerHTML = `<b>${i + 1}</b>`;
 
     for (let j = 0; j < usersInformation[i].userInformation.length; j++) {
       if (!usersInformation[i].userInformation[j]) break;

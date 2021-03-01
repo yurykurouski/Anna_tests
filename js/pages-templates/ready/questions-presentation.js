@@ -1,5 +1,5 @@
 const template = `
-  <form>
+  <form id='questions-wrapper'>
     <div class='questions-wrapper'>
     </div>
 

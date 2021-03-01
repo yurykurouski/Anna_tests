@@ -1,5 +1,5 @@
 const template = `
-    <form>
+    <form class = 'questions-edit'>
         <h4>Заполните список вопросов:</h4>
         <ol class='questions'>
 

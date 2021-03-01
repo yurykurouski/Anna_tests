@@ -1,5 +1,5 @@
 const template = `
-<form>
+<form id='existing-anquete'>
     <div>
       <h3>Название проводимого исследования:</h3>
       <p class='template-name card'></p>
@@ -10,8 +10,10 @@ const template = `
       <p class='template-description card'></p>
     </div>
 
-    <h3>Сбор предварительной информации:</h3>
-    <div class='additional-information-anquette card'>
+    <div id='additional-information-wrap'>
+      <h3>Сбор предварительной информации:</h3>
+      <div class='additional-information-anquette card'>
+    </div>
 
     </div>
 

@@ -29,7 +29,13 @@ function renderOverlay(parent, targetText, id) {
   parent.appendChild(item);
   item.appendChild(href);
 
-  href.textContent = targetText;
+  if (targetText.length > 150) {
+    targetText = `${targetText.substring(0, 150)}...`
+  }
+
+
+  // href.innerHTML = ``;
+  item.innerHTML = `<i class="material-icons search">search</i><b>${targetText}</b>`
   item.style.cursor = 'pointer';
 
   href.addEventListener('mousedown', () => navigateToUrl(`/templates/${id}`));

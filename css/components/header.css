@@ -1,15 +1,14 @@
 header {
+  grid-area: h;
   position: fixed;
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  column-gap: 20px;
   height: 50px;
-
   max-width: 1280px;
   width: 90%;
-  left: 50%;
-  right: 50%;
-  padding: 5px;
-  transform: translate(-50%, -50%);
-  top: 25px;
+  align-items: center;
+
   background-color: #2196f3;
   opacity: 0.97;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
@@ -20,12 +19,13 @@ header {
   border-radius: 0 0 5px 5px;
 }
 
-header span {
-  margin: 0 10px 0 10px;
-  line-height: 50px;
+#main {
+  margin-left: 15px;
 }
 
-
+#auth {
+  margin-right: 15px;
+}
 
 header a {
   font-size: 18px;
@@ -45,11 +45,7 @@ header a:after {
   width: 0%;
   left: 50%;
   position: absolute;
-  -webkit-transition: width .1s ease-in-out;
-  -moz--transition: width .1s ease-in-out;
   transition: width .1s ease-in-out;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -60,47 +56,43 @@ header a:focus:after {
 
 header #search-form {
   display: inline;
+  align-items: center;
 }
 
 header #search-form button {
+  position: relative;
+  vertical-align: middle;
+
+  left: 2px;
   border: none;
   background: none;
   outline: none;
   border-style: none;
-  padding: 0;
-  height: 24px;
-
-  vertical-align: middle;
-}
-
-header #search .search {
   margin: 0;
-  z-index: 2;
+  padding: 0;
+  cursor: pointer;
+  color: #212121;
 }
 
-header #search {
-  flex-grow: 1;
-}
-
-header #search input {
+header #search-form input {
   height: 1.5em;
-  width: 340px;
-  font-size: 16px;
-  padding: 0 10px 0px 10px;
-  border: 0;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-    0 1px 2px rgba(0, 0, 0, 0.24);
-
+  width: 300px;
+  border-radius: 1em;
   border: none;
   outline: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  padding: 1px 5px 1px 5px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-header #search input:hover {
+header #search-form input:hover {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.20)
+    0 2px 4px -1px rgba(0, 0, 0, 0.20);
 }
 
 header #results {
@@ -110,47 +102,33 @@ header #results {
 header #search input:focus~#results {
   display: block;
   position: fixed;
-  top: 45px;
-  width: 361px;
-  /* max-height: 500px; */
+  width: 338px;
   overflow-y: auto;
-  left: 135px;
   background-color: whitesmoke;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12),
     0 5px 5px -3px rgba(0, 0, 0, 0.20);
-  border-radius: 5px;
-
-  animation-duration: 0.1s;
-  animation-name: search-results;
-}
-
-@keyframes search-results {
-  from {
-    height: 0;
-  }
-
-  to {
-    height: auto;
-  }
+  border-radius: 10px;
 }
 
 header #results ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  line-height: 2em;
 }
 
 header #results ul li {
-  padding: 0px 5px 0px 5px;
+  padding: 0 5px 0 5px;
   transition: .2s;
 }
 
-header #results ul li span {
-  display: inline-block;
-  margin: 0;
-  /* height: 50px; */
-  overflow-y: hidden;
+header #results ul li i {
+  position: relative;
+  top: 5px;
+  left: -3px;
+  margin-right: 5px;
+  color: grey;
 }
 
 header #results ul li:hover {
@@ -161,37 +139,35 @@ header #results ul li:hover {
   background-color: #efebe9;
 }
 
-header #auth {
-  width: 70px;
-}
-
 header #cabinet-wrap {
-  position: relative;
-  right: 135px;
-  bottom: 10px;
   display: none;
+  position: fixed;
+  right: 120px;
+  top: 40px;
   height: max-content;
-  width: 220px;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12),
     0 5px 5px -3px rgba(0, 0, 0, 0.20);
 
   list-style: none;
   padding: 0px;
+  margin: 0;
 
   animation-duration: 0.2s;
   animation-name: cabinet-wrap;
 }
 
-header #cabinet-wrap li{
-  padding-left: 10px;
+header #cabinet-wrap li {
+  align-items: center;
+  padding: 10px;
+  height: 2em;
 }
 
-header #cabinet-wrap li:hover{
-    background-color: #efebe9;
-  border-radius: 5px;
+header #cabinet-wrap li:hover {
+  background-color: #efebe9;
+  border-radius: 10px;
 }
 
 @keyframes cabinet-wrap {
@@ -205,14 +181,16 @@ header #cabinet-wrap li:hover{
 }
 
 #cabinet-wrap span {
-  margin: 0;
-  width: 100%;
+  line-height: 2em;
 }
 
 .cabinet-a {
   color: black;
+  line-height: 2em;
 }
 
 .cabinet-a:after {
   background-color: black !important;
+  bottom: 5px;
+  line-height: 2em;
 }

@@ -1,5 +1,5 @@
 const template = `
-    <form>
+    <form class='quest-generator'>
 
         <h4>Название проводимого исследования:</h4>
         <label id='templateName' class="pure-material-textfield-filled">
@@ -38,30 +38,23 @@ const template = `
         <button type='button' class="pure-material-button-text add-extra-field">Добавить</button>
       </div>
 
-      <div class='rest-information'>
+       <div>
+        <h4>Количество вопросов в исследовании и формат возможных ответов:</h4>
+        <div class='rest-information card'>
+          <label id='numberOfQuestions' class="pure-material-textfield-outlined">
+            <input name='questions-amount' type="number">
+            <span>Введите число</span>
+          </label>
 
-        <div>
-          <h4>Количество вопросов в исследовании:</h4>
-          <div class='card'>
-            <label id='numberOfQuestions' class="pure-material-textfield-outlined">
-              <input name='questions-amount' type="number">
-              <span>Введите число</span>
-            </label>
+          <div class = 'possible-answers' >
+            <select id='possibleAnswersType' name='possible-answers'>
+              <option selected value ='' hidden>Выберите вариант</option>
+              <option name='possible-answers' value='boolean'>Да/Нет</option>
+              <option name='possible-answers' value='range'>Диапазон</option>
+            </select>
           </div>
         </div>
 
-        <div>
-          <h4>Формат возможных ответов:</h4>
-            <div class = 'possible-answers card' >
-              <select id='possibleAnswersType' name='possible-answers'>
-                <option selected value ='' hidden>Выберите вариант</option>
-                <option name='possible-answers' value='boolean'>Да/Нет</option>
-                <option name='possible-answers' value='range'>Диапазон</option>
-              </select>
-            </div>
-        </div>
-      </div>
-      
     </form>
 `
 

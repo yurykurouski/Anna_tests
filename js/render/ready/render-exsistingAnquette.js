@@ -8,7 +8,7 @@ import popupMessage from "../../components/pop-up.js";
 //* сборка анкеты из конструктора
 export function renderExsistingAnquette(id) {
   ROOT_DIV.innerHTML = template;
-  
+
   const currTemplate = questionsTemplate.getTemplateById(id);
 
   const description = ROOT_DIV.querySelector('p.template-description');
@@ -18,12 +18,18 @@ export function renderExsistingAnquette(id) {
   name.textContent = currTemplate.templateName;
 
   const additionalInformation = ROOT_DIV.querySelector('div .additional-information-anquette');
+  const additionalInformationWrap = ROOT_DIV.querySelector('#additional-information-wrap');
 
-  currTemplate.additionalInformation.forEach(param => {
-    const wrap = document.createElement('div');
-    wrap.setAttribute('class', 'additional-wrap');
+  additionalInformationWrap.style.display = 'none';
 
-    wrap.innerHTML = `
+  if (currTemplate.additionalInformation.length > 0) {
+    additionalInformationWrap.style.display = 'block';
+
+    currTemplate.additionalInformation.forEach(param => {
+      const wrap = document.createElement('div');
+      wrap.setAttribute('class', 'additional-wrap');
+
+      wrap.innerHTML = `
       <h4 class='additional-header'>${param}:</h4>
 
       <label class="pure-material-textfield-outlined">
@@ -31,15 +37,17 @@ export function renderExsistingAnquette(id) {
         <span>Введите...</span>
       </label>
     `
-    additionalInformation.appendChild(wrap);
-  });
+      additionalInformation.appendChild(wrap);
+    });
+  }
+
 
   const firstInput = ROOT_DIV.querySelector('input');
 
   if (firstInput) firstInput.focus();
 
   const summary = ROOT_DIV.querySelector('.summary');
-  
+
   summary.textContent = `Количество вопросов: ${currTemplate.numberOfQuestions}`;
 
   const form = ROOT_DIV.querySelector('form');

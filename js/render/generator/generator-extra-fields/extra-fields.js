@@ -45,28 +45,34 @@ export function rangeTemplate(event) {
       ROOT_DIV.querySelector('select[name="quanity-of-answers"]').remove();
     }
     const quanityField = document.createElement('select');
+
     quanityField.setAttribute('name', 'quanity-of-answers');
     possibleAnswersWrap.appendChild(quanityField);
 
     quanityField.innerHTML = `
-
         <option selected hidden>Количество</option>
         <option name='quanityOfAnswers' value='3'>3</option>
         <option name='quanityOfAnswers' value='4'>4</option>
         <option name='quanityOfAnswers' value='5'>5</option>
         <option name='quanityOfAnswers' value='6'>6</option>
         <option name='quanityOfAnswers' value='7'>7</option>
-
      `
 
     quanityField.addEventListener('change', () => {
       if (ROOT_DIV.querySelector('.range-wrap')) {
         ROOT_DIV.querySelector('.range-wrap').remove();
+        ROOT_DIV.querySelector('.range-notation').remove();
       }
+
       const rangeWrap = document.createElement('div');
+      const rangeNotation = document.createElement('h4');
+
+      rangeNotation.textContent = 'Введите варианты ответов. Цифры обозначают "вес" ответа:'
 
       rangeWrap.setAttribute('class', 'range-wrap card');
+      rangeNotation.setAttribute('class', 'range-notation')
 
+      form.insertBefore(rangeNotation, submitBtn)
       form.insertBefore(rangeWrap, submitBtn);
 
       for (let i = 1; i <= quanityField.value; i++) {
@@ -84,9 +90,13 @@ export function rangeTemplate(event) {
   } else {
     const quanityField = document.querySelector('select[name="quanity-of-answers"]');
     const rangeWrap = document.querySelector('.range-wrap');
+    const rangeNotation = ROOT_DIV.querySelector('.range-notation');
 
-    if (rangeWrap) rangeWrap.remove();
-    if (quanityField) quanityField.remove();
+    if (rangeWrap) {
+      rangeWrap.remove();
+      quanityField.remove();
+      rangeNotation.remove();
+    }
   }
 }
 
@@ -100,7 +110,7 @@ export function addQuestionBlock(questionsField, id) {
   questionBlock.setAttribute('class', 'qstn-wrap questions');
   questionBlock.innerHTML = `
       <label id = ${id} class="pure-material-textfield-filled desription-wrap">
-        <textarea class='question-description' name='qstn-description' placeholder='Вопрос для респондента'></textarea>
+        <textarea class='question-description' name='qstn-description' placeholder='${id}-й вопрос'></textarea>
         <span></span>
       </label>
       <span class="material-icons close" title='Удалить вопрос'>cancel</span>
