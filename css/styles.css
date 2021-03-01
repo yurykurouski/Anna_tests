@@ -142,6 +142,7 @@ h5 {
 
 footer {
   grid-area: f;
+  
   height: 20px;
   font-size: 14px;
   text-align: center;

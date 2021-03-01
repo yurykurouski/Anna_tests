@@ -1,10 +1,16 @@
 const template = `
-<span>Исследование: <h4 class='description'></h4></span>
-<span>Количество вопросов: <h4 class='num'></h4></span>
+  <h4>Название исследования:</h4> 
+  <div class='completed-name card'></div>
 
-<table class='striped'>
-  
-</table>
+  <h4>Описание исследования:</h4> 
+  <div class='completed-description card'></div>
+
+  <h5>Количество вопросов:</h5>
+  <span class='completed-num'></span>
+
+  <table class='striped'>
+    
+  </table>
 `
 
 export default template;
