@@ -1,8 +1,11 @@
+import popupMessage from "../components/pop-up.js";
 import { ROOT_DIV } from "../constants.js";
+import renderExistingQuestions from "../render/ready/render-existingQuestions.js";
 import storageService from "../storage-service.js";
 import userAnswers from "../user-answers.js";
+import validateForms from "./validation.js";
 
-export function collectUserAnquette(event, id) {
+export function collectUserAnquette(event, id, currTemplate) {
   event.preventDefault();
 
   const formData = new FormData(event.target);
@@ -14,7 +17,12 @@ export function collectUserAnquette(event, id) {
 
   userAnswers.saveInformation(userInformation);
 
+  if (validateForms(userInformation)) return;
+
   storageService.set('UserInformation', JSON.stringify(userAnswers.information));
+
+  renderExistingQuestions(currTemplate);
+  popupMessage('msg');
 }
 
 export function collectUserAnswers(event, id) {

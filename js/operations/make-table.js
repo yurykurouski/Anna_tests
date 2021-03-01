@@ -14,7 +14,7 @@ function makeTable(currTemplate, questId) {
 
   cell1.textContent = '# респондента';
 
-  currTemplate.additionalInformation.forEach(el => {
+  currTemplate.userInformation.forEach(el => {
     const extraField = headerRow.insertCell(-1);
 
     extraField.textContent = el;

@@ -17,30 +17,29 @@ export function renderExsistingAnquette(id) {
   description.textContent = currTemplate.description;
   name.textContent = currTemplate.templateName;
 
-  const additionalInformation = ROOT_DIV.querySelector('div .additional-information-anquette');
-  const additionalInformationWrap = ROOT_DIV.querySelector('#additional-information-wrap');
+  const userInformation = ROOT_DIV.querySelector('div .additional-information-anquette');
+  const userInformationWrap = ROOT_DIV.querySelector('#additional-information-wrap');
 
-  additionalInformationWrap.style.display = 'none';
+  userInformationWrap.style.display = 'none';
 
-  if (currTemplate.additionalInformation.length > 0) {
-    additionalInformationWrap.style.display = 'block';
+  if (currTemplate.userInformation.length > 0) {
+    userInformationWrap.style.display = 'block';
 
-    currTemplate.additionalInformation.forEach(param => {
+    currTemplate.userInformation.forEach((param, index) => {
       const wrap = document.createElement('div');
       wrap.setAttribute('class', 'additional-wrap');
 
       wrap.innerHTML = `
       <h4 class='additional-header'>${param}:</h4>
 
-      <label class="pure-material-textfield-outlined">
+      <label id='userInformation-${index}' class="pure-material-textfield-outlined">
         <input name='additional-input' placeholder=' '>
         <span>Введите...</span>
       </label>
     `
-      additionalInformation.appendChild(wrap);
+      userInformation.appendChild(wrap);
     });
   }
-
 
   const firstInput = ROOT_DIV.querySelector('input');
 
@@ -53,9 +52,7 @@ export function renderExsistingAnquette(id) {
   const form = ROOT_DIV.querySelector('form');
 
   form.addEventListener('submit', () => {
-    popupMessage('msg');
-    collectUserAnquette(event, id);
-    renderExistingQuestions(currTemplate);
+    collectUserAnquette(event, id, currTemplate);
   });
 
   document.title = 'Социология > Информация об исследовании';

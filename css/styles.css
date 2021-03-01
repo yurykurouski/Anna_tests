@@ -56,11 +56,14 @@ h5 {
 }
 
 /* quest generator */
+.quest-generator .additional-information{
+  margin: 5px;
+}
+
 .quest-generator .additional-information .checks,
 .quest-generator .additional-information .additional-information-extra {
   display: flex;
   width: 100%;
-
 }
 
 .quest-generator .additional-information .checks {
@@ -113,6 +116,11 @@ h5 {
   margin-top: 40px;
 }
 
+#existing-anquete button,
+.quest-generator button{
+  margin-left: 10px;
+}
+
 /* questions edit */
 .questions-edit .qstn-wrap {
   display: flex;
@@ -158,9 +166,6 @@ h5 {
   border: 2px solid #808080;
   border-radius: 10px;
 }
-
-
-
 
 footer {
   grid-area: f;

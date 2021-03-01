@@ -5,7 +5,8 @@ import {
   MIN_PASSWORD_LENGTH,
   PASSWORD_REGEX,
   REGISTRATION_URL,
-  ROOT_DIV
+  ROOT_DIV,
+  TEMPLATES_REGEX
 } from "../constants.js";
 import usersList from "../users.js";
 
@@ -77,6 +78,17 @@ function validateForms(data) {
       }
     }
 
+
+    if (key === 'userInformation' && TEMPLATES_REGEX.test(currentUrl)) {
+      data[key].forEach((key, index) => {
+        if (key.length === 0) {
+          makeErrorMsg(`userInformation-${index}`, 'Заполните все необходимые поля');
+          return hasErrors = true;
+        }
+      });
+
+    }
+
     if (key === 'description' || key === 'numberOfQuestions' || key === 'possibleAnswersType' || key === 'templateName') {
       if (!data[key]) {
         makeErrorMsg(key, 'Заполните все необходимые поля');
@@ -104,6 +116,12 @@ function makeErrorMsg(key, msg, id) {
     target.classList.add('error');
     return;
   }
+/* 
+  if (key === 'userInformation') {
+    const target = document.querySelectorAll('.userInformation');
+    target.forEach(el => el.classList.add('error'));
+    return;
+  } */
 
   const target = ROOT_DIV.querySelector(`#${key}`);
   target.classList.add('error');
