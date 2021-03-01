@@ -21,10 +21,14 @@ function renderExistingQuestions(currTemplate) {
     wrap.setAttribute('class', 'question-wrap');
 
     wrap.innerHTML = `
-    <h4>Вопрос №${currTemplate.id}</h4>
-    <p>${qstn}</p>
-    <h4>Ваш ответ:</h4>
-    ${generateAnswerTypeTemplate(currTemplate, index, currTemplate.id)}
+    <h4>Вопрос №${index + 1}:</h4>
+    <div  class='card'>
+      <p>${qstn}</p>
+      <div class='answer-wrap'>
+        <h5>Ваш ответ:</h5>
+        ${generateAnswerTypeTemplate(currTemplate, index)}
+      </div>
+    </div>
     `
 
     questionsWrapper.appendChild(wrap);
@@ -44,7 +48,7 @@ function renderExistingQuestions(currTemplate) {
   window.scrollTo(0, 0);
 }
 
-function generateAnswerTypeTemplate(currTemplate, index, id) {
+function generateAnswerTypeTemplate(currTemplate, index) {
   if (currTemplate.possibleAnswersType === 'boolean') {
     const template = `
       <label class="pure-material-radio">
