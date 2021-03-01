@@ -3,7 +3,7 @@ const template = `
     <span class='header' id='search'>
         <form id = 'search-form'>
             <button type'submit'><i class="material-icons search">search</i></button>
-            <input name='search'>
+            <input name='search' placeholder='Поиск по описанию...'>
             <div id='results'>
                 <ul id='list'></ul>
             </div>
@@ -15,7 +15,7 @@ const template = `
         <ul id='cabinet-wrap'>
             <li><span id='usr-name'></span></li>
             <li id='cabinet'></li>
-            <li id='logout'><a class='cabinet-a'>Выйти</a></li>
+            <li><a id='logout' class='cabinet-a'>Выйти</a></li>
         </г>
     </span>
 `

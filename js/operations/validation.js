@@ -86,8 +86,8 @@ function validateForms(data) {
           return hasErrors = true;
         }
       });
-
     }
+
 
     if (key === 'description' || key === 'numberOfQuestions' || key === 'possibleAnswersType' || key === 'templateName') {
       if (!data[key]) {
@@ -116,12 +116,6 @@ function makeErrorMsg(key, msg, id) {
     target.classList.add('error');
     return;
   }
-/* 
-  if (key === 'userInformation') {
-    const target = document.querySelectorAll('.userInformation');
-    target.forEach(el => el.classList.add('error'));
-    return;
-  } */
 
   const target = ROOT_DIV.querySelector(`#${key}`);
   target.classList.add('error');

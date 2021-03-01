@@ -1,3 +1,4 @@
+import { CABINET_URL, NEW_QUEST_URL } from '../constants.js';
 import currentUser from '../current-user.js';
 import logOut from '../operations/auth/log-out.js';
 import questionsTemplate from '../questions-template.js';
@@ -7,15 +8,16 @@ import {
 
 export function cabinetWrap() {
   const wrap = document.querySelector('.header #cabinet-wrap');
+  const wrapLi = wrap.querySelectorAll('li')
   const wrapUsrName = wrap.querySelector('#usr-name');
 
   wrap.style.display = 'block';
 
   document.addEventListener('mousedown', event => {
-    if (event.target != wrap && event.target != wrapUsrName) {
+    if (event.target != wrap && event.target != wrapUsrName && !Array.from(wrapLi).includes(event.target)) {
       wrap.style.display = 'none'
     }
-  })
+  });
 }
 
 export function renderCabinetWrap() {
@@ -23,12 +25,19 @@ export function renderCabinetWrap() {
   const logoutBtn = document.getElementById('logout');
   const cabinet = document.getElementById('cabinet');
 
-  const currUsrName = currentUser.userData.username
+  const currUsrName = currentUser.userData.username;
   const usrTemplates = questionsTemplate.getTemplatesByUser(currUsrName);
 
   usrName.textContent = currUsrName;
-  cabinet.innerHTML = `<a class='cabinet-a'>Ваши исследования(${usrTemplates.length})</a>`;
+  cabinet.innerHTML = `
+    <a class='cabinet-a'>Ваши исследования (${usrTemplates.length})&nbsp;
+    </a><button id='add-btn'class='material-icons' title='Новое исследование'>add_circle_outline</button>
+  `;
 
-  cabinet.addEventListener('mousedown', () => navigateToUrl('/cabinet'));
+  const addBtn = document.getElementById('add-btn');
+  const cabinetBtn = cabinet.querySelector('.cabinet-a');
+  
+  addBtn.addEventListener('mousedown', () => navigateToUrl(NEW_QUEST_URL));
+  cabinetBtn.addEventListener('mousedown', () => navigateToUrl(CABINET_URL));
   logoutBtn.addEventListener('mousedown', logOut);
 }
