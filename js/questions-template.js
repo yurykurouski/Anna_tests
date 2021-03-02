@@ -27,7 +27,7 @@ class QuestionsList {
   }
 
   getTemplateByRequest(requestText) {
-    return this.templates.filter(template => template.description.toUpperCase().includes(requestText.toUpperCase()));
+    return this.templates.filter(template => template.templateName.toUpperCase().includes(requestText.toUpperCase()));
   }
 
   deleteTemplateById(id) {
