@@ -30,7 +30,6 @@ body {
   margin: 0 auto;
 }
 
-
 .container {
   grid-area: c;
   margin-top: 60px;
@@ -151,6 +150,14 @@ h5 {
   justify-content: center;
 }
 
+.auth-form label{
+  width: 280px
+}
+
+.auth-form button {
+  margin-left: 20px;
+}
+
 .auth-form h3 {
   margin: 0 0 10px 20px;
 }
@@ -163,7 +170,6 @@ h5 {
   row-gap: 15px;
   padding: 30px;
   margin-top: 20px;
-  border: 2px solid #808080;
   border-radius: 10px;
 }
 
