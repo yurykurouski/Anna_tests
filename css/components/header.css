@@ -124,7 +124,7 @@ header #results ul li {
   transition: .2s;
 }
 
-header #results ul li i {
+header #results ul li .search {
   position: relative;
   top: 5px;
   left: -3px;

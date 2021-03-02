@@ -1,6 +1,6 @@
 const template = `
     <form class='auth-form'>
-      <div>
+      <div class='form-wrap card'>
         <h3>Войти:</h3>
         
           <label id='username' class="pure-material-textfield-outlined">
@@ -13,9 +13,7 @@ const template = `
             <span>Пароль</span>
           </label>
           <br>
-          <span id='msg'>
-            <span><a href=''>Создать аккаунт</a></span> 
-          </span>
+
       </div>
     </form>
 `

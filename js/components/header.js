@@ -10,7 +10,7 @@ import {
 import currentUser from "../current-user.js";
 import template from "../pages-templates/header/header.js";
 import renderSearchPage from "../render/search/search-results.js";
-import { cabinetWrap, renderCabinetWrap } from "./cabinet-wrap.js";
+import { showCabinetWrap, renderCabinetWrap } from "./cabinet-wrap.js";
 
 function renderHeader() {
   const header = document.querySelector('header');
@@ -37,7 +37,7 @@ function renderHeader() {
     auth.textContent = 'Кабинет';
 
     renderCabinetWrap();
-    auth.addEventListener('click', cabinetWrap);
+    auth.addEventListener('click', showCabinetWrap);
   } else {
     auth.textContent = 'Войти';
     auth.addEventListener('click', () => navigateToUrl(LOGIN_URL));

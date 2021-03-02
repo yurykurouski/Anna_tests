@@ -6,7 +6,7 @@ import {
   navigateToUrl
 } from '../routing.js';
 
-export function cabinetWrap() {
+export function showCabinetWrap() {
   const wrap = document.querySelector('.header #cabinet-wrap');
   const wrapLi = wrap.querySelectorAll('li')
   const wrapUsrName = wrap.querySelector('#usr-name');
@@ -36,7 +36,7 @@ export function renderCabinetWrap() {
 
   const addBtn = document.getElementById('add-btn');
   const cabinetBtn = cabinet.querySelector('.cabinet-a');
-  
+
   addBtn.addEventListener('mousedown', () => navigateToUrl(NEW_QUEST_URL));
   cabinetBtn.addEventListener('mousedown', () => navigateToUrl(CABINET_URL));
   logoutBtn.addEventListener('mousedown', logOut);
