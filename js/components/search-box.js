@@ -6,7 +6,7 @@ import questionsTemplate from '../questions-template.js';
 export function launchSearchBox(event) {
   const {
     value
-  } = event.target
+  } = event.target;
 
   const list = document.querySelector('header #list');
   list.innerHTML = '';
@@ -17,12 +17,12 @@ export function launchSearchBox(event) {
 
   result.forEach((el) => {
     if (el.templateName) {
-      renderOverlay(list, el.templateName, el.id);
+      renderOverlay(list, el.templateName, el.id, el.owner);
     }
   });
 }
 
-function renderOverlay(parent, targetText, id) {
+function renderOverlay(parent, targetText, id, author) {
   const item = document.createElement('li');
 
   parent.appendChild(item);
@@ -31,7 +31,11 @@ function renderOverlay(parent, targetText, id) {
     targetText = `${targetText.substring(0, 150)}...`
   }
 
-  item.innerHTML = `<i class="material-icons search">search</i><b>${targetText}</b>`
+  item.innerHTML = `
+    <i class="material-icons search">search</i><b>${targetText}</b><br>
+    <i>Автор: <u>${author}</u></i>
+  `;
+
   item.style.cursor = 'pointer';
 
   item.addEventListener('mousedown', () => navigateToUrl(`/templates/${id}`));
