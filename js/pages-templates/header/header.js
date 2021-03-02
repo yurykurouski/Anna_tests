@@ -15,7 +15,7 @@ const template = `
         <ul id='cabinet-wrap'>
             <li><span id='usr-name'></span></li>
             <li id='cabinet'></li>
-            <li><a id='logout' class='cabinet-a'>Выйти</a></li>
+            <li><a id='logout' class='cabinet-a'>Выйти</a><img id='theme-toggler'></li>
         </г>
     </span>
 `

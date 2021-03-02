@@ -12,7 +12,7 @@ class ResearchCard {
       span = document.createElement('span'),
       info = document.createElement('span');
 
-    cardWrap.setAttribute('class', 'card main')
+    cardWrap.setAttribute('class', 'card main light-theme')
 
     researchesWrap.appendChild(researchCard);
     researchCard.appendChild(cardWrap);
@@ -37,7 +37,7 @@ class ResearchCard {
       span = document.createElement('span'),
       info = document.createElement('span');
 
-    cardWrap.setAttribute('class', 'card cabinet');
+    cardWrap.setAttribute('class', 'card cabinet light-theme');
     researchCard.setAttribute('id', el.id);
 
     researchesWrap.appendChild(researchCard);

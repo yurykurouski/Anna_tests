@@ -8,13 +8,14 @@ import {
 
 export function showCabinetWrap() {
   const wrap = document.querySelector('.header #cabinet-wrap');
-  const wrapLi = wrap.querySelectorAll('li')
+  const wrapLi = wrap.querySelectorAll('li');
   const wrapUsrName = wrap.querySelector('#usr-name');
+  const toggler = wrap.querySelector('img');
 
   wrap.style.display = 'block';
 
   document.addEventListener('mousedown', event => {
-    if (event.target != wrap && event.target != wrapUsrName && !Array.from(wrapLi).includes(event.target)) {
+    if (event.target != wrap && event.target != wrapUsrName && !Array.from(wrapLi).includes(event.target) && event.target != toggler) {
       wrap.style.display = 'none'
     }
   });

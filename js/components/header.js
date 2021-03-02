@@ -11,6 +11,8 @@ import currentUser from "../current-user.js";
 import template from "../pages-templates/header/header.js";
 import renderSearchPage from "../render/search/search-results.js";
 import { showCabinetWrap, renderCabinetWrap } from "./cabinet-wrap.js";
+import storageService from "../storage-service.js";
+import changeTheme from "../operations/changeTheme.js";
 
 function renderHeader() {
   const header = document.querySelector('header');
@@ -18,7 +20,8 @@ function renderHeader() {
 
   const auth = header.querySelector('#auth a'),
     main = header.querySelector('#main'),
-    form = header.querySelector('#search-form');
+    form = header.querySelector('#search-form'),
+    toggler = header.querySelector('#theme-toggler');
 
   form.addEventListener('input', launchSearchBox);
   form.addEventListener('submit', () => {
@@ -32,9 +35,23 @@ function renderHeader() {
   });
 
   main.addEventListener('click', () => navigateToUrl('/'));
-  
+
   if (currentUser.userData) {
     auth.textContent = 'Кабинет';
+    toggler.setAttribute('src', 'img/nightlight_48dp.svg');
+
+    toggler.addEventListener('click', () => {
+      if (storageService.get('Current theme') === 'Light') {
+        changeTheme('Dark');
+        storageService.set('Current theme', 'Dark');
+        toggler.setAttribute('src', 'img/daylight_48dp.svg');
+      } else {
+        changeTheme('Light');
+        storageService.set('Current theme', 'Light');
+        toggler.setAttribute('src', 'img/nightlight_48dp.svg');
+      }
+
+    });
 
     renderCabinetWrap();
     auth.addEventListener('click', showCabinetWrap);

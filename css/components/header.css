@@ -193,6 +193,11 @@ header #cabinet-wrap li #add-btn{
   font-size: 28px;
 }
 
+header #cabinet-wrap #theme-toggler {
+  height: 28px;
+  width: 28px;
+}
+
 .cabinet-a {
   color: black;
   line-height: 2em;

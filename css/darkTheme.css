@@ -1,0 +1,19 @@
+body.dark-theme {
+  background-color: #212121;
+  color: aliceblue;
+}
+
+header.dark-theme{
+  background-color: #1C2541;
+}
+
+header.dark-theme input{
+  background-color: #0d1117;
+  color: aqua;
+}
+
+
+.card.dark-theme {
+  background-color: #424242 !important;
+  color: #c4c7c7;
+}
