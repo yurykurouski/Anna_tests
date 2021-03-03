@@ -8,8 +8,10 @@ import questionsTemplate from "../../questions-template.js";
 import template from "../../pages-templates/Ready/questions-presentation.js";
 import popupMessage from "../../components/pop-up.js";
 import { navigateToUrl } from "../../routing.js";
+import { currentTheme } from "../../utils.js";
 
 function renderExistingQuestions(currTemplate) {
+
   ROOT_DIV.innerHTML = template;
   const questionsWrapper = ROOT_DIV.querySelector('.questions-wrapper');
 
@@ -22,7 +24,7 @@ function renderExistingQuestions(currTemplate) {
 
     wrap.innerHTML = `
     <h4>Вопрос №${index + 1}:</h4>
-    <div  class='card'>
+    <div  class='card ${currentTheme()}'>
       <p>${qstn}</p>
       <div class='answer-wrap'>
         <h5>Ваш ответ:</h5>

@@ -21,7 +21,7 @@ function renderCompleted() {
 
   questName.textContent = currTemplate.templateName;
   questDescription.textContent = currTemplate.description;
-  questNum.textContent = currTemplate.numberOfQuestions;
+  questNum.textContent = `Количество вопросов: ${currTemplate.numberOfQuestions}`;
 
   makeTable(currTemplate, questId);
 }

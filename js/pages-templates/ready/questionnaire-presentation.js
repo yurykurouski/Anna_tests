@@ -2,17 +2,17 @@ const template = `
 <form id='existing-anquete'>
     <div>
       <h3>Название проводимого исследования:</h3>
-      <p class='template-name card'></p>
+      <p class='template-name card light-theme'></p>
     </div>
 
     <div>
       <h3>Описание проводимого исследования:</h3>
-      <p class='template-description card'></p>
+      <p class='template-description card light-theme'></p>
     </div>
 
     <div id='additional-information-wrap'>
       <h3>Сбор предварительной информации:</h3>
-      <div class='additional-information-anquette card'>
+      <div class='additional-information-anquette card light-theme'>
     </div>
 
     </div>

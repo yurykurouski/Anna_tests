@@ -2,12 +2,7 @@ import {
   ROOT_DIV
 } from "../../../constants.js";
 import storageService from "../../../storage-service.js";
-
-let currentTheme;
-
-if (storageService.get('Current theme') === 'Light') {
-  currentTheme = 'light-theme';
-} else currentTheme = 'dark-theme';
+import { currentTheme } from "../../../utils.js";
 
 // функция добавления дополнительного поля для доп. сведений
 export function addExtraField() {
@@ -121,13 +116,11 @@ export function addQuestionBlock(questionsField, id) {
     id = (ROOT_DIV.querySelectorAll('li').length + 1);
   }
 
-  
-
   const questionBlock = document.createElement('li');
   questionBlock.setAttribute('class', 'qstn-wrap questions');
   questionBlock.innerHTML = `
       <label id = ${id} class="pure-material-textfield-filled desription-wrap">
-        <textarea class='question-description ${currentTheme}' name='qstn-description' placeholder='${id}-й вопрос'></textarea>
+        <textarea class='question-description ${currentTheme()}' name='qstn-description' placeholder='${id}-й вопрос'></textarea>
         <span></span>
       </label>
       <span class="material-icons close" title='Удалить вопрос'>cancel</span>
