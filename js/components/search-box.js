@@ -2,6 +2,7 @@ import {
   navigateToUrl
 } from '../routing.js';
 import questionsTemplate from '../questions-template.js';
+import storageService from '../storage-service.js';
 
 export function launchSearchBox(event) {
   const {
@@ -24,6 +25,9 @@ export function launchSearchBox(event) {
 
 function renderOverlay(parent, targetText, id, author) {
   const item = document.createElement('li');
+  if (storageService.get('Current theme') === 'Dark') {
+    item.setAttribute('class', 'dark-theme');
+  } else item.setAttribute('class', 'light-theme');
 
   parent.appendChild(item);
 

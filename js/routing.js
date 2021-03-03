@@ -18,6 +18,8 @@ import renderCabinet from "./render/cabinet/render-cabinet.js";
 import renderQuestGenerator from "./render/generator/render-quest-generator.js";
 import { renderExsistingAnquette } from "./render/ready/render-exsistingAnquette.js";
 import renderCompleted from "./render/cabinet/completed/render-cabinet-completed.js";
+import changeTheme from "./operations/changeTheme.js";
+import storageService from "./storage-service.js";
 
 export function renderPage() {
   const {
@@ -28,46 +30,55 @@ export function renderPage() {
 
   if (INDEX_URLS.includes(currentUrl)) {
     renderMainPage();
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === NEW_QUEST_URL) {
     renderQuestGenerator();
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (TEMPLATES_REGEX.test(currentUrl)) {
     renderExsistingAnquette(getIdByUrl());
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === CABINET_URL && currentUser.userData) {
     renderCabinet();
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (SHOW_COMPLETED.test(currentUrl) && currentUser.userData) {
     renderCompleted();
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === LOGIN_URL && !currentUser.userData) {
     renderLogin();
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === REGISTRATION_URL && !currentUser.userData) {
     renderSignup();
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === LOGIN_URL && currentUser.userData) {
-    navigateToUrl('/')
+    navigateToUrl('/');
+    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === REGISTRATION_URL && currentUser.userData) {
-    navigateToUrl('/')
+    navigateToUrl('/');
+    changeTheme(storageService.get('Current theme'));
     return;
   }
   notFound();

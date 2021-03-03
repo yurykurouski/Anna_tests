@@ -1,20 +1,21 @@
-import { CABINET_URL, NEW_QUEST_URL } from '../constants.js';
-import currentUser from '../current-user.js';
-import logOut from '../operations/auth/log-out.js';
-import questionsTemplate from '../questions-template.js';
 import {
   navigateToUrl
 } from '../routing.js';
+import currentUser from '../current-user.js';
+import logOut from '../operations/auth/log-out.js';
+import questionsTemplate from '../questions-template.js';
+import { CABINET_URL, NEW_QUEST_URL } from '../constants.js';
 
 export function showCabinetWrap() {
   const wrap = document.querySelector('.header #cabinet-wrap');
-  const wrapLi = wrap.querySelectorAll('li')
+  const wrapLi = wrap.querySelectorAll('li');
   const wrapUsrName = wrap.querySelector('#usr-name');
+  const toggler = wrap.querySelector('img');
 
   wrap.style.display = 'block';
 
   document.addEventListener('mousedown', event => {
-    if (event.target != wrap && event.target != wrapUsrName && !Array.from(wrapLi).includes(event.target)) {
+    if (event.target != wrap && event.target != wrapUsrName && !Array.from(wrapLi).includes(event.target) && event.target != toggler) {
       wrap.style.display = 'none'
     }
   });

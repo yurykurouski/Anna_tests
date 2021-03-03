@@ -1,6 +1,8 @@
 import {
   ROOT_DIV
 } from "../../../constants.js";
+import storageService from "../../../storage-service.js";
+import { currentTheme } from "../../../utils.js";
 
 // функция добавления дополнительного поля для доп. сведений
 export function addExtraField() {
@@ -47,6 +49,11 @@ export function rangeTemplate(event) {
     const quanityField = document.createElement('select');
 
     quanityField.setAttribute('name', 'quanity-of-answers');
+
+    if (storageService.get('Current theme') === 'Dark') {
+      quanityField.setAttribute('class', 'dark-theme');
+    } else quanityField.setAttribute('class', 'light-theme');
+    
     possibleAnswersWrap.appendChild(quanityField);
 
     quanityField.innerHTML = `
@@ -67,9 +74,12 @@ export function rangeTemplate(event) {
       const rangeWrap = document.createElement('div');
       const rangeNotation = document.createElement('h4');
 
-      rangeNotation.textContent = 'Введите варианты ответов. Цифры обозначают "вес" ответа:'
+      rangeNotation.textContent = 'Введите варианты ответов. Цифры обозначают "вес" ответа:';
 
-      rangeWrap.setAttribute('class', 'range-wrap card');
+      if (storageService.get('Current theme') === 'Light') {
+        rangeWrap.setAttribute('class', 'range-wrap card light-theme');
+      } else rangeWrap.setAttribute('class', 'range-wrap card dark-theme');
+
       rangeNotation.setAttribute('class', 'range-notation')
 
       form.insertBefore(rangeNotation, submitBtn)
@@ -110,7 +120,7 @@ export function addQuestionBlock(questionsField, id) {
   questionBlock.setAttribute('class', 'qstn-wrap questions');
   questionBlock.innerHTML = `
       <label id = ${id} class="pure-material-textfield-filled desription-wrap">
-        <textarea class='question-description' name='qstn-description' placeholder='${id}-й вопрос'></textarea>
+        <textarea class='question-description ${currentTheme()}' name='qstn-description' placeholder='${id}-й вопрос'></textarea>
         <span></span>
       </label>
       <span class="material-icons close" title='Удалить вопрос'>cancel</span>

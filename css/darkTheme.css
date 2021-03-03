@@ -1,0 +1,80 @@
+body.dark-theme {
+  background-color: #0d1117;
+  color: aliceblue;
+}
+
+body.dark-theme .pure-material-button-contained {
+  background-color: #114D7C;
+}
+
+header.dark-theme {
+  background-color: #1C2541;
+}
+
+header.dark-theme input {
+  color: #5BC0BE;
+}
+
+header.dark-theme i {
+  color: #436C80;
+}
+
+header.dark-theme input,
+header #cabinet-wrap.dark-theme,
+header #search input:focus~#results.dark-theme {
+  background-color: #0B132B;
+}
+
+header #cabinet-wrap li.dark-theme:hover,
+header #results ul li.dark-theme:hover {
+  background-color: #1C2541;
+}
+
+header #cabinet-wrap.dark-theme li a {
+  color: #c4c7c7;
+}
+
+header #cabinet-wrap.dark-theme li button {
+  color: #00E676;
+}
+
+.card.dark-theme:hover,
+textarea.dark-theme:hover {
+  background-color: #262626;
+}
+
+textarea.dark-theme,
+.card.dark-theme {
+  background-color: #212121;
+  color: #c4c7c7;
+}
+
+.card.dark-theme span {
+  color: #c4c7c7;
+}
+
+.card.dark-theme input {
+  color: #5BC0BE;
+}
+
+select.dark-theme {
+  background-color: #0e151c;
+  color: #1b79d6;
+  border: none;
+}
+
+table.dark-theme>tbody>tr:nth-child(odd) {
+  background-color: #212121;
+}
+
+table.dark-theme {
+  background-color: #141414;
+}
+
+table.dark-theme tr:hover {
+  background-color: #1a1a1a;
+}
+
+table.dark-theme>tbody>tr:nth-child(odd):hover {
+  background-color: #262626;
+}

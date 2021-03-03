@@ -13,6 +13,7 @@ import {
   renderQuestionsInputs
 } from "../render/generator/render-questions-edit.js";
 import renderMainPage from "../render/main/render-main.js";
+import { navigateToUrl } from "../routing.js";
 
 //* получение темплейта для формы вопросов
 function collectQuestionsTemplate(event) {
@@ -74,7 +75,7 @@ export function collectQuestions(currId, event) {
   storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
 
   popupMessage('msg');
-  renderMainPage();
+  navigateToUrl('/');
 }
 
 export default collectQuestionsTemplate;

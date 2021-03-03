@@ -1,4 +1,5 @@
 import { ROOT_DIV } from "./constants.js";
+import storageService from "./storage-service.js";
 
 export function generateId(arr) {
   if (!arr) {
@@ -22,4 +23,14 @@ export function makeUrlFromId(id) {
 
 export function changeUrl(url) {
   window.history.pushState({}, url, window.location.origin + url);
+}
+
+export function currentTheme() {
+  let currentTheme;
+
+  if (storageService.get('Current theme') === 'Light') {
+    currentTheme = 'light-theme';
+  } else currentTheme = 'dark-theme';
+
+  return currentTheme;
 }
