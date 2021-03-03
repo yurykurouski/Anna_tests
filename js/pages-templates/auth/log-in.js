@@ -1,6 +1,6 @@
 const template = `
     <form class='auth-form'>
-      <div class='form-wrap card'>
+      <div class='form-wrap card light-theme'>
         <h3>Войти:</h3>
         
           <label id='username' class="pure-material-textfield-outlined">

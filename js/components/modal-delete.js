@@ -6,6 +6,7 @@ import userAnswers from "../user-answers.js";
 import storageService from "../storage-service.js";
 import questionsTemplate from "../questions-template.js";
 import currentUser from "../current-user.js";
+import { currentTheme } from "../utils.js";
 
 function modalDelete(id) {
   const fadeWrapper = document.createElement('div'),
@@ -21,7 +22,7 @@ function modalDelete(id) {
   soWhat.textContent = 'Вы уверены?';
 
   fadeWrapper.setAttribute('class', 'fade');
-  messageWrap.setAttribute('class', 'modal-window card');
+  messageWrap.setAttribute('class', `modal-window card ${currentTheme()}`);
 
   ROOT_DIV.appendChild(fadeWrapper);
   fadeWrapper.appendChild(messageWrap);
