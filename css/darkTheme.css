@@ -8,10 +8,32 @@ header.dark-theme{
 }
 
 header.dark-theme input{
-  background-color: #0d1117;
-  color: aqua;
+  color: #5BC0BE;
 }
 
+header.dark-theme i{
+  color: #436C80;
+}
+header.dark-theme input,
+header #cabinet-wrap.dark-theme,
+header #search input:focus~#results.dark-theme{
+  background-color: #0B132B;
+}
+
+header #cabinet-wrap li.dark-theme:hover,
+header #results ul li.dark-theme:hover{
+  background-color: #1C2541;
+}
+
+header #cabinet-wrap.dark-theme li a{
+  color: #c4c7c7;
+}
+
+header #cabinet-wrap.dark-theme li button{
+  color: #00E676;
+  /* background: blue; */
+  /* background-color: brown; */
+}
 
 .card.dark-theme {
   background-color: #424242 !important;
