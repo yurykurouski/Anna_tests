@@ -1,5 +1,5 @@
 body.dark-theme {
-  background-color: #212121;
+  background-color: #0d1117;
   color: aliceblue;
 }
 
@@ -31,11 +31,29 @@ header #cabinet-wrap.dark-theme li a{
 
 header #cabinet-wrap.dark-theme li button{
   color: #00E676;
-  /* background: blue; */
-  /* background-color: brown; */
 }
 
+.card.dark-theme:hover,
+textarea.dark-theme:hover{
+  background-color: #262626;
+}
+
+textarea.dark-theme,
 .card.dark-theme {
-  background-color: #424242 !important;
+  background-color: #212121;
   color: #c4c7c7;
+}
+
+.card.dark-theme span {
+  color: #c4c7c7;
+}
+
+.card.dark-theme input{
+  color: #5BC0BE;
+}
+
+select.dark-theme{
+  background-color: #0e151c;
+  color: #1b79d6;
+  border: none;
 }

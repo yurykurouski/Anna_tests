@@ -1,10 +1,10 @@
-import { CABINET_URL, NEW_QUEST_URL } from '../constants.js';
-import currentUser from '../current-user.js';
-import logOut from '../operations/auth/log-out.js';
-import questionsTemplate from '../questions-template.js';
 import {
   navigateToUrl
 } from '../routing.js';
+import currentUser from '../current-user.js';
+import logOut from '../operations/auth/log-out.js';
+import questionsTemplate from '../questions-template.js';
+import { CABINET_URL, NEW_QUEST_URL } from '../constants.js';
 
 export function showCabinetWrap() {
   const wrap = document.querySelector('.header #cabinet-wrap');

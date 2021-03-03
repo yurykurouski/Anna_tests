@@ -55,29 +55,29 @@ h5 {
   list-style-type: none;
   padding-left: 0;
 }
-
+#quest-generator
 /* quest generator */
-.quest-generator .additional-information{
+#quest-generator .additional-information{
   margin: 5px;
 }
 
-.quest-generator .additional-information .checks,
-.quest-generator .additional-information .additional-information-extra {
+#quest-generator .additional-information .checks,
+#quest-generator .additional-information .additional-information-extra {
   display: flex;
   width: 100%;
 }
 
-.quest-generator .additional-information .checks {
+#quest-generator .additional-information .checks {
   justify-content: space-around;
   margin-bottom: 20px;
 }
 
-.quest-generator .extra-wrapper label,
-.quest-generator .rest-information label {
+#quest-generator .extra-wrapper label,
+#quest-generator .rest-information label {
   margin: 0;
 }
 
-.quest-generator .extra-wrapper .close {
+#quest-generator .extra-wrapper .close {
   opacity: 0;
   position: relative;
   margin: 0;
@@ -86,16 +86,16 @@ h5 {
   transition: opacity 0.2s ease-in;
 }
 
-.quest-generator .extra-wrapper .close:hover {
+#quest-generator .extra-wrapper .close:hover {
   opacity: 1;
 }
 
-.quest-generator .rest-information {
+#quest-generator .rest-information {
   display: flex;
   align-items: baseline;
 }
 
-.quest-generator .possible-answers select {
+#quest-generator .possible-answers select {
   font-size: 16px;
   font-family: 'Roboto',
     sans-serif;
@@ -106,19 +106,19 @@ h5 {
   height: 40px;
 }
 
-.quest-generator .range-wrap {
+#quest-generator .range-wrap {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 300px);
-  grid-column-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
-.quest-generator .range-notation {
+#quest-generator .range-notation {
   margin-top: 40px;
 }
 
 #existing-anquete button,
-.quest-generator button{
+#quest-generator button{
   margin-left: 10px;
 }
 
