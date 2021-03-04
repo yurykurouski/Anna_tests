@@ -1,5 +1,6 @@
 import {
   EMAIL_REGEX,
+  IS_DIGIT,
   LOGIN_URL,
   MIN_PASSWORD_LENGTH,
   NEW_QUEST_URL,
@@ -95,6 +96,11 @@ function validateForms(data) {
           makeErrorMsg(key, 'Заполните все необходимые поля');
           return hasErrors = true;
         }
+      }
+
+      if (key === 'numberOfQuestions' && !IS_DIGIT.test(key)) {
+        makeErrorMsg(key, 'В это поле необходимо ввести число');
+        return hasErrors = true;
       }
 
       if (key === 'questions' || key === 'ifRange') {
