@@ -11,8 +11,6 @@ import questionsTemplate from "../../questions-template.js";
 import newButton from "../../components/elements/button.js";
 import template from "../../pages-templates/Main/main-page.js";
 import newResearchCard from "../../components/research-cards.js";
-import changeTheme from "../../operations/changeTheme.js";
-import storageService from "../../storage-service.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template;

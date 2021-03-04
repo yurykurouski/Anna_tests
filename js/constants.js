@@ -6,7 +6,8 @@ export const LOGIN_URL = '/login',
   CABINET_URL = '/cabinet',
   REGISTRATION_URL = '/signup',
   INDEX_URLS = ['/', '/index.html'],
-  SEARCH_RESULTS_URL = /search=\S+/;
+  SEARCH_RESULTS_URL = /search=\S+/,
+  SHOW_COMPLETED = /cabinet\/completed\/\d/;
 
 //regexp
 export const MIN_PASSWORD_LENGTH = 8,
@@ -14,4 +15,7 @@ export const MIN_PASSWORD_LENGTH = 8,
   TEMPLATES_REGEX = /templates\/\d/,
   PASSWORD_REGEX = /(([A-Za-z]+\d+)|(\d+[A-Za-z]+))[A-Za-z\d]/;
 
-export const SHOW_COMPLETED = /cabinet\/completed\/\d/;
+//themes
+
+export const DARK_THEME = 'Dark',
+  LIGHT_THEME = 'Light';

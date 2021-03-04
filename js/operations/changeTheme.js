@@ -1,7 +1,9 @@
-function changeTheme(theme) {
+import { DARK_THEME, LIGHT_THEME } from "../constants";
 
-  if (theme === 'Dark') {
+function changeTheme(theme) {
+  if (theme === DARK_THEME) {
     const elements = document.querySelectorAll('.light-theme');
+
     elements.forEach(el => {
       const currAttr = el.getAttribute('class');
       const deLighted = currAttr.split(' ').filter(el => el != 'light-theme').join(' ');
@@ -9,7 +11,7 @@ function changeTheme(theme) {
     });
   }
 
-  if (theme === 'Light') {
+  if (theme === LIGHT_THEME) {
     const elements = document.querySelectorAll('.dark-theme');
 
     elements.forEach(el => {
