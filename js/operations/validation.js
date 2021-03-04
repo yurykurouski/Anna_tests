@@ -1,6 +1,7 @@
 import {
   EMAIL_REGEX,
   IS_DIGIT,
+  IS_STRING_EMPTY,
   LOGIN_URL,
   MIN_PASSWORD_LENGTH,
   NEW_QUEST_URL,
@@ -92,7 +93,7 @@ function validateForms(data) {
 
     if (NEW_QUEST_URL === currentUrl) {
       if (key === 'description' || key === 'numberOfQuestions' || key === 'possibleAnswersType' || key === 'templateName') {
-        if (!data[key]) {
+        if (IS_STRING_EMPTY.test(data[key])) {
           makeErrorMsg(key, 'Заполните все необходимые поля');
           return hasErrors = true;
         }
@@ -106,7 +107,7 @@ function validateForms(data) {
 
       if (key === 'questions' || key === 'ifRange') {
         for (let i = 0; i < data[key].length; i++) {
-          if (!data[key][i]) {
+          if (IS_STRING_EMPTY.test(data[key][i])) {
             makeErrorMsg(key, 'Заполните все поля или удалите ненужные', i);
             return hasErrors = true;
           }
