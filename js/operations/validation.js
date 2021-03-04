@@ -9,9 +9,9 @@ import {
   REGISTRATION_URL,
   ROOT_DIV,
   TEMPLATES_REGEX
-} from "../constants.js";
-import usersList from "../users.js";
-import popupMessage from "../components/pop-up.js";
+} from '../constants.js';
+import usersList from '../users.js';
+import popupMessage from '../components/pop-up.js';
 
 function validateForms(data) {
   let hasErrors = false;
@@ -100,7 +100,6 @@ function validateForms(data) {
       }
 
       if (key === 'numberOfQuestions' && !IS_DIGIT.test(data[key])) {
-        console.log(IS_DIGIT.test(data[key]))
         makeErrorMsg(key, 'В это поле необходимо ввести число');
         return hasErrors = true;
       }

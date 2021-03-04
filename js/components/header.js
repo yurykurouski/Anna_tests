@@ -1,18 +1,19 @@
 import {
   navigateToUrl
-} from "../routing.js";
+} from '../routing.js';
 import {
   launchSearchBox
-} from "./search-box.js";
+} from './search-box.js';
 import {
+  IS_STRING_EMPTY,
   LOGIN_URL
-} from "../constants.js";
-import currentUser from "../current-user.js";
-import storageService from "../storage-service.js";
-import changeTheme from "../operations/changeTheme.js";
-import template from "../pages-templates/header/header.js";
-import renderSearchPage from "../render/search/search-results.js";
-import { showCabinetWrap, renderCabinetWrap } from "./cabinet-wrap.js";
+} from '../constants.js';
+import currentUser from '../current-user.js';
+import storageService from '../storage-service.js';
+import changeTheme from '../operations/changeTheme.js';
+import template from '../pages-templates/header/header.js';
+import renderSearchPage from '../render/search/search-results.js';
+import { showCabinetWrap, renderCabinetWrap } from './cabinet-wrap.js';
 
 function renderHeader() {
   const header = document.querySelector('header');
@@ -24,10 +25,11 @@ function renderHeader() {
     toggler = header.querySelector('#theme-toggler');
 
   form.addEventListener('input', launchSearchBox);
-  form.addEventListener('submit', () => {
+  
+  form.addEventListener('submit', (event) => {
     const formData = new FormData(event.target);
     const searchRequest = formData.get('search');
-    if (!searchRequest) {
+    if (IS_STRING_EMPTY.test(searchRequest)) {
       event.preventDefault();
       return;
     }

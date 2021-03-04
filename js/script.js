@@ -1,3 +1,4 @@
+import changeTheme from "./operations/changeTheme.js";
 import { renderPage } from "./routing.js";
 import storageService from "./storage-service.js";
 

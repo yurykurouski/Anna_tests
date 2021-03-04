@@ -1,5 +1,4 @@
-import { ROOT_DIV } from "./constants.js";
-import storageService from "./storage-service.js";
+import storageService from './storage-service.js';
 
 export function generateId(arr) {
   if (!arr) {

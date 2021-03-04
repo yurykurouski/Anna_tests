@@ -1,12 +1,12 @@
 import {
   ROOT_DIV
 } from "../constants.js";
+import { currentTheme } from "../utils.js";
+import currentUser from "../current-user.js";
 import newButton from "./elements/button.js";
 import userAnswers from "../user-answers.js";
 import storageService from "../storage-service.js";
 import questionsTemplate from "../questions-template.js";
-import currentUser from "../current-user.js";
-import { currentTheme } from "../utils.js";
 
 function modalDelete(id) {
   const fadeWrapper = document.createElement('div'),
@@ -47,7 +47,6 @@ function modalDelete(id) {
     storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
     storageService.set('UserInformation', JSON.stringify(userAnswers.information));
     storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
-
   });
 
   newButton('text', 'discard-button', '', 'Нет', messageWrap).

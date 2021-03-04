@@ -1,7 +1,8 @@
 import {
   ROOT_DIV
-} from "../constants.js";
-import userAnswers from "../user-answers.js";
+} from '../constants.js';
+import userAnswers from '../user-answers.js';
+import newButton from '../components/elements/button.js';
 
 function makeTable(currTemplate, questId) {
   const mainTable = ROOT_DIV.querySelector('table');
@@ -45,6 +46,14 @@ function makeTable(currTemplate, questId) {
       userAnswers.textContent = usersAnswers[i].userAnswers[k]
     }
   }
+  
+  newButton('contained', 'button', 'copy-button', 'Копировать', ROOT_DIV).
+    addEventListener('click', () => copyTableContent(mainTable))
+}
+
+function copyTableContent(table) {
+  new ClipboardJS('.copy-button');
+  document.execCommand('copy')
 }
 
 export default makeTable;

@@ -4,11 +4,11 @@ import {
 import {
   collectUserAnswers
 } from "../../operations/collect-answers.js";
+import { currentTheme } from "../../utils.js";
+import { navigateToUrl } from "../../routing.js";
+import popupMessage from "../../components/pop-up.js";
 import questionsTemplate from "../../questions-template.js";
 import template from "../../pages-templates/Ready/questions-presentation.js";
-import popupMessage from "../../components/pop-up.js";
-import { navigateToUrl } from "../../routing.js";
-import { currentTheme } from "../../utils.js";
 
 function renderExistingQuestions(currTemplate) {
 
@@ -23,14 +23,14 @@ function renderExistingQuestions(currTemplate) {
     wrap.setAttribute('class', 'question-wrap');
 
     wrap.innerHTML = `
-    <h4>Вопрос №${index + 1}:</h4>
-    <div  class='card ${currentTheme()}'>
-      <p>${qstn}</p>
-      <div class='answer-wrap'>
-        <h5>Ваш ответ:</h5>
-        ${generateAnswerTypeTemplate(currTemplate, index)}
+      <h4>Вопрос №${index + 1}:</h4>
+      <div  class='card ${currentTheme()}'>
+        <p>${qstn}</p>
+        <div class='answer-wrap'>
+          <h5>Ваш ответ:</h5>
+          ${generateAnswerTypeTemplate(currTemplate, index)}
+        </div>
       </div>
-    </div>
     `
 
     questionsWrapper.appendChild(wrap);
