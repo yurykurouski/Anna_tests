@@ -1,4 +1,4 @@
-import { DARK_THEME, LIGHT_THEME } from "../constants";
+import { DARK_THEME, LIGHT_THEME } from '../constants.js';
 
 function changeTheme(theme) {
   if (theme === DARK_THEME) {

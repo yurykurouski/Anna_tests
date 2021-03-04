@@ -7,15 +7,14 @@ export const LOGIN_URL = '/login',
   REGISTRATION_URL = '/signup',
   INDEX_URLS = ['/', '/index.html'],
   SEARCH_RESULTS_URL = /search=\S+/,
+  TEMPLATES_REGEX = /templates\/\d/,
   SHOW_COMPLETED = /cabinet\/completed\/\d/;
 
-//regexp
+//auth
 export const MIN_PASSWORD_LENGTH = 8,
   EMAIL_REGEX = /\S+@\S+\.\S+/,
-  TEMPLATES_REGEX = /templates\/\d/,
   PASSWORD_REGEX = /(([A-Za-z]+\d+)|(\d+[A-Za-z]+))[A-Za-z\d]/;
 
 //themes
-
 export const DARK_THEME = 'Dark',
   LIGHT_THEME = 'Light';

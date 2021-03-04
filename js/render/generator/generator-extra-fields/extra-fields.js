@@ -89,6 +89,7 @@ export function rangeTemplate(event) {
         const variantField = document.createElement('label');
 
         variantField.setAttribute('class', 'pure-material-textfield-outlined');
+        variantField.setAttribute('id', i);
         rangeWrap.appendChild(variantField);
 
         variantField.innerHTML = `

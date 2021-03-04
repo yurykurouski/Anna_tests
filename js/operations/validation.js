@@ -1,14 +1,15 @@
-import popupMessage from "../components/pop-up.js";
 import {
   EMAIL_REGEX,
   LOGIN_URL,
   MIN_PASSWORD_LENGTH,
+  NEW_QUEST_URL,
   PASSWORD_REGEX,
   REGISTRATION_URL,
   ROOT_DIV,
   TEMPLATES_REGEX
 } from "../constants.js";
 import usersList from "../users.js";
+import popupMessage from "../components/pop-up.js";
 
 function validateForms(data) {
   let hasErrors = false;
@@ -88,19 +89,20 @@ function validateForms(data) {
       });
     }
 
-
-    if (key === 'description' || key === 'numberOfQuestions' || key === 'possibleAnswersType' || key === 'templateName') {
-      if (!data[key]) {
-        makeErrorMsg(key, 'Заполните все необходимые поля');
-        return hasErrors = true;
-      }
-    }
-
-    if (key === 'questions') {
-      for (let i = 0; i < data[key].length; i++) {
-        if (!data[key][i]) {
-          makeErrorMsg(key, 'Заполните все поля или удалите ненужные', i);
+    if (NEW_QUEST_URL === currentUrl) {
+      if (key === 'description' || key === 'numberOfQuestions' || key === 'possibleAnswersType' || key === 'templateName') {
+        if (!data[key]) {
+          makeErrorMsg(key, 'Заполните все необходимые поля');
           return hasErrors = true;
+        }
+      }
+
+      if (key === 'questions' || key === 'ifRange') {
+        for (let i = 0; i < data[key].length; i++) {
+          if (!data[key][i]) {
+            makeErrorMsg(key, 'Заполните все поля или удалите ненужные', i);
+            return hasErrors = true;
+          }
         }
       }
     }
@@ -111,7 +113,7 @@ function validateForms(data) {
 
 function makeErrorMsg(key, msg, id) {
   popupMessage('error', msg);
-  if (key === 'questions') {
+  if (key === 'questions' || key === 'ifRange') {
     const target = document.getElementById(id + 1);
     target.classList.add('error');
     return;
