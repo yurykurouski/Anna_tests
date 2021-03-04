@@ -15,7 +15,7 @@ export const MIN_PASSWORD_LENGTH = 8,
   EMAIL_REGEX = /\S+@\S+\.\S+/,
   PASSWORD_REGEX = /(([A-Za-z]+\d+)|(\d+[A-Za-z]+))[A-Za-z\d]/;
 
-export const IS_DIGIT = / \d+/;
+export const IS_DIGIT = /\d/;
 
 //themes
 export const DARK_THEME = 'Dark',

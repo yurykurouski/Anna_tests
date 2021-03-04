@@ -98,7 +98,8 @@ function validateForms(data) {
         }
       }
 
-      if (key === 'numberOfQuestions' && !IS_DIGIT.test(key)) {
+      if (key === 'numberOfQuestions' && !IS_DIGIT.test(data[key])) {
+        console.log(IS_DIGIT.test(data[key]))
         makeErrorMsg(key, 'В это поле необходимо ввести число');
         return hasErrors = true;
       }
