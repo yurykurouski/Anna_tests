@@ -11,9 +11,7 @@ import {
 import { getIdByUrl } from "./utils.js";
 import currentUser from "./current-user.js";
 import notFound from "./render/main/404.js";
-import storageService from "./storage-service.js";
 import renderHeader from "./components/header.js";
-import changeTheme from "./operations/changeTheme.js";
 import renderLogin from "./render/auth/render-login.js";
 import renderMainPage from "./render/main/render-main.js";
 import renderSignup from "./render/auth/render-signup.js";
@@ -28,64 +26,54 @@ export function renderPage() {
   } = window.location;
 
   renderHeader();
-
+  
   if (INDEX_URLS.includes(currentUrl)) {
     renderMainPage();
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (CARDS_PAGE.test(currentUrl)) {
     renderMainPage();
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === NEW_QUEST_URL) {
     renderQuestGenerator();
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (TEMPLATES_REGEX.test(currentUrl)) {
     renderExsistingAnquette(getIdByUrl());
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === CABINET_URL && currentUser.userData) {
     renderCabinet();
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (SHOW_COMPLETED.test(currentUrl) && currentUser.userData) {
     renderCompleted();
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === LOGIN_URL && !currentUser.userData) {
     renderLogin();
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === REGISTRATION_URL && !currentUser.userData) {
     renderSignup();
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === LOGIN_URL && currentUser.userData) {
     navigateToUrl('/');
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
   if (currentUrl === REGISTRATION_URL && currentUser.userData) {
     navigateToUrl('/');
-    changeTheme(storageService.get('Current theme'));
     return;
   }
 
