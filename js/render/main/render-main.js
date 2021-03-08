@@ -11,6 +11,7 @@ import questionsTemplate from "../../questions-template.js";
 import newButton from "../../components/elements/button.js";
 import template from "../../pages-templates/Main/main-page.js";
 import newResearchCard from "../../components/research-cards.js";
+import pagination from "../../operations/pagination.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template;
@@ -41,7 +42,7 @@ function renderMainPage() {
   } else {
     questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
   }
-
+  ROOT_DIV.appendChild(pagination(questionsTemplate.templates));
   document.title = 'Социология > Главная';
   window.scrollTo(0, 0);
 };

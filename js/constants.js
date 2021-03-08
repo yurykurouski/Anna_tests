@@ -21,3 +21,5 @@ export const IS_DIGIT = /\d/,
 //themes
 export const DARK_THEME = 'Dark',
   LIGHT_THEME = 'Light';
+
+export const MAX_CARDS_PER_PAGE = 10;
