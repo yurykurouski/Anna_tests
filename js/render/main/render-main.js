@@ -3,6 +3,7 @@ import {
 } from "../../routing.js";
 import {
   LOGIN_URL,
+  MAX_CARDS_PER_PAGE,
   NEW_QUEST_URL,
   ROOT_DIV
 } from "../../constants.js";
@@ -39,10 +40,14 @@ function renderMainPage() {
     researchesWrap.innerHTML = `
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
     `
+  } else if (template.length > MAX_CARDS_PER_PAGE){
+    // questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
+    pagination(questionsTemplate.templates, researchesWrap);
   } else {
     questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
   }
-  ROOT_DIV.appendChild(pagination(questionsTemplate.templates));
+
+ 
   document.title = 'Социология > Главная';
   window.scrollTo(0, 0);
 };

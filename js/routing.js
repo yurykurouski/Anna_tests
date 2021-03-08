@@ -1,5 +1,6 @@
 import {
   CABINET_URL,
+  CARDS_PAGE,
   INDEX_URLS,
   LOGIN_URL,
   NEW_QUEST_URL,
@@ -29,6 +30,12 @@ export function renderPage() {
   renderHeader();
 
   if (INDEX_URLS.includes(currentUrl)) {
+    renderMainPage();
+    changeTheme(storageService.get('Current theme'));
+    return;
+  }
+
+  if (CARDS_PAGE.test(currentUrl)) {
     renderMainPage();
     changeTheme(storageService.get('Current theme'));
     return;
