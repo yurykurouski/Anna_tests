@@ -3,6 +3,7 @@ import {
 } from "../../routing.js";
 import {
   LOGIN_URL,
+  MAX_CARDS_PER_PAGE,
   NEW_QUEST_URL,
   ROOT_DIV
 } from "../../constants.js";
@@ -11,6 +12,7 @@ import questionsTemplate from "../../questions-template.js";
 import newButton from "../../components/elements/button.js";
 import template from "../../pages-templates/Main/main-page.js";
 import newResearchCard from "../../components/research-cards.js";
+import pagination from "../../components/pagination.js";
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template;
@@ -38,10 +40,13 @@ function renderMainPage() {
     researchesWrap.innerHTML = `
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
     `
+  } else if (template.length > MAX_CARDS_PER_PAGE){
+    pagination(questionsTemplate.templates, researchesWrap);
   } else {
     questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
   }
 
+ 
   document.title = 'Социология > Главная';
   window.scrollTo(0, 0);
 };

@@ -6,6 +6,7 @@ export const LOGIN_URL = '/login',
   CABINET_URL = '/cabinet',
   REGISTRATION_URL = '/signup',
   INDEX_URLS = ['/', '/index.html'],
+  CARDS_PAGE = /page\/\d/,
   SEARCH_RESULTS_URL = /search=\S+/,
   TEMPLATES_REGEX = /templates\/\d/,
   SHOW_COMPLETED = /cabinet\/completed\/\d/;
@@ -21,3 +22,5 @@ export const IS_DIGIT = /\d/,
 //themes
 export const DARK_THEME = 'Dark',
   LIGHT_THEME = 'Light';
+
+export const MAX_CARDS_PER_PAGE = 10;

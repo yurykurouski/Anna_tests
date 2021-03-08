@@ -1,0 +1,15 @@
+
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.pagination-wrap li{
+  margin: 0 5px 0 5px;
+}
+
+.pagination-wrap .active{
+  font-weight: 600;
+  background: rgb(5, 144, 255, 0.2);
+}
