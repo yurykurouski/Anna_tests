@@ -8,6 +8,8 @@ function popupMessage(type, msg) {
 
   wrap.setAttribute('id', 'popup');
 
+  wrap.setAttribute('class', 'light-theme')
+
   if (msg) {
     pMsg.textContent = msg;
   } else {

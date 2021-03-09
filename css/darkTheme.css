@@ -78,3 +78,31 @@ table.dark-theme tr:hover {
 table.dark-theme>tbody>tr:nth-child(odd):hover {
   background-color: #262626;
 }
+
+#popup.dark-theme {
+  background: #0d1117;
+
+  animation-duration: 1.5s;
+  animation-name: popupDark;
+}
+
+@keyframes popupDark {
+  from {
+    top: 0px;
+    background-color: #0d1117
+  }
+
+  to {
+    top: -40px;
+  }
+
+  20% {
+    top: 10px;
+    background-color: #0d1117
+  }
+
+  80% {
+    top: 10px;
+    background-color: #0d1117
+  }
+}
