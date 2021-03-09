@@ -40,7 +40,7 @@ function renderMainPage() {
     researchesWrap.innerHTML = `
       <span>Нажмите на кнопку ниже чтобы добавить.</span>
     `
-  } else if (template.length > MAX_CARDS_PER_PAGE){
+  } else if (questionsTemplate.templates.length > MAX_CARDS_PER_PAGE){
     pagination(questionsTemplate.templates, researchesWrap);
   } else {
     questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));

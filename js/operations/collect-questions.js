@@ -74,8 +74,8 @@ export function collectQuestions(currId, event) {
   storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
   storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
 
-  popupMessage('msg');
   navigateToUrl('/');
+  popupMessage('msg');
 }
 
 export default collectQuestionsTemplate;
