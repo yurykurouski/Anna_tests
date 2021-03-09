@@ -8,6 +8,7 @@ if (!storageService.get('Current theme')) {
 }
 
 renderPage();
+
 changeTheme(storageService.get('Current theme'));
 
 window.addEventListener('popstate', () => {

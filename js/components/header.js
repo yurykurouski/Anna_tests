@@ -42,8 +42,8 @@ function renderHeader() {
     auth.textContent = 'Кабинет';
 
     if (storageService.get('Current theme') === 'Dark') {
-      changeTheme('Dark');
-      storageService.set('Current theme', 'Dark');
+      // changeTheme('Dark');
+      // storageService.set('Current theme', 'Dark');
       toggler.setAttribute('src', 'img/daylight_48dp.svg');
       toggler.setAttribute('title', 'Переключить на светлую тему');
     }
