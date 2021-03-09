@@ -337,3 +337,19 @@
     }
   }
 }
+
+.pure-material-textfield-filled>textarea::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.pure-material-textfield-filled>textarea::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: grey;
+}
+
+.pure-material-textfield-filled>textarea::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2); */
+  border-radius: 10px;
+  background-color: transparent;
+}
