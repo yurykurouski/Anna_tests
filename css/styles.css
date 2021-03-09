@@ -43,19 +43,18 @@ body {
 
 body {
   display: grid;
-  grid-template-areas: 'h''c''f';
+  grid-template-areas: 'h'
+    'c'
+    'f';
+  grid-template-rows: 60px minmax(650px, 1fr) 40px;
   max-width: 1280px;
   width: 90%;
   margin: 0 auto;
 }
 
-
-
 .container {
   grid-area: c;
-  margin-top: 60px;
   padding: 0 15px 15px 15px;
-  min-height: calc(100vh - 100px);
 }
 
 .container .pure-material-textfield-outlined {
@@ -70,13 +69,13 @@ h5 {
   margin: 10px;
 }
 
-.container ol {
+.container .aw-researches {
   list-style-type: none;
   padding-left: 0;
 }
-#quest-generator
+
 /* quest generator */
-#quest-generator .additional-information{
+#quest-generator .additional-information {
   margin: 5px;
 }
 
@@ -137,7 +136,7 @@ h5 {
 }
 
 #existing-anquete button,
-#quest-generator button{
+#quest-generator button {
   margin-left: 10px;
 }
 
@@ -148,6 +147,7 @@ h5 {
 
 .questions-edit ol {
   list-style-type: square !important;
+  padding: 0;
 }
 
 /* existing */
@@ -162,7 +162,22 @@ h5 {
 
 #questions-wrapper .answer-wrap {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5px
+}
+
+.answer-wrap h5{
+  margin: 5px;
+}
+
+.answer-wrap span{
+  font-size: 14px;
+}
+
+.new-questionaire{
+  position: sticky;
+  bottom: 15px;
 }
 
 /* auth */
@@ -171,7 +186,7 @@ h5 {
   justify-content: center;
 }
 
-.auth-form label{
+.auth-form label {
   width: 280px
 }
 
@@ -197,7 +212,6 @@ h5 {
 footer {
   grid-area: f;
 
-  height: 20px;
   font-size: 14px;
   text-align: center;
 }
@@ -211,18 +225,18 @@ footer strong {
   top: -5px;
 }
 
-footer a{
+footer a {
   display: inline-block;
   height: 20px;
   width: 20px;
   background-size: 20px 20px;
 }
 
-footer a.light-theme{
+footer a.light-theme {
   background-image: url(../img/GitHub-Mark-64px.png);
 }
 
-footer a.dark-theme{
+footer a.dark-theme {
   background-image: url(../img/GitHub-Mark-Light-64px.png);
 }
 

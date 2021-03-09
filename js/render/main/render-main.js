@@ -46,7 +46,6 @@ function renderMainPage() {
     questionsTemplate.templates.forEach(el => newResearchCard.main(el, researchesWrap));
   }
 
- 
   document.title = 'Социология > Главная';
   window.scrollTo(0, 0);
 };
