@@ -15,8 +15,6 @@ const template = `
       <div class='additional-information-anquette card light-theme'>
     </div>
 
-    </div>
-
     <h4 class='summary'></h4>
     <button type='submit' class='pure-material-button-contained go-to-questions'>Перейти к вопросам</input>
   </form>

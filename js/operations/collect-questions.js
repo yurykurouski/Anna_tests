@@ -26,7 +26,7 @@ function collectQuestionsTemplate(event) {
     owner: currentUser.userData.username,
     id: generateId(questionsTemplate.templates),
     description: formDdata.get('rsrchdescription'),
-    userInformation: formDdata.getAll('additional-information').filter(el => el.length === 0),
+    userInformation: formDdata.getAll('additional-information')/* .filter(el => el.length === 0) */,
     numberOfQuestions: formDdata.get('questions-amount'),
     possibleAnswersType: formDdata.get('possible-answers'),
     ifRange: formDdata.getAll('variant-field')
