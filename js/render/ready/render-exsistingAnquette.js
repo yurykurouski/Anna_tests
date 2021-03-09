@@ -24,18 +24,20 @@ export function renderExsistingAnquette(id) {
     userInformationWrap.style.display = 'block';
 
     currTemplate.userInformation.forEach((param, index) => {
-      const wrap = document.createElement('div');
-      wrap.setAttribute('class', 'additional-wrap');
+      if (param) {
+        const wrap = document.createElement('div');
+        wrap.setAttribute('class', 'additional-wrap');
 
-      wrap.innerHTML = `
-      <h4 class='additional-header'>${param}:</h4>
+        wrap.innerHTML = `
+          <h4 class='additional-header'>${param}:</h4>
 
-      <label id='userInformation-${index}' class="pure-material-textfield-outlined">
-        <input name='additional-input' placeholder=' '>
-        <span>Введите...</span>
-      </label>
-    `
-      userInformation.appendChild(wrap);
+          <label id='userInformation-${index}' class="pure-material-textfield-outlined">
+            <input name='additional-input' placeholder=' '>
+            <span>Введите...</span>
+          </label>
+        `
+        userInformation.appendChild(wrap);
+      }
     });
   }
 

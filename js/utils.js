@@ -17,7 +17,7 @@ export function getIdByUrl() {
 }
 
 export function makeUrlFromId(id) {
-  return window.location.pathname+`/${id}`
+  return window.location.pathname + `/${id}`
 }
 
 export function changeUrl(url) {

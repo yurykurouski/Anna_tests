@@ -12,7 +12,6 @@ import popupMessage from "../components/pop-up.js";
 import {
   renderQuestionsInputs
 } from "../render/generator/render-questions-edit.js";
-import renderMainPage from "../render/main/render-main.js";
 import { navigateToUrl } from "../routing.js";
 
 //* получение темплейта для формы вопросов
@@ -26,7 +25,7 @@ function collectQuestionsTemplate(event) {
     owner: currentUser.userData.username,
     id: generateId(questionsTemplate.templates),
     description: formDdata.get('rsrchdescription'),
-    userInformation: formDdata.getAll('additional-information').filter(el => el.length === 0),
+    userInformation: formDdata.getAll('additional-information'),
     numberOfQuestions: formDdata.get('questions-amount'),
     possibleAnswersType: formDdata.get('possible-answers'),
     ifRange: formDdata.getAll('variant-field')
@@ -74,8 +73,8 @@ export function collectQuestions(currId, event) {
   storageService.set('SavedQuestionsTemplate', JSON.stringify(questionsTemplate.templates));
   storageService.set('SavedQuestions', JSON.stringify(questionsTemplate.questions));
 
-  popupMessage('msg');
   navigateToUrl('/');
+  popupMessage('msg');
 }
 
 export default collectQuestionsTemplate;

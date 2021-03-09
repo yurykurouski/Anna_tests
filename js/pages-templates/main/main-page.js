@@ -4,7 +4,6 @@ const template = `
 
     </ol>
 
-    <br>
     <span id='msg'></span>
 `
 

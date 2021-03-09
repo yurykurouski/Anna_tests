@@ -2,7 +2,6 @@ import newResearchCard from "./research-cards.js";
 import { CABINET_URL, INDEX_URLS, MAX_CARDS_PER_PAGE, ROOT_DIV } from "../constants.js";
 
 function pagination(template, parent) {
-  // const paginationWrap = document.createElement('span');
   const pages = document.createElement('ol');
 
   let nexPageNum = 3;
@@ -14,8 +13,6 @@ function pagination(template, parent) {
       <li class='pure-material-button-text active'>1</li>
       <li class='pure-material-button-text'>2</li>
     `
-
-  // paginationWrap.appendChild(pages);
 
   for (let i = MAX_CARDS_PER_PAGE; i <= template.length; i++) {
     if (i % (MAX_CARDS_PER_PAGE * (nexPageNum - 1) + 1) === 0) {

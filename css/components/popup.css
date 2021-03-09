@@ -21,7 +21,7 @@
 @keyframes popup{
   from{
     top: 0px;
-    background-color: rgba(255, 255, 255, 0.1)
+    background-color: rgba(13, 17, 23, 0.1)
   }
   to{
     top: -40px;
@@ -40,7 +40,7 @@
 
 #popup strong.msg{
   margin: 0;
-  color: #00AA8D;
+  color: #00E676;
 }
 
 #popup strong.error-msg{
