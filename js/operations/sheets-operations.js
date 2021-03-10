@@ -1,6 +1,12 @@
+import popupMessage from "../components/pop-up.js";
 import { SCRIPT_URL, SHEETS_URL } from "../constants.js";
 
 export function sendData(data) {
+  if (data.length === 0) {
+    popupMessage('error', 'Таблица пустая');
+    return;
+  }
+  
   fetch(SCRIPT_URL, {
     method: "POST",
     mode: "cors",
@@ -11,12 +17,10 @@ export function sendData(data) {
   })
     .then((r) => r.json())
     .then((data) => {
-      // The response comes here
       window.open(SHEETS_URL);
       console.log(data);
     })
     .catch((error) => {
-      // Errors are reported there
       console.log(error);
     });
 }
