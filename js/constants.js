@@ -23,4 +23,9 @@ export const IS_DIGIT = /\d/,
 export const DARK_THEME = 'Dark',
   LIGHT_THEME = 'Light';
 
+//pagination
 export const MAX_CARDS_PER_PAGE = 10;
+
+//sheets
+export const SCRIPT_URL = 'https://sheet.best/api/sheets/ed398154-6f02-402b-9c14-3549f34b66ce',
+  SHEETS_URL = 'https://docs.google.com/spreadsheets/d/1l5vcyO5dQzTbzEXZjZJLC-VRanIVVOvKkiDnEBWhMJ8/edit#gid=0';

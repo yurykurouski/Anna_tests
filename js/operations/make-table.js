@@ -3,6 +3,7 @@ import {
 } from '../constants.js';
 import userAnswers from '../user-answers.js';
 import newButton from '../components/elements/button.js';
+import sendData from './sendTable.js';
 
 function makeTable(currTemplate, questId) {
   const mainTable = ROOT_DIV.querySelector('table');
@@ -47,13 +48,8 @@ function makeTable(currTemplate, questId) {
     }
   }
   
-  newButton('contained', 'button', 'copy-button', 'Копировать', ROOT_DIV).
-    addEventListener('click', () => copyTableContent(mainTable))
-}
-
-function copyTableContent(table) {
-  new ClipboardJS('.copy-button');
-  document.execCommand('copy')
+  newButton('contained', 'button', 'google-sheets', 'GOOGLE SHEETS', ROOT_DIV).
+    addEventListener('click', () => sendData(usersAnswers[0]))
 }
 
 export default makeTable;
