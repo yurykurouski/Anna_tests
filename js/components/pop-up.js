@@ -1,3 +1,5 @@
+import { currentTheme } from "../utils.js";
+
 function popupMessage(type, msg) {
   const header = document.querySelector('header');
   const wrap = document.createElement('span');
@@ -8,7 +10,7 @@ function popupMessage(type, msg) {
 
   wrap.setAttribute('id', 'popup');
 
-  wrap.setAttribute('class', 'light-theme')
+  wrap.setAttribute('class', `${currentTheme()}`);
 
   if (msg) {
     pMsg.textContent = msg;

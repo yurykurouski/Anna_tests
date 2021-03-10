@@ -58,7 +58,7 @@
   content: "";
   display: block;
   position: absolute;
-  top: 2px;
+  top: 4px;
   left: 0;
   border-radius: 50%;
   width: 10px;
@@ -71,6 +71,7 @@
 /* Checked */
 .pure-material-radio>input:checked {
   background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+  top: -6px;
 }
 
 .pure-material-radio>input:checked+span::before {

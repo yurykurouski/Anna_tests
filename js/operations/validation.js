@@ -81,7 +81,6 @@ function validateForms(data) {
       }
     }
 
-
     if (TEMPLATES_REGEX.test(currentUrl)) {
       if (key === 'userInformation') {
         data[key].forEach((key, index) => {
@@ -98,7 +97,7 @@ function validateForms(data) {
             makeErrorMsg(`userAnswers-${index}`, 'Ответьте на все вопросы');
             return hasErrors = true;
           }
-        })
+        });
       }
     }
 
