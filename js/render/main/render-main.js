@@ -17,7 +17,7 @@ import pagination from "../../components/pagination.js";
 function renderMainPage() {
   ROOT_DIV.innerHTML = template;
 
-  const toNewQuestBtn = newButton('contained', 'button', 'new-questionaire', 'Новое исследование', ROOT_DIV);
+  const toNewQuestBtn = newButton('fab', 'button', 'new-questionaire', '+', ROOT_DIV);
 
   toNewQuestBtn.addEventListener('click', () => navigateToUrl(NEW_QUEST_URL));
 

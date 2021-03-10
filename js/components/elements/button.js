@@ -15,6 +15,11 @@ function newButton(kind, type, customClass, buttonText, parentEl) {
     button.setAttribute('class', `pure-material-button-contained ${customClass}`);
     return button;
   }
+
+  if (kind === 'fab') {
+    button.setAttribute('class', `fab-btn light-theme ${customClass}`);
+    return button;
+  }
 }
 
 export default newButton;

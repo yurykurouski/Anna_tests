@@ -3,8 +3,17 @@ body.dark-theme {
   color: aliceblue;
 }
 
+.new-questionaire.dark-theme,
 body.dark-theme .pure-material-button-contained {
   background-color: #114D7C;
+}
+
+.new-questionaire.dark-theme {
+  box-shadow: 0 0 10px 1px #212121;
+}
+
+.new-questionaire.dark-theme:hover {
+  box-shadow: 0 0 10px 3px #262626;
 }
 
 header.dark-theme {
@@ -34,7 +43,11 @@ header #cabinet-wrap.dark-theme li a {
   color: #c4c7c7;
 }
 
-header #cabinet-wrap.dark-theme li button {
+header #cabinet-wrap.dark-theme #add-btn {
+  color: white;
+}
+
+header #cabinet-wrap.dark-theme #add-btn:hover {
   color: #00E676;
 }
 

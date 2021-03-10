@@ -45,7 +45,7 @@ body {
   grid-template-areas: 'h'
     'c'
     'f';
-  grid-template-rows: 60px minmax(650px, 1fr) 40px;
+  grid-template-rows: 60px 1fr;
   max-width: 1280px;
   width: 90%;
   margin: 0 auto;
@@ -166,20 +166,45 @@ h5 {
   gap: 5px
 }
 
-.answer-wrap h5{
+.answer-wrap h5 {
   margin: 5px;
 }
 
-.answer-wrap span{
+.answer-wrap span {
   font-size: 14px;
 }
 
-.new-questionaire{
-  position: sticky;
-  bottom: 15px;
+.new-questionaire {
+  position: fixed;
+  bottom: 10px;
+
+  height: 46px;
+  width: 46px;
+  border-radius: 100%;
+  border-style: none;
+  outline: none;
+
+  font-size: 36px;
+  text-align: center;
+  line-height: 46px;
+
+  color: rgb(255, 255, 255);
+  background-color: rgb(33, 150, 243);
+  box-shadow: 0 0 10px 1px #666;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  z-index: 10;
 }
 
-button.google-sheets{
+.new-questionaire:hover {
+  box-shadow: 0 0 10px 3px #666;
+  background-color: #00E676;
+  transform: scale(1.05);
+  transform: rotate(90deg);
+}
+
+button.google-sheets {
   margin-top: 15px;
   background-color: #0F9D58 !important;
 }
@@ -214,8 +239,9 @@ button.google-sheets{
 }
 
 footer {
-  grid-area: f;
-
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
   font-size: 14px;
   text-align: center;
 }

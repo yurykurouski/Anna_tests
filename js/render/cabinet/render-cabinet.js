@@ -15,7 +15,7 @@ import pagination from "../../components/pagination.js";
 function renderCabinet() {
   ROOT_DIV.innerHTML = template;
 
-  newButton('contained', 'button', 'new-questionaire', 'Новое исследование', ROOT_DIV).
+  newButton('fab', 'button', 'new-questionaire', '+', ROOT_DIV).
     addEventListener('click', () => navigateToUrl('/new'));
 
   const templatesByCurrUser = questionsTemplate.getTemplatesByUser(currentUser.userData.username),

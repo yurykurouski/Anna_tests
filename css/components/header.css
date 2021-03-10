@@ -191,21 +191,46 @@ header #cabinet-wrap li:hover {
   line-height: 2em;
 }
 
+#cabinet-wrap #theme-toggler,
 header #cabinet-wrap li #add-btn {
   font-size: 28px;
+
+  transition: all 0.2s ease-in-out;
 }
 
-header #cabinet-wrap #theme-toggler {
+#add-btn:hover {
+  color: #00E676;
+  transform: rotate(90deg);
+}
+
+#cabinet-wrap #theme-toggler {
   margin-left: auto;
   height: 28px;
-  width: 28px;
   cursor: pointer;
+}
+
+#cabinet-wrap #theme-toggler:hover {
+  animation-name: toggler;
+  animation-duration: 0.5s;
+}
+
+@keyframes toggler{
+  from{
+    transform: rotate(0deg);
+  }
+
+  50%{
+    transform: rotate(45deg);
+  }
+
+  to{
+    transform: rotate(0deg);
+  }
 }
 
 .cabinet-a {
   color: black;
   line-height: 2em;
-
 }
 
 .cabinet-a:after {
