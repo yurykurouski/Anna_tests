@@ -180,6 +180,11 @@ h5 {
   bottom: 15px;
 }
 
+button.google-sheets{
+  margin-top: 15px;
+  background-color: #0F9D58 !important;
+}
+
 /* auth */
 .auth-form {
   display: flex;

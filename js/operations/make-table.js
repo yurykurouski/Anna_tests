@@ -1,8 +1,9 @@
 import {
-  ROOT_DIV
+  ROOT_DIV, SHEETS_URL
 } from '../constants.js';
 import userAnswers from '../user-answers.js';
 import newButton from '../components/elements/button.js';
+import { sendData, prepareData } from './sheets-operations.js';
 
 function makeTable(currTemplate, questId) {
   const mainTable = ROOT_DIV.querySelector('table');
@@ -13,7 +14,7 @@ function makeTable(currTemplate, questId) {
   const headerRow = mainTable.insertRow();
   const cell1 = headerRow.insertCell(-1);
 
-  cell1.textContent = '# респондента';
+  cell1.textContent = '#';
 
   currTemplate.userInformation.forEach(el => {
     const extraField = headerRow.insertCell(-1);
@@ -46,14 +47,12 @@ function makeTable(currTemplate, questId) {
       userAnswers.textContent = usersAnswers[i].userAnswers[k]
     }
   }
-  
-  newButton('contained', 'button', 'copy-button', 'Копировать', ROOT_DIV).
-    addEventListener('click', () => copyTableContent(mainTable))
-}
 
-function copyTableContent(table) {
-  new ClipboardJS('.copy-button');
-  document.execCommand('copy')
+  const tableData = prepareData(usersInformation, usersAnswers);
+
+
+  newButton('contained', 'button', 'google-sheets', 'GOOGLE SHEETS', ROOT_DIV).
+    addEventListener('click', () => sendData(tableData));
 }
 
 export default makeTable;
