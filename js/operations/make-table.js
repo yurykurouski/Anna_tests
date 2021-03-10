@@ -3,7 +3,7 @@ import {
 } from '../constants.js';
 import userAnswers from '../user-answers.js';
 import newButton from '../components/elements/button.js';
-import { deleteData, sendData, prepareData } from './sheets-operations.js';
+import { sendData, prepareData } from './sheets-operations.js';
 
 function makeTable(currTemplate, questId) {
   const mainTable = ROOT_DIV.querySelector('table');

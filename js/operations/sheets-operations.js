@@ -12,6 +12,7 @@ export function sendData(data) {
     .then((r) => r.json())
     .then((data) => {
       // The response comes here
+      window.open(SHEETS_URL);
       console.log(data);
     })
     .catch((error) => {
@@ -37,20 +38,5 @@ export function prepareData(usrInformation, usrAnswers) {
   }
 
   return data;
-  console.log(data);
-}
-
-
-export function deleteData() {
-  fetch(`${SCRIPT_URL}/all`, {
-    method: "DELETE",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
 }
 
