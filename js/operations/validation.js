@@ -99,9 +99,7 @@ function validateForms(data) {
             return hasErrors = true;
           }
         })
-        return hasErrors = true
       }
-
     }
 
     if (NEW_QUEST_URL === currentUrl) {
