@@ -39,11 +39,7 @@ function renderExistingQuestions(currTemplate) {
   const form = ROOT_DIV.querySelector('form');
 
   form.addEventListener('submit', () => {
-    popupMessage('msg');
     collectUserAnswers(event, currTemplate.id);
-    setTimeout(() => {
-      navigateToUrl('/');
-    }, 1000);
   });
 
   document.title = `Социология > Всего вопросов - ${questionsNum}`;

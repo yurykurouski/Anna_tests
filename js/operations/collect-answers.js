@@ -1,6 +1,7 @@
 import popupMessage from "../components/pop-up.js";
 import { ROOT_DIV } from "../constants.js";
 import renderExistingQuestions from "../render/ready/render-existingQuestions.js";
+import { navigateToUrl } from "../routing.js";
 import storageService from "../storage-service.js";
 import userAnswers from "../user-answers.js";
 import validateForms from "./validation.js";
@@ -45,4 +46,7 @@ export function collectUserAnswers(event, id) {
   userAnswers.saveAnswers(answers);
 
   storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
+
+  popupMessage('msg');
+  navigateToUrl('/');
 }
