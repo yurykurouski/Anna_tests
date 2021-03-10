@@ -82,13 +82,26 @@ function validateForms(data) {
     }
 
 
-    if (key === 'userInformation' && TEMPLATES_REGEX.test(currentUrl)) {
-      data[key].forEach((key, index) => {
-        if (key.length === 0) {
-          makeErrorMsg(`userInformation-${index}`, 'Заполните все необходимые поля');
-          return hasErrors = true;
-        }
-      });
+    if (TEMPLATES_REGEX.test(currentUrl)) {
+      if (key === 'userInformation') {
+        data[key].forEach((key, index) => {
+          if (key.length === 0) {
+            makeErrorMsg(`userInformation-${index}`, 'Заполните все необходимые поля');
+            return hasErrors = true;
+          }
+        });
+      }
+
+      if (key === 'userAnswers') {
+        data[key].forEach((el, index) => {
+          if (!el) {
+            makeErrorMsg(`userAnswers-${index}`, 'Ответьте на все вопросы');
+            return hasErrors = true;
+          }
+        })
+        return hasErrors = true
+      }
+
     }
 
     if (NEW_QUEST_URL === currentUrl) {

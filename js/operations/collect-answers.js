@@ -43,6 +43,8 @@ export function collectUserAnswers(event, id) {
     answers.userAnswers = [...answers.userAnswers, answer]
   });
 
+  if (validateForms(answers)) return;
+
   userAnswers.saveAnswers(answers);
 
   storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));

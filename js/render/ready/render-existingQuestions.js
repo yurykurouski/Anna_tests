@@ -24,7 +24,7 @@ function renderExistingQuestions(currTemplate) {
 
     wrap.innerHTML = `
       <h4>Вопрос №${index + 1}:</h4>
-      <div  class='card ${currentTheme()}'>
+      <div id='userAnswers-${index}' class='card ${currentTheme()}'>
         <p>${qstn}</p>
         <div class='answer-wrap'>
           <h5>Ваш ответ:</h5>
