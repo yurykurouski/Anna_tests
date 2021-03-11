@@ -1,8 +1,7 @@
 import {
   ROOT_DIV
-} from "../../../constants.js";
-import storageService from "../../../storage-service.js";
-import { currentTheme } from "../../../utils.js";
+} from '../../../constants.js';
+import { currentTheme } from '../../../utils.js';
 
 // функция добавления дополнительного поля для доп. сведений
 export function addExtraField() {
@@ -16,7 +15,7 @@ export function addExtraField() {
       <input name='additional-information' placeholder=' '>
       <span>Введите...</span>
     </label>
-    <span class="material-icons close" title='Удалить вопрос'>cancel</span>
+    <span class='material-icons close' title='Удалить вопрос'>cancel</span>
   `
 
   extraInformationDiv.appendChild(extraWrapper);
@@ -50,10 +49,8 @@ export function rangeTemplate(event) {
 
     quanityField.setAttribute('name', 'quanity-of-answers');
 
-    if (storageService.get('Current theme') === 'Dark') {
-      quanityField.setAttribute('class', 'dark-theme');
-    } else quanityField.setAttribute('class', 'light-theme');
-    
+    quanityField.setAttribute('class', `${currentTheme()}`);
+
     possibleAnswersWrap.appendChild(quanityField);
 
     quanityField.innerHTML = `
@@ -76,9 +73,7 @@ export function rangeTemplate(event) {
 
       rangeNotation.textContent = 'Введите варианты ответов. Цифры обозначают "вес" ответа:';
 
-      if (storageService.get('Current theme') === 'Light') {
-        rangeWrap.setAttribute('class', 'range-wrap card light-theme');
-      } else rangeWrap.setAttribute('class', 'range-wrap card dark-theme');
+      rangeWrap.setAttribute('class', `range-wrap card ${currentTheme()}`);
 
       rangeNotation.setAttribute('class', 'range-notation')
 

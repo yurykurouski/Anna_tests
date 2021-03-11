@@ -1,8 +1,9 @@
 import {
   navigateToUrl
-} from "../routing.js";
-import modalDelete from "./modal-delete.js";
-import newButton from "./elements/button.js";
+} from '../routing.js';
+import { currentTheme } from '../utils.js';
+import modalDelete from './modal-delete.js';
+import newButton from './elements/button.js';
 
 class ResearchCard {
   main(el, researchesWrap) {
@@ -12,7 +13,7 @@ class ResearchCard {
       span = document.createElement('span'),
       info = document.createElement('span');
 
-    cardWrap.setAttribute('class', 'card main light-theme')
+    cardWrap.setAttribute('class', `card main ${currentTheme()}`);
 
     researchesWrap.appendChild(researchCard);
     researchCard.appendChild(cardWrap);
@@ -37,7 +38,7 @@ class ResearchCard {
       span = document.createElement('span'),
       info = document.createElement('span');
 
-    cardWrap.setAttribute('class', 'card cabinet light-theme');
+    cardWrap.setAttribute('class', `card cabinet ${currentTheme()}`);
     researchCard.setAttribute('id', el.id);
 
     researchesWrap.appendChild(researchCard);

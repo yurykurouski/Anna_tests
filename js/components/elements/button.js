@@ -1,3 +1,5 @@
+import { currentTheme } from '../../utils.js';
+
 function newButton(kind, type, customClass, buttonText, parentEl) {
   const button = document.createElement('button');
   button.setAttribute('type', type);
@@ -17,7 +19,7 @@ function newButton(kind, type, customClass, buttonText, parentEl) {
   }
 
   if (kind === 'fab') {
-    button.setAttribute('class', `fab-btn light-theme ${customClass}`);
+    button.setAttribute('class', `fab-btn ${currentTheme()} ${customClass}`);
     return button;
   }
 }

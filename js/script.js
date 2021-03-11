@@ -1,7 +1,7 @@
-import { ROOT_DIV } from "./constants.js";
-import { renderPage } from "./routing.js";
-import storageService from "./storage-service.js";
-import changeTheme from "./operations/changeTheme.js";
+import { ROOT_DIV } from './constants.js';
+import { renderPage } from './routing.js';
+import storageService from './storage-service.js';
+import changeTheme from './operations/changeTheme.js';
 
 if (!storageService.get('Current theme')) {
   storageService.set('Current theme', 'Light');
@@ -16,8 +16,6 @@ window.addEventListener('popstate', () => {
 });
 
 const observer = new MutationObserver(() => {
-  const toggl = document.querySelector('#theme-toggler');
-  console.log(toggl);
   changeTheme(storageService.get('Current theme'));
 });
 

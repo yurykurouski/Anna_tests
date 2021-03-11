@@ -15,6 +15,10 @@ function renderSearchPage(event, text) {
   const wrap = ROOT_DIV.querySelector('.aw-researches');
   const matchingTemplates = questionsTemplate.getTemplateByRequest(text);
 
+  if (matchingTemplates.length === 0) {
+    return headerMsg.textContent = 'По вашему запросу ничего не найденою Повторите поиск';
+  }
+
   headerMsg.textContent = `По запросу '${text}' найдено:`;
 
   matchingTemplates.forEach(template => {

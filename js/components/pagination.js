@@ -1,5 +1,6 @@
-import newResearchCard from "./research-cards.js";
-import { CABINET_URL, INDEX_URLS, MAX_CARDS_PER_PAGE, ROOT_DIV } from "../constants.js";
+import { currentTheme } from '../utils.js';
+import newResearchCard from './research-cards.js';
+import { CABINET_URL, INDEX_URLS, MAX_CARDS_PER_PAGE, ROOT_DIV } from '../constants.js';
 
 function pagination(template, parent) {
   const pages = document.createElement('ol');
@@ -7,7 +8,7 @@ function pagination(template, parent) {
   let nexPageNum = 3;
   let currentPage = 1;
 
-  pages.setAttribute('class', 'pagination-wrap light-theme');
+  pages.setAttribute('class', `pagination-wrap ${currentTheme()}`); 
 
   pages.innerHTML = `
       <li class='pure-material-button-text active'>1</li>

@@ -1,5 +1,5 @@
-import popupMessage from "../components/pop-up.js";
-import { SCRIPT_URL, SHEETS_URL } from "../constants.js";
+import popupMessage from '../components/pop-up.js';
+import { SCRIPT_URL, SHEETS_URL } from '../constants.js';
 
 export function sendData(data) {
   if (data.length === 0) {
@@ -8,10 +8,10 @@ export function sendData(data) {
   }
 
   fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "cors",
+    method: 'POST',
+    mode: 'cors',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   })
