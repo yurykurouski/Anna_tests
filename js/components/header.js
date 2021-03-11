@@ -25,7 +25,7 @@ function renderHeader() {
     toggler = header.querySelector('#theme-toggler');
 
   form.addEventListener('input', launchSearchBox);
-  
+
   form.addEventListener('submit', (event) => {
     const formData = new FormData(event.target);
     const searchRequest = formData.get('search');
@@ -42,9 +42,7 @@ function renderHeader() {
     auth.textContent = 'Кабинет';
 
     if (storageService.get('Current theme') === 'Dark') {
-      // changeTheme('Dark');
-      // storageService.set('Current theme', 'Dark');
-      toggler.setAttribute('src', 'img/daylight_48dp.svg');
+      toggler.setAttribute('src', '/img/daylight_48dp.svg');
       toggler.setAttribute('title', 'Переключить на светлую тему');
     }
 
@@ -52,12 +50,12 @@ function renderHeader() {
       if (storageService.get('Current theme') === 'Light') {
         changeTheme('Dark');
         storageService.set('Current theme', 'Dark');
-        toggler.setAttribute('src', 'img/daylight_48dp.svg');
+        toggler.setAttribute('src', '/img/daylight_48dp.svg');
         toggler.setAttribute('title', 'Переключить на светлую тему');
       } else {
         changeTheme('Light');
         storageService.set('Current theme', 'Light');
-        toggler.setAttribute('src', 'img/nightlight_48dp.svg');
+        toggler.setAttribute('src', '/img/nightlight_48dp.svg');
         toggler.setAttribute('title', 'Переключить на темную тему');
       }
     });

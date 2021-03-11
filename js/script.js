@@ -16,6 +16,8 @@ window.addEventListener('popstate', () => {
 });
 
 const observer = new MutationObserver(() => {
+  const toggl = document.querySelector('#theme-toggler');
+  console.log(toggl);
   changeTheme(storageService.get('Current theme'));
 });
 

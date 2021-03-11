@@ -27,8 +27,6 @@ function makeTable(currTemplate, questId) {
 
     questionField.textContent = `Вопрос ${i}`;
   }
-  
-  if (usersInformation.length != usersAnswers.length) return console.error('Smthg wrong!');
 
   //* заполнение таблицы пользовательскими ответами
   for (let i = 0; i < usersAnswers.length; i++) {

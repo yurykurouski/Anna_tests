@@ -15,7 +15,7 @@ const template = `
         <ul id='cabinet-wrap' class='light-theme'>
             <li class='light-theme'><span id='usr-name'></span></li>
             <li id='cabinet' class='light-theme'></li>
-            <li class='light-theme'><a id='logout' class='cabinet-a'>Выйти</a><img id='theme-toggler' src='img/nightlight_48dp.svg' title='Переключить на темную тему' alt='Theme toggler'></li>
+            <li class='light-theme'><a id='logout' class='cabinet-a'>Выйти</a><img id='theme-toggler' src='/img/nightlight_48dp.svg' title='Переключить на темную тему' alt='Theme toggler'></li>
         </г>
     </span>
 `
