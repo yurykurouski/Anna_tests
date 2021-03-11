@@ -35,14 +35,20 @@ export function prepareData(usrInformation, usrAnswers) {
   for (let i = 0; i < usrInformation.length; i++) {
     const obj = {};
 
-    obj.Id = i + 1;
-    obj.Information = usrInformation[i].userInformation.toString();
+    try {
+      obj.Id = i + 1;
+      obj.Information = usrInformation[i].userInformation.toString();
 
-    usrAnswers[i].userAnswers.forEach((el, index) => {
-      obj[index + 1] = el
-    });
+      usrAnswers[i].userAnswers.forEach((el, index) => {
+        obj[index + 1] = el
+      });
 
-    data.push(obj);
+      data.push(obj);
+    }
+    catch {
+      return console.error('Ошибка с сохраненными данными');
+    }
+
   }
 
   return data;
