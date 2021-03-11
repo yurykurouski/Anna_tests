@@ -5,7 +5,6 @@ import {
   collectUserAnswers
 } from "../../operations/collect-answers.js";
 import { currentTheme } from "../../utils.js";
-import { navigateToUrl } from "../../routing.js";
 import popupMessage from "../../components/pop-up.js";
 import questionsTemplate from "../../questions-template.js";
 import template from "../../pages-templates/Ready/questions-presentation.js";

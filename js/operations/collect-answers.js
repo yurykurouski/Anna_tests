@@ -49,6 +49,6 @@ export function collectUserAnswers(event, id) {
 
   storageService.set('UserAnswers', JSON.stringify(userAnswers.answers));
 
-  popupMessage('msg');
   navigateToUrl('/');
+  popupMessage('msg', 'Ответы сохранены, спасибо!');
 }
