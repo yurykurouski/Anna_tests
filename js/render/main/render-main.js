@@ -1,18 +1,18 @@
 import {
   navigateToUrl
-} from "../../routing.js";
+} from '../../routing.js';
 import {
   LOGIN_URL,
   MAX_CARDS_PER_PAGE,
   NEW_QUEST_URL,
   ROOT_DIV
-} from "../../constants.js";
-import currentUser from "../../current-user.js";
-import questionsTemplate from "../../questions-template.js";
-import newButton from "../../components/elements/button.js";
-import template from "../../pages-templates/Main/main-page.js";
-import newResearchCard from "../../components/research-cards.js";
-import pagination from "../../components/pagination.js";
+} from '../../constants.js';
+import currentUser from '../../current-user.js';
+import questionsTemplate from '../../questions-template.js';
+import newButton from '../../components/elements/button.js';
+import template from '../../pages-templates/Main/main-page.js';
+import newResearchCard from '../../components/research-cards.js';
+import pagination from '../../components/pagination.js';
 
 function renderMainPage() {
   ROOT_DIV.innerHTML = template;

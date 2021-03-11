@@ -1,13 +1,12 @@
 import {
   ROOT_DIV
-} from "../../constants.js";
+} from '../../constants.js';
 import {
   collectUserAnswers
-} from "../../operations/collect-answers.js";
-import { currentTheme } from "../../utils.js";
-import popupMessage from "../../components/pop-up.js";
-import questionsTemplate from "../../questions-template.js";
-import template from "../../pages-templates/Ready/questions-presentation.js";
+} from '../../operations/collect-answers.js';
+import { currentTheme } from '../../utils.js';
+import questionsTemplate from '../../questions-template.js';
+import template from '../../pages-templates/Ready/questions-presentation.js';
 
 function renderExistingQuestions(currTemplate) {
 
@@ -48,12 +47,12 @@ function renderExistingQuestions(currTemplate) {
 function generateAnswerTypeTemplate(currTemplate, index) {
   if (currTemplate.possibleAnswersType === 'boolean') {
     const template = `
-      <label class="pure-material-radio">
-        <input type="radio" name="radio${index + 1}" value='0'>
+      <label class='pure-material-radio'>
+        <input type='radio' name='radio${index + 1}' value='0'>
         <span>Нет</span>
       </label>
-      <label class="pure-material-radio">
-        <input type="radio" name="radio${index + 1}" value='1'>
+      <label class='pure-material-radio'>
+        <input type='radio' name='radio${index + 1}' value='1'>
         <span>Да</span>
       </label>
     `
@@ -64,8 +63,8 @@ function generateAnswerTypeTemplate(currTemplate, index) {
     let template = '';
     for (let i = 0; i < currTemplate.ifRange.length; i++) {
       const part = `
-        <label class="pure-material-radio">
-          <input type="radio" name="radio${index + 1}" value='${i + 1}'>
+        <label class='pure-material-radio'>
+          <input type='radio' name='radio${index + 1}' value='${i + 1}'>
           <span>${currTemplate.ifRange[i]}</span>
         </label>
       `

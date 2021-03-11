@@ -2,6 +2,7 @@ import { currentTheme } from '../../utils.js';
 
 const template = `
     <form class='auth-form'>
+
       <div class='form-wrap card ${currentTheme()}'>
       <h3>Регистрация:</h3>
       
@@ -22,8 +23,8 @@ const template = `
           <span>Подтвердите</span>
         </label>
         <br>
-
       </div>
+
     </form>
 `
 

@@ -1,5 +1,5 @@
-import currentUser from "../../current-user.js";
-import { navigateToUrl } from "../../routing.js";
+import currentUser from '../../current-user.js';
+import { navigateToUrl } from '../../routing.js';
 
 function logOut() {
   currentUser.logout();

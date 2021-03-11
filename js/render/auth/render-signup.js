@@ -1,11 +1,11 @@
 import {
   LOGIN_URL,
   ROOT_DIV
-} from "../../constants.js";
-import { navigateToUrl } from "../../routing.js";
-import signUp from "../../operations/auth/sign-up.js";
-import template from "../../pages-templates/Auth/sign-up.js";
-import newButton from "../../components/elements/button.js";
+} from '../../constants.js';
+import { navigateToUrl } from '../../routing.js';
+import signUp from '../../operations/auth/sign-up.js';
+import newButton from '../../components/elements/button.js';
+import template from '../../pages-templates/Auth/sign-up.js';
 
 function renderSignup() {
   ROOT_DIV.innerHTML = template;

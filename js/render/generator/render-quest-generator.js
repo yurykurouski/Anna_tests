@@ -1,13 +1,13 @@
 import {
   ROOT_DIV
-} from "../../constants.js";
+} from '../../constants.js';
 import {
   addExtraField,
   rangeTemplate
-} from "./generator-extra-fields/extra-fields.js";
-import newButton from "../../components/elements/button.js";
-import template from "../../pages-templates/Generator/quest-generator.js";
-import collectQuestionsTemplate from "../../operations/collect-questions.js";
+} from './generator-extra-fields/extra-fields.js';
+import newButton from '../../components/elements/button.js';
+import template from '../../pages-templates/Generator/quest-generator.js';
+import collectQuestionsTemplate from '../../operations/collect-questions.js';
 
 //* рендер формы-конструктора
 function renderQuestGenerator() {

@@ -1,9 +1,8 @@
-import { ROOT_DIV } from "../../constants.js";
-import questionsTemplate from "../../questions-template.js";
-import { collectUserAnquette } from "../../operations/collect-answers.js";
-import template from "../../pages-templates/Ready/questionnaire-presentation.js";
+import { ROOT_DIV } from '../../constants.js';
+import questionsTemplate from '../../questions-template.js';
+import { collectUserAnquette } from '../../operations/collect-answers.js';
+import template from '../../pages-templates/Ready/questionnaire-presentation.js';
 
-//* сборка анкеты из конструктора
 export function renderExsistingAnquette(id) {
   ROOT_DIV.innerHTML = template;
 
@@ -31,7 +30,7 @@ export function renderExsistingAnquette(id) {
         wrap.innerHTML = `
           <h4 class='additional-header'>${param}:</h4>
 
-          <label id='userInformation-${index}' class="pure-material-textfield-outlined">
+          <label id='userInformation-${index}' class='pure-material-textfield-outlined'>
             <input name='additional-input' placeholder=' '>
             <span>Введите...</span>
           </label>

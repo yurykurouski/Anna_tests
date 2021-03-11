@@ -3,7 +3,6 @@ import {
 } from '../../../constants.js';
 import { currentTheme } from '../../../utils.js';
 
-// функция добавления дополнительного поля для доп. сведений
 export function addExtraField() {
   const extraInformationDiv = ROOT_DIV.querySelector('.additional-information-extra');
 
@@ -35,7 +34,7 @@ export function delExtraField(event, el) {
   targetWrap.remove();
 }
 
-//* создание полей для кастомных полей ответа
+// создание полей для кастомных полей ответа
 export function rangeTemplate(event) {
   const possibleAnswersWrap = ROOT_DIV.querySelector('.possible-answers');
   const form = ROOT_DIV.querySelector('form');

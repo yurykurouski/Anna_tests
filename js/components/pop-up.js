@@ -1,4 +1,4 @@
-import { currentTheme } from "../utils.js";
+import { currentTheme } from '../utils.js';
 
 function popupMessage(type, msg) {
   const header = document.querySelector('header');

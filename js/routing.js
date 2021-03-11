@@ -7,18 +7,18 @@ import {
   REGISTRATION_URL,
   SHOW_COMPLETED,
   TEMPLATES_REGEX
-} from "./constants.js";
-import { getIdByUrl } from "./utils.js";
-import currentUser from "./current-user.js";
-import notFound from "./render/main/404.js";
-import renderHeader from "./components/header.js";
-import renderLogin from "./render/auth/render-login.js";
-import renderMainPage from "./render/main/render-main.js";
-import renderSignup from "./render/auth/render-signup.js";
-import renderCabinet from "./render/cabinet/render-cabinet.js";
-import renderQuestGenerator from "./render/generator/render-quest-generator.js";
-import { renderExsistingAnquette } from "./render/ready/render-exsistingAnquette.js";
-import renderCompleted from "./render/cabinet/completed/render-cabinet-completed.js";
+} from './constants.js';
+import { getIdByUrl } from './utils.js';
+import currentUser from './current-user.js';
+import notFound from './render/main/404.js';
+import renderHeader from './components/header.js';
+import renderLogin from './render/auth/render-login.js';
+import renderMainPage from './render/main/render-main.js';
+import renderSignup from './render/auth/render-signup.js';
+import renderCabinet from './render/cabinet/render-cabinet.js';
+import renderQuestGenerator from './render/generator/render-quest-generator.js';
+import { renderExsistingAnquette } from './render/ready/render-exsistingAnquette.js';
+import renderCompleted from './render/cabinet/completed/render-cabinet-completed.js';
 
 export function renderPage() {
   const {

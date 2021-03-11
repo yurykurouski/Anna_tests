@@ -1,10 +1,10 @@
-import popupMessage from "../components/pop-up.js";
-import { ROOT_DIV } from "../constants.js";
-import renderExistingQuestions from "../render/ready/render-existingQuestions.js";
-import { navigateToUrl } from "../routing.js";
-import storageService from "../storage-service.js";
-import userAnswers from "../user-answers.js";
-import validateForms from "./validation.js";
+import { ROOT_DIV } from '../constants.js';
+import validateForms from './validation.js';
+import userAnswers from '../user-answers.js';
+import { navigateToUrl } from '../routing.js';
+import storageService from '../storage-service.js';
+import popupMessage from '../components/pop-up.js';
+import renderExistingQuestions from '../render/ready/render-existingQuestions.js';
 
 export function collectUserAnquette(event, id, currTemplate) {
   event.preventDefault();

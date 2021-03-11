@@ -1,7 +1,7 @@
-import usersList from "../../users.js";
-import validateForms from "../validation.js";
-import currentUser from "../../current-user.js";
-import { navigateToUrl } from "../../routing.js";
+import usersList from '../../users.js';
+import validateForms from '../validation.js';
+import currentUser from '../../current-user.js';
+import { navigateToUrl } from '../../routing.js';
 
 function login(event) {
   event.preventDefault();

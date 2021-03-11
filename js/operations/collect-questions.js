@@ -1,18 +1,18 @@
 import {
   generateId
-} from "../utils.js";
-import currentUser from "../current-user.js";
-import storageService from "../storage-service.js";
-import questionsTemplate from "../questions-template.js";
+} from '../utils.js';
+import currentUser from '../current-user.js';
 import {
   ROOT_DIV
-} from "../constants.js";
-import validateForms from "./validation.js";
-import popupMessage from "../components/pop-up.js";
+} from '../constants.js';
+import validateForms from './validation.js';
+import { navigateToUrl } from '../routing.js';
+import storageService from '../storage-service.js';
+import popupMessage from '../components/pop-up.js';
 import {
   renderQuestionsInputs
-} from "../render/generator/render-questions-edit.js";
-import { navigateToUrl } from "../routing.js";
+} from '../render/generator/render-questions-edit.js';
+import questionsTemplate from '../questions-template.js';
 
 //* получение темплейта для формы вопросов
 function collectQuestionsTemplate(event) {

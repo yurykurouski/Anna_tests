@@ -1,16 +1,16 @@
 import {
   navigateToUrl
-} from "../../routing.js";
+} from '../../routing.js';
 import {
   MAX_CARDS_PER_PAGE,
   ROOT_DIV
-} from "../../constants.js";
-import currentUser from "../../current-user.js";
-import questionsTemplate from "../../questions-template.js";
-import newButton from "../../components/elements/button.js";
-import newResearchCard from "../../components/research-cards.js";
-import template from "../../pages-templates/cabinet/cabinet-template.js";
-import pagination from "../../components/pagination.js";
+} from '../../constants.js';
+import currentUser from '../../current-user.js';
+import pagination from '../../components/pagination.js';
+import questionsTemplate from '../../questions-template.js';
+import newButton from '../../components/elements/button.js';
+import newResearchCard from '../../components/research-cards.js';
+import template from '../../pages-templates/cabinet/cabinet-template.js';
 
 function renderCabinet() {
   ROOT_DIV.innerHTML = template;

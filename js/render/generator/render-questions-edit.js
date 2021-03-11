@@ -1,16 +1,15 @@
 import {
   ROOT_DIV
-} from "../../constants.js";
+} from '../../constants.js';
 import {
   collectQuestions
-} from "../../operations/collect-questions.js";
+} from '../../operations/collect-questions.js';
 import {
   addQuestionBlock
-} from "./generator-extra-fields/extra-fields.js";
-import newButton from "../../components/elements/button.js";
-import template from "../../pages-templates/Generator/questions-edit.js";
+} from './generator-extra-fields/extra-fields.js';
+import newButton from '../../components/elements/button.js';
+import template from '../../pages-templates/Generator/questions-edit.js';
 
-//* рендер инпутов для ввода вопросов
 export function renderQuestionsInputs(numAndId) {
   ROOT_DIV.innerHTML = template;
 

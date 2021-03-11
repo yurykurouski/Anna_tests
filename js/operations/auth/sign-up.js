@@ -1,11 +1,11 @@
 import {
   generateId
-} from "../../utils.js";
-import usersList from "../../users.js";
-import validateForms from "../validation.js";
-import currentUser from "../../current-user.js";
-import { navigateToUrl } from "../../routing.js";
-import storageService from "../../storage-service.js";
+} from '../../utils.js';
+import usersList from '../../users.js';
+import validateForms from '../validation.js';
+import currentUser from '../../current-user.js';
+import { navigateToUrl } from '../../routing.js';
+import storageService from '../../storage-service.js';
 
 function signUp(event) {
   event.preventDefault();

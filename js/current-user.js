@@ -1,5 +1,3 @@
-import storageService from "./storage-service.js";
-
 class CurrentUser {
   constructor(userData) {
     this.userData = userData;
