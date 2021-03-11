@@ -1,6 +1,16 @@
 table {
+  max-width: 1250px;
   border-collapse: collapse;
   border-spacing: 0;
+  display: inline-block;
+
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.table-wrap{
+  position: relative;
+  overflow-x: auto;
 }
 
 td,
@@ -12,11 +22,6 @@ table,
 th,
 td {
   border: none;
-}
-
-table {
-  width: 100%;
-  display: table;
 }
 
 table.highlight>tbody>tr {
@@ -54,3 +59,18 @@ th {
   border-radius: 2px;
 }
 
+table::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+
+table::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: grey;
+}
+
+table::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}

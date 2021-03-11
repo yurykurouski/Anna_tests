@@ -1,12 +1,12 @@
 import {
   getIdByUrl
-} from "../../../utils.js";
+} from '../../../utils.js';
 import {
   ROOT_DIV
-} from "../../../constants.js";
-import makeTable from "../../../operations/make-table.js";
-import questionsTemplate from "../../../questions-template.js";
-import template from "../../../pages-templates/cabinet/completed/cabinet-completed.js";
+} from '../../../constants.js';
+import makeTable from '../../../operations/make-table.js';
+import questionsTemplate from '../../../questions-template.js';
+import template from '../../../pages-templates/cabinet/completed/cabinet-completed.js';
 
 function renderCompleted() {
   ROOT_DIV.innerHTML = template;

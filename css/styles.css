@@ -18,6 +18,7 @@
 
 :root::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
   background-color: transparent;
 }
 
@@ -27,7 +28,6 @@
 }
 
 :root::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   background-color: transparent;
 }
@@ -74,7 +74,7 @@ h5 {
 }
 
 /* quest generator */
-#quest-generator #description textarea{
+#quest-generator #description textarea {
   min-height: 150px;
 }
 

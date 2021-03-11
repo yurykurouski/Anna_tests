@@ -11,7 +11,9 @@ const template = `
     <h4 class='completed-num'></h4>
   </span>
 
-  <table class='striped ${currentTheme()}'>
+  <div class='table-wrap'>
+    <table class='striped ${currentTheme()}'>
+  </div>
 
   </table>
 `

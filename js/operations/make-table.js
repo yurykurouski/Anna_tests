@@ -1,5 +1,5 @@
 import {
-  ROOT_DIV, SHEETS_URL
+  ROOT_DIV
 } from '../constants.js';
 import userAnswers from '../user-answers.js';
 import newButton from '../components/elements/button.js';
