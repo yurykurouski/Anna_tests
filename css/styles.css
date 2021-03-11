@@ -74,6 +74,10 @@ h5 {
 }
 
 /* quest generator */
+#quest-generator #description textarea{
+  min-height: 150px;
+}
+
 #quest-generator .additional-information {
   margin: 5px;
 }

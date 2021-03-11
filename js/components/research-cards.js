@@ -7,55 +7,45 @@ import newButton from './elements/button.js';
 
 class ResearchCard {
   main(el, researchesWrap) {
-    const researchCard = document.createElement('li'),
-      cardWrap = document.createElement('div'),
-      name = document.createElement('p'),
-      span = document.createElement('span'),
-      info = document.createElement('span');
+    const researchCard = document.createElement('li');
 
-    cardWrap.setAttribute('class', `card main ${currentTheme()}`);
+    researchCard.innerHTML = `
+      <div class='card main ${currentTheme()}'>
+        <p>${el.templateName}</p>
+        <span class='action-wrap'>
+          <span>Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}</span>
+        </span>
+      </div>
+      `
 
-    researchesWrap.appendChild(researchCard);
-    researchCard.appendChild(cardWrap);
-    cardWrap.appendChild(name);
-    cardWrap.appendChild(span);
-    span.appendChild(info);
+    newButton('contained', 'button', 'go-to-anquette', 'Пройти', researchCard.querySelector('.action-wrap')).
+      addEventListener('click', () => {
+        navigateToUrl(`/templates/${el.id}`);
+      });
 
-    name.textContent = el.templateName;
-
-    info.textContent = `Количество вопросов: ${el.numberOfQuestions}. Автор: ${el.owner}`;
-
-    newButton('contained', 'button', 'go-to-anquette', 'Пройти', span).
-    addEventListener('click', () => {
-      navigateToUrl(`/templates/${el.id}`);
-    });
+    researchesWrap.appendChild(researchCard)
   }
 
   cabinet(el, researchesWrap) {
-    const researchCard = document.createElement('li'),
-      cardWrap = document.createElement('div'),
-      name = document.createElement('p'),
-      span = document.createElement('span'),
-      info = document.createElement('span');
-
-    cardWrap.setAttribute('class', `card cabinet ${currentTheme()}`);
+    const researchCard = document.createElement('li');
     researchCard.setAttribute('id', el.id);
 
+    researchCard.innerHTML = `
+      <div class='card cabinet ${currentTheme()}'>
+        <p>${el.templateName}</p>
+        <span class='action-wrap'>
+          <span>Количество вопросов: ${el.numberOfQuestions}.</span>
+        </span>
+      </div>
+      `
+
+    newButton('contained', 'button', 'go-to-anquette', 'Посмотреть анкеты', researchCard.querySelector('.action-wrap')).
+      addEventListener('click', () => navigateToUrl(`/cabinet/completed/${el.id}`));
+
+    newButton('contained', 'button', 'del-anquette', 'Удалить', researchCard.querySelector('.action-wrap')).
+      addEventListener('click', () => modalDelete(el.id));
+
     researchesWrap.appendChild(researchCard);
-    researchCard.appendChild(cardWrap);
-    cardWrap.appendChild(name);
-    cardWrap.appendChild(span);
-    span.appendChild(info);
-
-    name.textContent = el.templateName;
-
-    info.textContent = `Количество вопросов: ${el.numberOfQuestions}.`;
-
-    newButton('contained', 'button', 'go-to-anquette', 'Посмотреть анкеты', span).
-    addEventListener('click', () => navigateToUrl(`/cabinet/completed/${el.id}`));
-
-    newButton('contained', 'button', 'del-anquette', 'Удалить', span).
-    addEventListener('click', () => modalDelete(el.id));
   }
 }
 
