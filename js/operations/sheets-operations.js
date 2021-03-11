@@ -6,7 +6,7 @@ export function sendData(data) {
     popupMessage('error', 'Таблица пустая');
     return;
   }
-  
+
   fetch(SCRIPT_URL, {
     method: "POST",
     mode: "cors",
@@ -28,6 +28,10 @@ export function sendData(data) {
 export function prepareData(usrInformation, usrAnswers) {
   let data = [];
 
+  if (usrAnswers.length === 0) {
+    return;
+  }
+
   for (let i = 0; i < usrInformation.length; i++) {
     const obj = {};
 
@@ -43,4 +47,3 @@ export function prepareData(usrInformation, usrAnswers) {
 
   return data;
 }
-
